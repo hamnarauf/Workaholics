@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/find', function () {
     return view('find/find');
 });
@@ -24,3 +25,8 @@ Route::get('/find', function () {
 Route::get('/categories', function () {
     return view('categories/categories');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

@@ -21,6 +21,23 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            # address fields
+            $table->string('city');
+            $table->string('town')->nullable();
+            $table->string('zip')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country');
+            
+            # financial fields
+            $table->bigInteger('wallet')->default(0);
+
+            # skills
+            $table->json('skills')->nullable();
+
+            # others
+            $table->string('company')->nullable();
+            $table->string('mobileNo')->nullable();
         });
     }
 
