@@ -1,0 +1,8 @@
+<div class="row">
+    <x-categoryCard title="Web Development" desc="MERN stack, MEAN stack, PHP, laravel" image="https://images.unsplash.com/photo-1669384056947-b6497936c8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"></x-categoryCard>
+    <x-categoryCard title="Web Development" desc="MERN stack, MEAN stack, PHP, laravel" image="https://images.unsplash.com/photo-1669384056947-b6497936c8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"></x-categoryCard>
+    <x-categoryCard title="Web Development" desc="MERN stack, MEAN stack, PHP, laravel" image="https://images.unsplash.com/photo-1669384056947-b6497936c8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"></x-categoryCard>
+    <x-categoryCard title="Web Development" desc="MERN stack, MEAN stack, PHP, laravel" image="https://images.unsplash.com/photo-1669384056947-b6497936c8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"></x-categoryCard>
+    <x-categoryCard title="Web Development" desc="MERN stack, MEAN stack, PHP, laravel" image="https://images.unsplash.com/photo-1669384056947-b6497936c8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"></x-categoryCard>
+    <x-categoryCard title="Web Development" desc="MERN stack, MEAN stack, PHP, laravel" image="https://images.unsplash.com/photo-1669384056947-b6497936c8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"></x-categoryCard>
+</div>
