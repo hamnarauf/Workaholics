@@ -1,0 +1,1 @@
+<span class="badge badge-pill badge-success bg-primary py-2 px-3">{{$title}}</span>

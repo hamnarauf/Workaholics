@@ -20,11 +20,14 @@ Route::get('/', function () {
 
 
 Route::get('/find', function () {
-    return view('find/find');
+    return view('find/index');
 });
 
 Route::get('/categories', function () {
-    return view('categories/categories');
+    return view('categories/index');
+});
+Route::get('/jobDetail', function () {
+    return view('jobDetail/index');
 });
 
 
