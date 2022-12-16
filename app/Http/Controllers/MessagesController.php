@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Cmgmyr\Messenger\Models\Message;
 use Cmgmyr\Messenger\Models\Participant;
@@ -29,7 +29,6 @@ class MessagesController extends Controller
 
         // All threads that user is participating in, with new messages
         // $threads = Thread::forUserWithNewMessages(Auth::id())->latest('updated_at')->get();
-
         return view('messenger.index', compact('threads'));
     }
 
@@ -69,7 +68,6 @@ class MessagesController extends Controller
     public function create()
     {
         $users = User::where('id', '!=', Auth::id())->get();
-
         return view('messenger.create', compact('users'));
     }
 

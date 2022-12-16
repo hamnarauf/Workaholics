@@ -127,14 +127,26 @@ Route::put('/users/{user}', [UsersController::class, 'update']);
 Route::delete('/users/{user}', [UsersController::class, 'destroy']);
 
 
+
+Route::group(['prefix' => 'messages'], function () {
+    Route::get('/', [MessagesController::class, 'index'])->name('messages');
+    // Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
+    Route::get('create', [MessagesController::class, 'create'])->name('messages.create');
+    Route::post('/', [MessagesController::class, 'store'])->name('messages.store');
+    Route::get('{id}', [MessagesController::class, 'show'])->name('messages.show');
+    Route::put('{id}', [MessagesController::class, 'update'])->name('messages.update');
+    // Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
+    // Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
+    // Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
+
+});
 // MessageController Routes
-Route::get('/messages', [MessagesController::class, 'index']);
-Route::get('/messages/create', [MessagesController::class, 'create']);
-Route::post('/messages', [MessagesController::class, 'store']);
-Route::get('/messages/{message}', [MessagesController::class, 'show']);
-Route::get('/messages/{message}/edit', [MessagesController::class, 'edit']);
-Route::put('/messages/{message}', [MessagesController::class, 'update']);
-Route::delete('/messages/{message}', [MessagesController::class, 'destriy']);
+// Route::get('/messages', [MessagesController::class, 'index']);
+// Route::get('/messages/create', [MessagesController::class, 'create']);
+// Route::post('/messages', [MessagesController::class, 'store']);
+// Route::get('/messages/{message}', [MessagesController::class, 'show']);
+// Route::put('/messages/{message}', [MessagesController::class, 'update']);
+
 
 Auth::routes();
 

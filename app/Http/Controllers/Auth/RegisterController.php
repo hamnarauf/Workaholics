@@ -66,6 +66,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        foreach($data as $dat){
+            error_log($dat);
+        }
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
