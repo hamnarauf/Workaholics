@@ -25,7 +25,8 @@
                 </li>
             </ul>
             <p>{{$desc}}</p>
-            <a href="" class="btn btn-outline-primary">Read More</a>
+            <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Read More">
+
         </div>
     </article>
 

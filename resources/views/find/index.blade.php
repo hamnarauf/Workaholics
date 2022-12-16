@@ -7,8 +7,8 @@
             </div>
 
             <x-tabmenu>
-                <x-tab title="Jobs"  filter=".filter-jobs" class="active"></x-tab>
-                <x-tab title="Gigs" filter=".filter-gigs" class=""></x-tab>
+                <x-tab title="Jobs" filter=".filter-jobs" class="active" sectionId="#filter-jobs"></x-tab>
+                <x-tab title="Gigs" filter=".filter-gigs" class=""  sectionId="#filter-gigs"></x-tab>
             </x-tabmenu>
             <div class="tab-content">
                 @include('find.jobs')
