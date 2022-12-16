@@ -1,1 +1,1 @@
-<li class={{$class}} data-filter={{$filter}}>{{$title}}</li>
+<li class={{$class}}><a href={{$sectionId}} data-toggle="tab">{{$title}}</a></li>

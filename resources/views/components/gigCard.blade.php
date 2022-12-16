@@ -19,7 +19,9 @@
                     &nbsp;&nbsp;
                     <i class="bx bx-heart"></i>&nbsp;{{$saves}}
                 </div>
+                
             </div>
         </div>
+        
     </div>
 </div>

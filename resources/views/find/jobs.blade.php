@@ -1,4 +1,4 @@
-<div class="row" id="filter-jobs">
+<div class="tab-pane active fade in row" id="filter-jobs">
     <x-jobCard
         title="Build a website"
         clientImg="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aHVtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" 
