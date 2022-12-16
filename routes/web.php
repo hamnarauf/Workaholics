@@ -1,6 +1,16 @@
 <?php
 
 use App\Http\Controllers\GigsController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\FeedbacksController;
+use App\Http\Controllers\JobsController;
+use App\Http\Controllers\MilestonesController;
+use App\Http\Controllers\PaymentOptionsController;
+use App\Http\Controllers\ProposalsController;
+use App\Http\Controllers\TransactionsController;
+use App\Http\Controllers\MessagesController;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -111,8 +121,14 @@ Route::put('/users/{user}', [UsersController::class, 'update']);
 Route::delete('/users/{user}', [UsersController::class, 'destroy']);
 
 
-
-
+// MessageController Routes
+Route::get('/messages', [MessagesController::class, 'index']);
+Route::get('/messages/create', [MessagesController::class, 'create']);
+Route::post('/messages', [MessagesController::class, 'store']);
+Route::get('/messages/{message}', [MessagesController::class, 'show']);
+Route::get('/messages/{message}/edit', [MessagesController::class, 'edit']);
+Route::put('/messages/{message}', [MessagesController::class, 'update']);
+Route::delete('/messages/{message}', [MessagesController::class, 'destriy']);
 
 Auth::routes();
 

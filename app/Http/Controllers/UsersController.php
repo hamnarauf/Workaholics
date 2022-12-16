@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UsersController extends Controller
 {
@@ -13,7 +14,8 @@ class UsersController extends Controller
 
     public function index()
     {
-        return view('users.index');
+        $users = User::all();
+        return view('users.index', ['users' => $users]);
     }
 
     public function create()
