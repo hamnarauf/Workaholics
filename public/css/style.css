@@ -1838,16 +1838,19 @@ section {
   background-color: #fff;
   transition: 0.2s ease;
 }
+
 .card-body {
   padding: 25px;
 }
+
 .card-img-sm {
   height: 85px;
   width: 85px;
   border-radius: 0.25rem;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
+
 .card-meta {
   display: flex;
   align-items: center;
@@ -1856,39 +1859,48 @@ section {
   color: #777;
   margin-bottom: 0;
 }
+
 .card-meta li {
   margin-bottom: 10px;
 }
+
 .card-meta li:not(:last-child) {
   border-right: 1px solid #EBEBEB;
   padding-right: 8px;
 }
+
 .card-meta i {
   color: #dddddd;
   margin-right: 5px;
 }
+
 .card-meta-author {
   color: inherit;
 }
+
 .card-meta-author img {
   height: 20px;
   width: 20px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-right: 5px;
   border-radius: 50%;
 }
+
 .card-meta-author:hover {
   color: #4FD675;
 }
+
 .card-meta-tag {
   margin-bottom: 0;
 }
+
 .card-meta-tag li {
   border: 0 !important;
   padding-right: 0 !important;
   margin-bottom: 0 !important;
 }
+
 .card-meta-tag li a {
   padding: 0px 8px;
   border-radius: 30px;
@@ -1896,6 +1908,7 @@ section {
   color: #555;
   display: inline-block;
 }
+
 .card-meta-tag li a:hover {
   background-color: #4FD675;
   border-color: #4FD675;
@@ -1906,6 +1919,7 @@ section {
   color: #333;
   font-weight: 700;
 }
+
 .post-title:hover {
   color: #4FD675;
 }
@@ -2035,3 +2049,60 @@ a:focus {
   width: 100px;
 }
 
+
+
+/* Activity */
+.dashboard .activity {
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.dashboard .activity .activity-item .activite-label {
+  color: #888;
+  position: relative;
+  flex-shrink: 0;
+  flex-grow: 0;
+  min-width: 64px;
+  padding-right: 20px;
+}
+.dashboard .activity .activity-item .title {
+  font-weight: bold;
+  font-size: 15px;
+  display: block;
+  clear: both;
+}
+
+.dashboard .activity .activity-item .activite-label::before {
+  content: "";
+  position: absolute;
+  right: -11px;
+  width: 4px;
+  top: 0;
+  bottom: 0;
+  background-color: #eceefe;
+}
+
+.dashboard .activity .activity-item .activity-badge {
+  margin-top: 3px;
+  z-index: 1;
+  font-size: 11px;
+  line-height: 0;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 3px solid #fff;
+  flex-grow: 0;
+}
+
+.dashboard .activity .activity-item .row .row .activity-content{
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.dashboard .activity .activity-item:first-child .activite-label::before {
+  top: 5px;
+}
+
+.dashboard .activity .activity-item:last-child .activity-content {
+  padding-bottom: 0;
+}
