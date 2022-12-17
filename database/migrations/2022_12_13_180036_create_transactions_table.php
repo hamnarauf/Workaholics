@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('payment_options', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
@@ -21,8 +21,9 @@ return new class extends Migration
             $table->enum('type', ['credit card', 'debit card', 'direct payment']);
             $table->string('account_name');
             $table->string('account_number');
+            $table->integer('amount');
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment_options');
+        Schema::dropIfExists('transactions');
     }
 };

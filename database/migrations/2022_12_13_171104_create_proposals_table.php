@@ -17,11 +17,12 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
+            $table->unsignedBigInteger('created_by');
+
             $table->unsignedBigInteger('project_id');
-            $table->string('proposal');
+            $table->string('proposal', 800);
             $table->date('expected_by');
             $table->integer('bid');
-            $table->unsignedBigInteger('created_by');
 
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('project_id')->references('id')->on('projects');

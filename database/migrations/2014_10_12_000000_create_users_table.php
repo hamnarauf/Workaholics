@@ -15,16 +15,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('img');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password', 255);
             $table->rememberToken();
             $table->timestamps();
 
             # address fields
-            $table->string('city');
-            $table->string('town')->nullable();
+            $table->string('street_address');
             $table->string('zip')->nullable();
             $table->string('state')->nullable();
             $table->string('country');
