@@ -1,5 +1,4 @@
 <x-layout>
-
     <!--search overlay end-->
     <section class="single-block-wrapper section-padding">
         <div class="container">
