@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Job;
 
 class JobsController extends Controller
 {
@@ -13,7 +14,8 @@ class JobsController extends Controller
 
     public function index()
     {
-        return view('jobs.index');
+        $jobs = Job::all();
+        return view('jobs.index', ["jobs" => $jobs]);
     }
 
     public function create()
@@ -23,26 +25,40 @@ class JobsController extends Controller
 
     public function store()
     {
+        $job = new Job();
+        $job->employer = request('employer');
+        $job->employee = request('employee');
+        $job->project_id = request('project_id');
+        $job->save();
         return redirect()->route('jobs.index');
     }
 
     public function show($id)
     {
-        return view('jobs.show');
+        $job = Job::find($id);
+        return view('jobs.show', ["job" => $job]);
     }
 
     public function edit($id)
     {
-        return view('jobs.edit');
+        $job = Job::find($id);
+        return view('jobs.edit', ["job" => $job]);
     }
 
     public function update($id)
     {
+        $job = Job::find($id);
+        $job->employer = request('employer');
+        $job->employee = request('employee');
+        $job->project_id = request('project_id');
+        $job->save();
         return redirect()->route('jobs.index');
     }
 
     public function destroy($id)
     {
+        $job = Job::find($id);
+        $job->delete();
         return redirect()->route('jobs.index');
     }
 }

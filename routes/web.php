@@ -30,7 +30,7 @@ Route::get('/', function () {
 
 
 Route::get('/find', function () {
-    return view('find/index');
+    return view('find.index');
 });
 Route::get('/test', function () {
     return view('test');

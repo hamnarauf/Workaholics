@@ -18,8 +18,9 @@ return new class extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('job_id');
-            $table->string('name');
-            $table->string('description');
+
+            $table->string('name', 255);
+            $table->string('description', 800);
             $table->integer('budget');
             $table->date('expected_by');
             $table->string('filename')->nullable();
