@@ -7,12 +7,17 @@
             </div>
 
             <x-tabmenu>
-                <x-tab title="Jobs" filter=".filter-jobs" class="active" sectionId="#filter-jobs"></x-tab>
-                <x-tab title="Gigs" filter=".filter-gigs" class=""  sectionId="#filter-gigs"></x-tab>
+                <x-tab title="Jobs" class="active" sectionId="#filter-jobs"></x-tab>
+                <x-tab title="Gigs" class="" sectionId="#filter-gigs"></x-tab>
             </x-tabmenu>
             <div class="tab-content">
-                @include('find.jobs')
-                @include('find.gigs')
+                <div class=" tab-pane active fade in tab-pane" id="filter-jobs">
+                    @include('find.jobs')
+                </div>
+
+                <div class=" tab-pane fade"  id="filter-gigs">
+                    @include('find.gigs')
+                </div>
             </div>
         </div>
     </section>

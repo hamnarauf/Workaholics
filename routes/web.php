@@ -46,6 +46,10 @@ Route::get('/milestones', function () {
     return view('milestones/index');
 });
 
+Route::get('/profile', function () {
+    return view('profile/index');
+});
+
 
 
 // Gigs Routes

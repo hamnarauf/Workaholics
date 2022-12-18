@@ -1,4 +1,4 @@
-<div class="row tab-pane fade" id="filter-gigs">
+<div class="row">
     <x-gigCard
         category="Web Dev"
         price="$1234"
