@@ -196,7 +196,11 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Cmgmyr\Messenger\MessengerServiceProvider::class,
+
     ],
+
+
+
 
     /*
     |--------------------------------------------------------------------------

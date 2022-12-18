@@ -19,32 +19,67 @@ class UsersController extends Controller
     }
 
     public function create()
-    {        
+    {
         return view('users.create');
     }
 
     public function store()
     {
+        $user = new User();
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->password = request('password');
+        $user->remember_token = request('remember_token');
+        $user->city = request('city');
+        $user->town = request('town');
+        $user->zip = request('zip');
+        $user->state = request('state');
+        $user->country = request('country');
+        $user->wallet = request('wallet');
+        $user->skills = request('skills');
+        $user->company = request('company');
+        $user->mobileNo = request('mobileNo');
+        $user->save();
+
         return redirect()->route('users.index');
     }
 
     public function show($id)
     {
-        return view('users.show');
+        $user = User::find($id);
+        return view('users.show', ['user' => $user]);
     }
 
     public function edit($id)
     {
-        return view('users.edit');
+        $user = User::find($id);
+        return view('users.edit', ['user' => $user]);
     }
 
     public function update($id)
     {
+        $user = User::find($id);
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->password = request('password');
+        $user->remember_token = request('remember_token');
+        $user->city = request('city');
+        $user->town = request('town');
+        $user->zip = request('zip');
+        $user->state = request('state');
+        $user->country = request('country');
+        $user->wallet = request('wallet');
+        $user->skills = request('skills');
+        $user->company = request('company');
+        $user->mobileNo = request('mobileNo');
+        $user->save();
         return redirect()->route('users.index');
     }
 
     public function destroy($id)
     {
+        $user = User::find($id);
+        $user->delete();
         return redirect()->route('users.index');
     }
 }
