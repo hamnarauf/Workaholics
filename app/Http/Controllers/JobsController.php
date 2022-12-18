@@ -12,10 +12,10 @@ class JobsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public static function index()
     {
         $jobs = Job::all();
-        return view('jobs.index', ["jobs" => $jobs]);
+        #return view('jobs.index', ["jobs" => $jobs]);
     }
 
     public function create()
