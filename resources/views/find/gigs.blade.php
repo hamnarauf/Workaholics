@@ -1,6 +1,4 @@
-<div class="row tab-pane fade" id="filter-gigs">
-
-@foreach($gigs as $gig)
+<div class="row">
     <x-gigCard
         category="{{ $gig->c_name }}"
         price="${{ $gig->budget }}"

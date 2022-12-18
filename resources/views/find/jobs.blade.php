@@ -1,5 +1,4 @@
-<div class="tab-pane active fade in row" id="filter-jobs">
-
+<div class="row">
 @foreach($projects as $project)
     <x-jobCard
         title="{{ $project->name }}"
