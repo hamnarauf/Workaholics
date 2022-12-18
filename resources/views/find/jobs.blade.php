@@ -1,4 +1,5 @@
 <div class="row">
+
 @foreach($projects as $project)
     <x-jobCard
         title="{{ $project->name }}"
@@ -14,4 +15,5 @@
     @if ($loop->index % 3 === 0 && $loop->index != 0)
         </div>        
     @endif
+
 @endforeach

@@ -1,4 +1,6 @@
 <div class="row">
+
+@foreach($gigs as $gig)
     <x-gigCard
         category="{{ $gig->c_name }}"
         price="${{ $gig->budget }}"
@@ -14,5 +16,6 @@
     @if ($loop->index % 3 === 0 && $loop->index != 0)
         </div>        
     @endif
+
 @endforeach
 
