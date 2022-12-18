@@ -24,19 +24,21 @@
     <link href="./css/app.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" >
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" >
+    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
     <title>Workaholics</title>
 </head>
 
 <body>
+    <x-header></x-header>
     <main>
         {{$slot}}
     </main>
     <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/aos/aos.js')}}"></script>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor/jQuery/jquery.min.js')}}"></script>
     <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
     <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
     <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>

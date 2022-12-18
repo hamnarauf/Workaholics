@@ -15,8 +15,11 @@
             <p> {{$desc}}</p>
         </div>
         <h3 class="mt-4 mb-4">Required Skills</h3>
-        @foreach ($skills as $skill)
-            <x-tag title={{$skill}}></x-tag>
-        @endforeach
+        <x-tagMenu>
+
+            @foreach ($skills as $skill)
+                <x-tag title={{$skill}}></x-tag>
+            @endforeach
+        </x-tagMenu>
     </div>
 </div>

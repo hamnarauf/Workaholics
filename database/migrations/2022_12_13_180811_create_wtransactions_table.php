@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('wtransactions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
             $table->unsignedBigInteger('milestone_id');
-            $table->unsignedBigInteger('sender_id');
+            $table->unsignedBigInteger('sender_id');            
             $table->unsignedBigInteger('receiver_id');
             $table->integer('amount');
 
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('wtransactions');
     }
 };
