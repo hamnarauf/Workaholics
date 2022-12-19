@@ -54,12 +54,16 @@ Route::get('/create', function () {
     return view('createGigJob/index');
 });
 
-Route::get('/proposal', function () {
+Route::get('/createProposal', function () {
     return view('createProposal/index');
 });
 
 Route::get('/wallet', function () {
     return view('addToWallet/index');
+});
+
+Route::get('/createMilestone', function () {
+    return view('createMilestone/index');
 });
 
 
