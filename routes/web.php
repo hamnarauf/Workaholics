@@ -42,9 +42,10 @@ Route::get('/categories', function () {
 Route::get('/jobDetail', function () {
     return view('jobDetail/index');
 });
-Route::get('/milestones', function () {
-    return view('milestones/index');
-});
+
+// Route::get('/milestones', function () {
+//     return view('milestones/index');
+// });
 
 
 
