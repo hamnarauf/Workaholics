@@ -58,8 +58,9 @@ Route::get('/wallet', function () {
 Route::get('/createMilestone', function () {
     return view('createMilestone/index');
 });
-
-
+Route::get('/gigDetail', function () {
+    return view('gigDetail/index');
+});
 
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);

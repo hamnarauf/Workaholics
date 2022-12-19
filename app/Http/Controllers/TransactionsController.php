@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Transaction;
 use App\Models\User;
 
@@ -28,7 +29,6 @@ class TransactionsController extends Controller
     {
         $transaction = new Transaction();
         $transaction->user_id = Auth::id();
-        $transaction->type = request('type');
         $transaction->account_name = request('account_name');
         $transaction->account_number = request('account_number');
         $transaction->amount = request('amount');
@@ -38,7 +38,7 @@ class TransactionsController extends Controller
 
         $transaction->save();
         $user->save();
-        
+
         return redirect()->route('transactions.index');
     }
 
