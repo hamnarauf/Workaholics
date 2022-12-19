@@ -14,11 +14,9 @@
   <div class="form-group">
     <label for="exampleFormControlSelect1">Category:</label>
     <select class="form-control" id="exampleFormControlSelect1">
-      <option>Category1</option>
-      <option>Category2</option>
-      <option>Category3</option>
-      <option>Category4</option>
-      <option>Category5</option>
+    @foreach ($categories as $category)
+      <option>{{ $category->name }}</option>
+    @endforeach
     </select>
   </div>
   <div class='form-row'>

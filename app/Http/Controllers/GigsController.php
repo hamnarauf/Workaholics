@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gig;
+use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class GigsController extends Controller
 {
@@ -18,18 +20,21 @@ class GigsController extends Controller
     }
     public function create()
     {
-        return view('gigs.create');
+        $categories = Category::all();
+        return view('createGigJob.index', ["categories" => $categories]);
     }
     public function store()
     {
         $gig = new Gig();
         $gig->name = request('name');
         $gig->description = request('description');
-        $gig->category = request('category');
         $gig->budget = request('budget');
         $gig->required_days = request('required_days');
         $gig->skills = request('skills');
-        $gig->created_by = request('created_by');
+        $gig->created_by = Auth::id();
+
+        $cat = Category::find(request('category'));
+        $gig->category = $cat;
         $gig->save();
         return redirect()->route('gigs.index');
     }

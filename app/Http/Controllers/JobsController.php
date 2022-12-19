@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Job;
+use App\Models\Category;
 
 class JobsController extends Controller
 {
@@ -20,7 +21,8 @@ class JobsController extends Controller
 
     public function create()
     {
-        return view('jobs.create');
+        $categories = Category::all();
+        return view('jobs.create', ["categories" => $categories]);
     }
 
     public function store()
