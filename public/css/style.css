@@ -2741,3 +2741,9 @@ svg {
 .star{
   margin-top: -12px;
 }
+
+.form-center
+{
+  display:flex;
+  justify-content: center;
+}

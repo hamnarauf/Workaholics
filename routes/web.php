@@ -50,6 +50,18 @@ Route::get('/profile', function () {
     return view('profile/index');
 });
 
+Route::get('/create', function () {
+    return view('createGigJob/index');
+});
+
+Route::get('/proposal', function () {
+    return view('createProposal/index');
+});
+
+Route::get('/wallet', function () {
+    return view('addToWallet/index');
+});
+
 
 
 // Gigs Routes
