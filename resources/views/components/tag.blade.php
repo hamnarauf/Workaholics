@@ -1,1 +1,1 @@
-<li class="list-inline-item"><a href="tags.html">{{$title}}</a></li>
+<li class="list-inline-item"><a href="">{{$title}}</a></li>

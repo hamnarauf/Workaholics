@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GigsController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\FeedbacksController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\PaymentOptionsController;
 use App\Http\Controllers\ProposalsController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\FindController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -29,23 +31,24 @@ Route::get('/', function () {
 });
 
 
-Route::get('/find', function () {
-    return view('find.index');
-});
+Route::get('/find', [FindController::class, 'index']);
+
 Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/categories', function () {
-    return view('categories/index');
-});
+Route::get('/categories', [CategoriesController::class, 'index']);
+
 Route::get('/jobDetail', function () {
     return view('jobDetail/index');
 });
+Route::get('/milestones', function () {
+    return view('milestones/index');
+});
 
-// Route::get('/milestones', function () {
-//     return view('milestones/index');
-// });
+Route::get('/profile', function () {
+    return view('profile/index');
+});
 
 
 
@@ -132,6 +135,7 @@ Route::delete('/users/{user}', [UsersController::class, 'destroy']);
 
 
 
+// MesaagesController Routes
 Route::group(['prefix' => 'messages'], function () {
     Route::get('/', [MessagesController::class, 'index'])->name('messages');
     // Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
@@ -139,17 +143,7 @@ Route::group(['prefix' => 'messages'], function () {
     Route::post('/', [MessagesController::class, 'store'])->name('messages.store');
     Route::get('{id}', [MessagesController::class, 'show'])->name('messages.show');
     Route::put('{id}', [MessagesController::class, 'update'])->name('messages.update');
-    // Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
-    // Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
-    // Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
-
 });
-// MessageController Routes
-// Route::get('/messages', [MessagesController::class, 'index']);
-// Route::get('/messages/create', [MessagesController::class, 'create']);
-// Route::post('/messages', [MessagesController::class, 'store']);
-// Route::get('/messages/{message}', [MessagesController::class, 'show']);
-// Route::put('/messages/{message}', [MessagesController::class, 'update']);
 
 
 Auth::routes();
