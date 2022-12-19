@@ -30,24 +30,28 @@ class GigsController extends Controller
         $gig->description = request('description');
         $gig->budget = request('budget');
         $gig->required_days = request('required_days');
-        $gig->skills = request('skills');
+     
+        $skill_string = request('skills');
+        $gig->skills = explode(',', $skill_string);
+     
         $gig->created_by = Auth::id();
-
-        $cat = Category::find(request('category'));
-        $gig->category = $cat;
+        $gig->category = request('category');
         $gig->save();
         return redirect()->route('gigs.index');
     }
+    
     public function show($id)
     {
         $gig = Gig::find($id);
         return view('gigs.show', ["gig" => $gig]);
     }
+
     public function edit($id)
     {
         $gig = Gig::find($id);
         return view('gigs.edit', ['gigs' => $gig]);
     }
+
     public function update($id)
     {
         $gig = Gig::find($id);
@@ -56,11 +60,17 @@ class GigsController extends Controller
         $gig->category = request('category');
         $gig->budget = request('budget');
         $gig->required_days = request('required_days');
-        $gig->skills = request('skills');
-        $gig->created_by = request('created_by');
+
+        $skill_string = request('skills');
+        $gig->skills = explode(',', $skill_string);
+
+        $gig->created_by = Auth::id();
+        $gig->category = request('category');
+
         $gig->save();
         return redirect()->route('gigs.index');
     }
+
     public function destroy($id)
     {
         $gig = Gig::find($id);
