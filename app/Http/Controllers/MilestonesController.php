@@ -12,9 +12,9 @@ class MilestonesController extends Controller
     //     $this->middleware('auth');
     // }
 
-    public function index()
+    public function index($id)
     {
-        $milestones = Milestone::all();
+        $milestones = Milestone::all()->where('job_id', $id);
         return view('milestones.index', ["milestones" => $milestones]);
     }
 

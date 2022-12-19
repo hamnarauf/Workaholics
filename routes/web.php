@@ -42,9 +42,9 @@ Route::get('/categories', [CategoriesController::class, 'index']);
 Route::get('/jobDetail', function () {
     return view('jobDetail/index');
 });
-Route::get('/milestones', function () {
-    return view('milestones/index');
-});
+// Route::get('/milestones', function () {
+//     return view('milestones/index');
+// });
 
 Route::get('/profile', function () {
     return view('profile/index');
@@ -105,7 +105,7 @@ Route::put('/jobs/{job}', [JobsController::class, 'update']);
 Route::delete('/jobs/{job}', [JobsController::class, 'destroy']);
 
 // MilestonesController Routes
-Route::get('/milestones', [MilestonesController::class, 'index']);
+Route::get('/milestones/{id}', [MilestonesController::class, 'index']);
 Route::get('/milestones/create', [MilestonesController::class, 'create']);
 Route::post('/milestones', [MilestonesController::class, 'store']);
 Route::get('/milestones/{milestone}', [MilestonesController::class, 'show']);

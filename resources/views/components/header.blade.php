@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/vendor/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="{{ asset('assets/vendor/themify-icons/themify-icons.css') }}">
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
