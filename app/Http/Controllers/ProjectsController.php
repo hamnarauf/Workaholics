@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
-<<<<<<< HEAD
 use App\Models\User;
 use App\Models\job;
 use App\Models\Category;
-=======
 use Illuminate\Support\Facades\Auth;
->>>>>>> 7345b00f7ed5fcf6495645b7e7436305f5fb66f0
 
 class ProjectsController extends Controller
 {
@@ -35,7 +32,7 @@ class ProjectsController extends Controller
         $project->category = request('category');
         $project->budget = request('budget');
         $project->expected_by = request('expected_by');
-        
+
         $skill_string = request('skills');
         $project->skills = explode(',', $skill_string);
 
@@ -65,10 +62,10 @@ class ProjectsController extends Controller
         $project->category = request('category');
         $project->budget = request('budget');
         $project->expected_by = request('expected_by');
-        
+
         $skill_string = request('skills');
         $project->skills = explode(',', $skill_string);
-        
+
         $project->created_by = request('created_by');
         $project->save();
         return redirect()->route('projects.index');
