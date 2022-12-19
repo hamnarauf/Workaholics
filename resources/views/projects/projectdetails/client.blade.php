@@ -1,15 +1,16 @@
-<?php
+@php
+$date = new DateTime($user->created_at);
+$date = $date->format('d M Y');
 $attrs = [
-    "Coutnry" => "Pakistan",
-    "Job Posted" => "3",
-    "Member Since" => "3 Dec 2022"
+    "Coutnry" => "$user->country",
+    "Job Posted" => "$jobcount",
+    "Member Since" => "$date"
 ];
-
-?>
+@endphp
 
 <x-clientOverview
-   clientName="Your name"
-   clientImg="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdlYnNpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
-   desc="I'm Liam, last year I decided to quit my job and travel the world. You can follow my journey on this blog!"                
+   clientName="{{ $user->name }}"
+   clientImg="{{ asset($user->img) }}"
+   desc="{{ $user->skills }}"                
    :attrs=$attrs             
 ></x-clientOverview>

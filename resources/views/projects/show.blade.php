@@ -10,7 +10,10 @@
                                 @include('projects.projectdetails.client')
                             </div>
                             <div class="sidebar-widget follow mb-5 text-center">
-                                <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Submit Proposal">
+                                <form action="/proposals/create" method="POST">
+                                    <input type="number" name="id" hidden value="{{ $project->id }}" >
+                                    <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Submit Proposal">
+                                </form>
                             </div>
                         </div>
                     </div>
