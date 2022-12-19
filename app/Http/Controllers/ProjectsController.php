@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectsController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $projects = Project::all();
@@ -28,8 +29,11 @@ class ProjectsController extends Controller
         $project->category = request('category');
         $project->budget = request('budget');
         $project->expected_by = request('expected_by');
-        $project->skills = request('skills');
-        $project->created_by = request('created_by');
+        
+        $skill_string = request('skills');
+        $project->skills = explode(',', $skill_string);
+
+        $project->created_by = Auth::id();
         $project->save();
         return redirect()->route('projects.index');
     }
@@ -51,7 +55,10 @@ class ProjectsController extends Controller
         $project->category = request('category');
         $project->budget = request('budget');
         $project->expected_by = request('expected_by');
-        $project->skills = request('skills');
+        
+        $skill_string = request('skills');
+        $project->skills = explode(',', $skill_string);
+        
         $project->created_by = request('created_by');
         $project->save();
         return redirect()->route('projects.index');
