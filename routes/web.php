@@ -118,7 +118,7 @@ Route::delete('/paymentoptions/{id}', [PaymentOptionsController::class, 'destroy
 
 // ProposalsController Routes
 Route::get('/proposals', [ProposalsController::class, 'index']);
-Route::get('/proposals/create', [ProposalsController::class, 'create']);
+Route::post('/proposals/create', [ProposalsController::class, 'create']);
 Route::post('/proposals', [ProposalsController::class, 'store']);
 Route::get('/proposals/{id}', [ProposalsController::class, 'show']);
 Route::get('/proposals/{id}/edit', [ProposalsController::class, 'edit']);
