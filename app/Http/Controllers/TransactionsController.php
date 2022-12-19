@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaction;
+use App\Models\User;
 
 class TransactionsController extends Controller
 {
@@ -26,11 +27,18 @@ class TransactionsController extends Controller
     public function store()
     {
         $transaction = new Transaction();
-        $transaction->milestone_id = request('milestone_id');
-        $transaction->sender_id = request('sender_id');
-        $transaction->receiver_id = request('receiver_id');
+        $transaction->user_id = Auth::id();
+        $transaction->type = request('type');
+        $transaction->account_name = request('account_name');
+        $transaction->account_number = request('account_number');
         $transaction->amount = request('amount');
+
+        $user = User::find(Auth::id());
+        $user->wallet = $user->wallet + $transaction->amount; 
+
         $transaction->save();
+        $user->save();
+        
         return redirect()->route('transactions.index');
     }
 
@@ -49,9 +57,9 @@ class TransactionsController extends Controller
     public function update($id)
     {
         $transaction = Transaction::find($id);
-        $transaction->milestone_id = request('milestone_id');
-        $transaction->sender_id = request('sender_id');
-        $transaction->receiver_id = request('receiver_id');
+        $transaction->type = request('type');
+        $transaction->account_name = request('account_name');
+        $transaction->account_number = request('account_number');
         $transaction->amount = request('amount');
         $transaction->save();
         return redirect()->route('transactions.index');
