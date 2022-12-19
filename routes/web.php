@@ -3,7 +3,7 @@
 use App\Http\Controllers\GigsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\FeedbacksController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\MilestonesController;
@@ -39,13 +39,6 @@ Route::get('/test', function () {
 
 Route::get('/categories', [CategoriesController::class, 'index']);
 
-Route::get('/jobDetail', function () {
-    return view('jobDetail/index');
-});
-Route::get('/milestones', function () {
-    return view('milestones/index');
-});
-
 Route::get('/profile', function () {
     return view('profile/index');
 });
@@ -73,82 +66,83 @@ Route::get('/gigDetail', function () {
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
 Route::post('/gigs', [GigsController::class, 'store']);
-Route::get('/gigs/{gig}', [GigsController::class, 'show']);
-Route::get('/gigs/{gig}/edit', [GigsController::class, 'edit']);
-Route::put('/gigs/{gig}', [GigsController::class, 'update']);
-Route::delete('/gigs/{gig}', [GigsController::class, 'destroy']);
+Route::get('/gigs/{id}', [GigsController::class, 'show']);
+Route::get('/gigs/{id}/edit', [GigsController::class, 'edit']);
+Route::put('/gigs/{id}', [GigsController::class, 'update']);
+Route::delete('/gigs/{id}', [GigsController::class, 'destroy']);
 
-// Products Routes
-Route::get('/products', [ProductsController::class, 'index']);
-Route::get('/products/create', [ProductsController::class, 'create']);
-Route::post('/products', [ProductsController::class, 'store']);
-Route::get('/products/{product}', [ProductsController::class, 'show']);
-Route::get('/products/{product}/edit', [ProductsController::class, 'edit']);
-Route::put('/products/{product}', [ProductsController::class, 'update']);
-Route::delete('/products/{product}', [ProductsController::class, 'destroy']);
+// Projects Routes
+Route::get('/projects', [ProjectsController::class, 'index']);
+Route::get('/projects/create', [ProjectsController::class, 'create']);
+Route::post('/projects', [ProjectsController::class, 'store']);
+Route::get('/projects/{id}', [ProjectsController::class, 'show']);
+Route::get('/projects/{id}/edit', [ProjectsController::class, 'edit']);
+Route::put('/projects/{id}', [ProjectsController::class, 'update']);
+Route::delete('/projects/{id}', [ProjectsController::class, 'destroy']);
+
 
 // Feedbacks Routes
 Route::get('/feedbacks', [FeedbacksController::class, 'index']);
 Route::get('/feedbacks/create', [FeedbacksController::class, 'create']);
 Route::post('/feedbacks', [FeedbacksController::class, 'store']);
-Route::get('/feedbacks/{feedback}', [FeedbacksController::class, 'show']);
-Route::get('/feedbacks/{feedback}/edit', [FeedbacksController::class, 'edit']);
-Route::put('/feedbacks/{feedback}', [FeedbacksController::class, 'update']);
-Route::delete('/feedbacks/{feedback}', [FeedbacksController::class, 'destroy']);
+Route::get('/feedbacks/{id}', [FeedbacksController::class, 'show']);
+Route::get('/feedbacks/{id}/edit', [FeedbacksController::class, 'edit']);
+Route::put('/feedbacks/{id}', [FeedbacksController::class, 'update']);
+Route::delete('/feedbacks/{id}', [FeedbacksController::class, 'destroy']);
 
 // JobsController Routes
 Route::get('/jobs', [JobsController::class, 'index']);
 Route::get('/jobs/create', [JobsController::class, 'create']);
 Route::post('/jobs', [JobsController::class, 'store']);
-Route::get('/jobs/{job}', [JobsController::class, 'show']);
-Route::get('/jobs/{job}/edit', [JobsController::class, 'edit']);
-Route::put('/jobs/{job}', [JobsController::class, 'update']);
-Route::delete('/jobs/{job}', [JobsController::class, 'destroy']);
+Route::get('/jobs/{id}', [JobsController::class, 'show']);
+Route::get('/jobs/{id}/edit', [JobsController::class, 'edit']);
+Route::put('/jobs/{id}', [JobsController::class, 'update']);
+Route::delete('/jobs/{id}', [JobsController::class, 'destroy']);
 
 // MilestonesController Routes
 Route::get('/milestones', [MilestonesController::class, 'index']);
 Route::get('/milestones/create', [MilestonesController::class, 'create']);
 Route::post('/milestones', [MilestonesController::class, 'store']);
-Route::get('/milestones/{milestone}', [MilestonesController::class, 'show']);
-Route::get('/milestones/{milestone}/edit', [MilestonesController::class, 'edit']);
-Route::put('/milestones/{milestone}', [MilestonesController::class, 'update']);
-Route::delete('/milestones/{milestone}', [MilestonesController::class, 'destroy']);
+Route::get('/milestones/{id}', [MilestonesController::class, 'show']);
+Route::get('/milestones/{id}/edit', [MilestonesController::class, 'edit']);
+Route::put('/milestones/{id}', [MilestonesController::class, 'update']);
+Route::delete('/milestones/{id}', [MilestonesController::class, 'destroy']);
 
 // PaymentOptionsController Routes
 Route::get('/paymentoptions', [PaymentOptionsController::class, 'index']);
 Route::get('/paymentoptions/create', [PaymentOptionsController::class, 'create']);
 Route::post('/paymentoptions', [PaymentOptionsController::class, 'store']);
-Route::get('/paymentoptions/{paymentoption}', [PaymentOptionsController::class, 'show']);
-Route::get('/paymentoptions/{paymentoption}/edit', [PaymentOptionsController::class, 'edit']);
-Route::put('/paymentoptions/{paymentoption}', [PaymentOptionsController::class, 'update']);
-Route::delete('/paymentoptions/{paymentoption}', [PaymentOptionsController::class, 'destroy']);
+Route::get('/paymentoptions/{id}', [PaymentOptionsController::class, 'show']);
+Route::get('/paymentoptions/{id}/edit', [PaymentOptionsController::class, 'edit']);
+Route::put('/paymentoptions/{id}', [PaymentOptionsController::class, 'update']);
+Route::delete('/paymentoptions/{id}', [PaymentOptionsController::class, 'destroy']);
 
 // ProposalsController Routes
 Route::get('/proposals', [ProposalsController::class, 'index']);
 Route::get('/proposals/create', [ProposalsController::class, 'create']);
 Route::post('/proposals', [ProposalsController::class, 'store']);
-Route::get('/proposals/{proposal}', [ProposalsController::class, 'show']);
-Route::get('/proposals/{proposal}/edit', [ProposalsController::class, 'edit']);
-Route::put('/proposals/{proposal}', [ProposalsController::class, 'update']);
-Route::delete('/proposals/{proposal}', [ProposalsController::class, 'destroy']);
+Route::get('/proposals/{id}', [ProposalsController::class, 'show']);
+Route::get('/proposals/{id}/edit', [ProposalsController::class, 'edit']);
+Route::put('/proposals/{id}', [ProposalsController::class, 'update']);
+Route::delete('/proposals/{id}', [ProposalsController::class, 'destroy']);
 
 // TransactionsController Routes   
 Route::get('/transactions', [TransactionsController::class, 'index']);
 Route::get('/transactions/create', [TransactionsController::class, 'create']);
 Route::post('/transactions', [TransactionsController::class, 'store']);
-Route::get('/transactions/{transaction}', [TransactionsController::class, 'show']);
-Route::get('/transactions/{transaction}/edit', [TransactionsController::class, 'edit']);
-Route::put('/transactions/{transaction}', [TransactionsController::class, 'update']);
-Route::delete('/transactions/{transaction}', [TransactionsController::class, 'destroy']);
+Route::get('/transactions/{id}', [TransactionsController::class, 'show']);
+Route::get('/transactions/{id}/edit', [TransactionsController::class, 'edit']);
+Route::put('/transactions/{id}', [TransactionsController::class, 'update']);
+Route::delete('/transactions/{id}', [TransactionsController::class, 'destroy']);
 
 // UsersController Routes
 Route::get('/users', [UsersController::class, 'index']);
 Route::get('/users/create', [UsersController::class, 'create']);
 Route::post('/users', [UsersController::class, 'store']);
-Route::get('/users/{user}', [UsersController::class, 'show']);
-Route::get('/users/{user}/edit', [UsersController::class, 'edit']);
-Route::put('/users/{user}', [UsersController::class, 'update']);
-Route::delete('/users/{user}', [UsersController::class, 'destroy']);
+Route::get('/users/{id}', [UsersController::class, 'show']);
+Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
+Route::put('/users/{id}', [UsersController::class, 'update']);
+Route::delete('/users/{id}', [UsersController::class, 'destroy']);
 
 
 

@@ -1,7 +1,10 @@
-<x-milestone 
-    dueDate="Nov 18 2202"
-    title="Task 1: Implement front-end"
-    desc="Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet Voluptatem blanditiis blanditiis eveniet"
-    price="$200"
+@foreach ($milestones as $milestone )
+<x-milestone
+dueDate="{{ $milestone->expected_by }}"
+title="{{ $milestone->name }}"
+desc="{{ $milestone->description }}"
+price="{{ $milestone->budget }}"
 ></x-milestone>
+@endforeach
+
 

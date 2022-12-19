@@ -12,7 +12,7 @@
             </x-tabmenu>
             <div class="tab-content">
                 <div class=" tab-pane active fade in tab-pane" id="filter-jobs">
-                    @include('createGigJob.job')
+                    @include('createGigJob.project')
                 </div>
 
                 <div class=" tab-pane fade"  id="filter-gigs">

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\User;
+use App\Models\job;
+use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectsController extends Controller
 {
@@ -28,15 +32,22 @@ class ProjectsController extends Controller
         $project->category = request('category');
         $project->budget = request('budget');
         $project->expected_by = request('expected_by');
-        $project->skills = request('skills');
-        $project->created_by = request('created_by');
+
+        $skill_string = request('skills');
+        $project->skills = explode(',', $skill_string);
+
+        $project->created_by = Auth::id();
         $project->save();
         return redirect()->route('projects.index');
     }
     public function show($id)
     {
         $project = Project::find($id);
-        return view('projects.show', ['project' => $project]);
+        $user = User::find($project->created_by);
+        $jobcount = Job::where('employer', $user->id)->count();
+        $category = Category::find($project->category);
+
+        return view('projects.show', ['project' => $project, 'user' => $user, 'jobcount' => $jobcount, 'category' => $category]);
     }
     public function edit($id)
     {
@@ -51,7 +62,10 @@ class ProjectsController extends Controller
         $project->category = request('category');
         $project->budget = request('budget');
         $project->expected_by = request('expected_by');
-        $project->skills = request('skills');
+
+        $skill_string = request('skills');
+        $project->skills = explode(',', $skill_string);
+
         $project->created_by = request('created_by');
         $project->save();
         return redirect()->route('projects.index');
