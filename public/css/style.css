@@ -2747,6 +2747,7 @@ svg {
   margin-top: -12px;
 }
 
+<<<<<<< HEAD
 .gradient-1 {
   background-image: linear-gradient(230deg, #759bff, #843cf6);
 }
@@ -3299,4 +3300,51 @@ svg {
 
 .dark-rgba {
   background-color: rgba(45, 54, 70, 0.1);
+=======
+.form-center
+{
+  display:flex;
+  justify-content: center;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: orange;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: orange;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: orange;
+>>>>>>> 3216f692a17268b0a9d303589858a3cb63802237
 }
