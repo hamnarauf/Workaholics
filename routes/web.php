@@ -56,9 +56,9 @@ Route::get('/createMilestone', function () {
     return view('createMilestone/index');
 });
 
-
-
-
+Route::get('/1milestoneSubmission', function () {
+    return view('1milestoneSubmission/index');
+});
 
 Route::get('/bank', function () {
     return view('addToBank/index');
