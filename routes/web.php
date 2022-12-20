@@ -56,29 +56,22 @@ Route::get('/createMilestone', function () {
     return view('createMilestone/index');
 });
 
-<<<<<<< HEAD
-=======
 Route::get('/1milestoneSubmission', function () {
     return view('1milestoneSubmission/index');
 });
->>>>>>> 3216f692a17268b0a9d303589858a3cb63802237
 
 Route::get('/bank', function () {
     return view('addToBank/index');
 });
-<<<<<<< HEAD
-Route::get('/chat', function () {
-    return view('chat/chat');
-});
-
-
-
-=======
 
 Route::get('/review', function () {
     return view('1review/index');
 });
->>>>>>> 3216f692a17268b0a9d303589858a3cb63802237
+
+Route::get('/editProfile', function () {
+    return view('1editProfile/index');
+});
+
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
