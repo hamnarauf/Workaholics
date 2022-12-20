@@ -36,9 +36,6 @@ Route::get('/find', [FindController::class, 'index']);
 Route::get('/test', function () {
     return view('test');
 });
-
-Route::get('/categories', [CategoriesController::class, 'index']);
-
 Route::get('/profile', function () {
     return view('profile/index');
 });
@@ -58,9 +55,10 @@ Route::get('/wallet', function () {
 Route::get('/createMilestone', function () {
     return view('createMilestone/index');
 });
-Route::get('/gigDetail', function () {
-    return view('gigDetail/index');
-});
+
+
+
+
 
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
@@ -143,6 +141,15 @@ Route::get('/users/{id}', [UsersController::class, 'show']);
 Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
 Route::put('/users/{id}', [UsersController::class, 'update']);
 Route::delete('/users/{id}', [UsersController::class, 'destroy']);
+
+// CategoriesController Routes
+Route::get('/categories', [CategoriesController::class, 'index']);
+Route::get('/categories/create', [CategoriesController::class, 'create']);
+Route::post('/categories', [CategoriesController::class, 'store']);
+Route::get('/categories/{id}', [CategoriesController::class, 'show']);
+Route::get('/categories/{id}/edit', [CategoriesController::class, 'edit']);
+Route::put('/categories/{id}', [CategoriesController::class, 'update']);
+Route::delete('/categories/{id}', [CategoriesController::class, 'destroy']);
 
 
 

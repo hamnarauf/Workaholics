@@ -16,6 +16,6 @@ $skills  = rtrim($skills, ',');
 <x-clientOverview
    clientName="{{ $user->name }}"
    clientImg="{{ asset($user->img) }}"
-   desc="{{ $skills }}"                
+   desc="{{ $skills }}"       
    :attrs=$attrs             
 ></x-clientOverview>

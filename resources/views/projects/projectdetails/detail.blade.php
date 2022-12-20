@@ -1,5 +1,5 @@
 @php
-    $skills = array("php", "javasript", "CSS", "Design");
+    $skills = $project->skills;
 @endphp
 
 
