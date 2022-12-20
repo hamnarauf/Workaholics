@@ -58,8 +58,9 @@ Route::get('/wallet', function () {
 Route::get('/createMilestone', function () {
     return view('createMilestone/index');
 });
-
-
+Route::get('/gigDetail', function () {
+    return view('gigDetail/index');
+});
 
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
@@ -118,7 +119,7 @@ Route::delete('/paymentoptions/{id}', [PaymentOptionsController::class, 'destroy
 
 // ProposalsController Routes
 Route::get('/proposals', [ProposalsController::class, 'index']);
-Route::get('/proposals/create', [ProposalsController::class, 'create']);
+Route::post('/proposals/create', [ProposalsController::class, 'create']);
 Route::post('/proposals', [ProposalsController::class, 'store']);
 Route::get('/proposals/{id}', [ProposalsController::class, 'show']);
 Route::get('/proposals/{id}/edit', [ProposalsController::class, 'edit']);

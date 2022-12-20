@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Proposal;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
+
+use function PHPUnit\Framework\identicalTo;
+use function Termwind\render;
 
 class ProposalsController extends Controller
 {
@@ -18,12 +22,13 @@ class ProposalsController extends Controller
         $proposals = Proposal::all();
         return view('proposals.index', ["proposals" => $proposals]);
     }
-    
+
     public function create()
     {
-        return view('proposals.create');
+        $id = request('id');
+        return view('proposals.create', ['id' => $id]);
     }
-    
+
     public function store()
     {
         $proposal = new Proposal();
@@ -33,21 +38,21 @@ class ProposalsController extends Controller
         $proposal->bid = request('bid');
         $proposal->created_by = Auth::id();
         $proposal->save();
-        return redirect()->route('proposals.index');
+        return redirect('/projects/' . request('project_id'));
     }
-    
+
     public function show($id)
     {
         $proposal = Proposal::find($id);
         return view('proposals.show', ['proposal' => $proposal]);
     }
-    
+
     public function edit($id)
     {
         $proposal =   Proposal::find($id);
         return view('proposals.edit', ['proposal' => $proposal]);
     }
-    
+
     public function update($id)
     {
         $proposal = Proposal::find($id);
@@ -60,7 +65,7 @@ class ProposalsController extends Controller
 
         return redirect()->route('proposals.index');
     }
-    
+
     public function destroy($id)
     {
         $proposal = Proposal::find($id);
