@@ -63,6 +63,10 @@ Route::get('/1milestoneSubmission', function () {
 Route::get('/bank', function () {
     return view('addToBank/index');
 });
+
+Route::get('/review', function () {
+    return view('1review/index');
+});
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
