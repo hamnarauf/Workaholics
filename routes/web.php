@@ -57,12 +57,15 @@ Route::get('/createMilestone', function () {
 });
 
 
-
-
-
 Route::get('/bank', function () {
     return view('addToBank/index');
 });
+Route::get('/chat', function () {
+    return view('chat/chat');
+});
+
+
+
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
@@ -119,10 +122,10 @@ Route::put('/paymentoptions/{id}', [PaymentOptionsController::class, 'update']);
 Route::delete('/paymentoptions/{id}', [PaymentOptionsController::class, 'destroy']);
 
 // ProposalsController Routes
-Route::get('/proposals', [ProposalsController::class, 'index']);
+Route::get('/proposals/{id}', [ProposalsController::class, 'index']);
 Route::post('/proposals/create', [ProposalsController::class, 'create']);
 Route::post('/proposals', [ProposalsController::class, 'store']);
-Route::get('/proposals/{id}', [ProposalsController::class, 'show']);
+Route::get('/proposals/{id}/details', [ProposalsController::class, 'show']);
 Route::get('/proposals/{id}/edit', [ProposalsController::class, 'edit']);
 Route::put('/proposals/{id}', [ProposalsController::class, 'update']);
 Route::delete('/proposals/{id}', [ProposalsController::class, 'destroy']);

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Proposal;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\URL;
 
 use function PHPUnit\Framework\identicalTo;
 use function Termwind\render;
@@ -17,9 +17,13 @@ class ProposalsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index($id)
     {
-        $proposals = Proposal::all();
+        $proposals = Proposal::all()->where('project_id', $id);
+        foreach ($proposals as $proposal) {
+            $proposal->user = User::find($proposal->created_by);
+        }
+
         return view('proposals.index', ["proposals" => $proposals]);
     }
 
