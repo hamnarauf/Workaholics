@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Proposal;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,10 +46,13 @@ class ProposalsController extends Controller
         return redirect('/projects/' . request('project_id'));
     }
 
-    public function show($id)
+    public function show($project_id, $proposal_id)
     {
-        $proposal = Proposal::find($id);
-        return view('proposals.show', ['proposal' => $proposal]);
+        $project_name = Project::find($project_id);
+        $proposal = Proposal::find($proposal_id);
+        $freelancer = User::find($proposal['created_by']);
+        $freelancer = $freelancer['name'];
+        return view('proposals.show', ['project_name' => $project_name, 'proposal' => $proposal, 'freelancer' => $freelancer]);
     }
 
     public function edit($id)

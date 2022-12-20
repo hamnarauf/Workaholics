@@ -12,6 +12,7 @@ use App\Http\Controllers\ProposalsController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\FindController;
+use App\Http\Controllers\WTransactionsController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -72,6 +73,19 @@ Route::get('/editProfile', function () {
     return view('1editProfile/index');
 });
 
+Route::get('/contracts', function () {
+    return view('contracts/index');
+});
+
+Route::get('/payment', function () {
+    return view('payment');
+});
+
+Route::get('/viewSub', function () {
+    return view('viewSubmission');
+});
+
+
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
@@ -118,20 +132,20 @@ Route::get('/milestones/{id}/edit', [MilestonesController::class, 'edit']);
 Route::put('/milestones/{id}', [MilestonesController::class, 'update']);
 Route::delete('/milestones/{id}', [MilestonesController::class, 'destroy']);
 
-// PaymentOptionsController Routes
-Route::get('/paymentoptions', [PaymentOptionsController::class, 'index']);
-Route::get('/paymentoptions/create', [PaymentOptionsController::class, 'create']);
-Route::post('/paymentoptions', [PaymentOptionsController::class, 'store']);
-Route::get('/paymentoptions/{id}', [PaymentOptionsController::class, 'show']);
-Route::get('/paymentoptions/{id}/edit', [PaymentOptionsController::class, 'edit']);
-Route::put('/paymentoptions/{id}', [PaymentOptionsController::class, 'update']);
-Route::delete('/paymentoptions/{id}', [PaymentOptionsController::class, 'destroy']);
+// WTransactionsController Routes
+Route::get('/wtransactions', [WTransactionsController::class, 'index']);
+Route::get('/wtransactions/create', [WTransactionsController::class, 'create']);
+Route::post('/wtransactions', [WTransactionsController::class, 'store']);
+Route::get('/wtransactions/{id}', [WTransactionsController::class, 'show']);
+Route::get('/wtransactions/{id}/edit', [WTransactionsController::class, 'edit']);
+Route::put('/wtransactions/{id}', [WTransactionsController::class, 'update']);
+Route::delete('/wtransactions/{id}', [WTransactionsController::class, 'destroy']);
 
 // ProposalsController Routes
 Route::get('/proposals/{id}', [ProposalsController::class, 'index']);
 Route::post('/proposals/create', [ProposalsController::class, 'create']);
 Route::post('/proposals', [ProposalsController::class, 'store']);
-Route::get('/proposals/{id}/details', [ProposalsController::class, 'show']);
+Route::get('/proposals/{project_id}/{proposal_id}/details', [ProposalsController::class, 'show']);
 Route::get('/proposals/{id}/edit', [ProposalsController::class, 'edit']);
 Route::put('/proposals/{id}', [ProposalsController::class, 'update']);
 Route::delete('/proposals/{id}', [ProposalsController::class, 'destroy']);
@@ -168,7 +182,6 @@ Route::delete('/categories/{id}', [CategoriesController::class, 'destroy']);
 // MesaagesController Routes
 Route::group(['prefix' => 'messages'], function () {
     Route::get('/', [MessagesController::class, 'index'])->name('messages');
-    // Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
     Route::get('create', [MessagesController::class, 'create'])->name('messages.create');
     Route::post('/', [MessagesController::class, 'store'])->name('messages.store');
     Route::get('{id}', [MessagesController::class, 'show'])->name('messages.show');
