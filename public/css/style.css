@@ -2744,10 +2744,7 @@ svg {
 }
 
 .star {
-  margin-top: -12px;
-}
-
-<<<<<<< HEAD
+  margin-top: -12px;}
 .gradient-1 {
   background-image: linear-gradient(230deg, #759bff, #843cf6);
 }
@@ -3346,5 +3343,4 @@ svg {
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
   color: orange;
->>>>>>> 3216f692a17268b0a9d303589858a3cb63802237
 }
