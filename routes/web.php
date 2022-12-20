@@ -60,6 +60,9 @@ Route::get('/createMilestone', function () {
 
 
 
+Route::get('/bank', function () {
+    return view('addToBank/index');
+});
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
