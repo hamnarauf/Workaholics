@@ -5,8 +5,8 @@
                 <h2>Edit your Profile</h2>
             </div>
             <div class="form-center">
-                @include('1editProfile.passwordForm')
-                {{-- @include('1editProfile.form') --}}
+                {{-- @include('1editProfile.passwordForm') --}}
+                @include('1editProfile.form')
             </div>
         </div>
     </section>

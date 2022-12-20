@@ -20,6 +20,10 @@
                         <div class="col-md-12"><label class="labels">Company</label><input type="text" class="form-control" placeholder="enter company name you work for" value=""></div>
                         <div class="col-md-12"><label class="labels">Skills</label><input type="text" class="form-control" placeholder="enter your skills here" value=""></div>
                     </div>
+                    <div class="row mt-3">
+                        <label for="submission">Change Profile Picture:</label>
+                        <input type="file" class="form-control-file" id="submission" name="submission" multiple="multiple">
+                      </div>
                     <div class="row mt-3"> 
                         <a style="text-decoration: underline; color:blue;"><small>Change Password</small></a>
                     </div>
