@@ -1,6 +1,7 @@
 <x-layout>
-        <!--search overlay end-->
+    <!--search overlay end-->
     <section class="single-block-wrapper section-padding">
+        <x-sectionTitle title="Wallet" desc="Wallet and Transaction Details"></x-sectionTitle>
         <div id="main-wrapper">
             <!--**********************************
             Content body start
@@ -14,20 +15,23 @@
                                     <h3 class="text-white d-inline">Total Balance</h3>
                                     <div class="d-inline-block">
                                         <h5 class=" text-white">$4565</h5>
-                                        <p class="text-white mb-0"></p>
-                                        <button class="btn text-start p-2 plus"><p class="mb-0"><i class="fa fa-plus"></i> Add</p></span></button>
+                                        <button class="btn text-start p-2 plus">
+                                            <p class="mb-0"><i class="fa fa-plus"></i> Add</p></span>
+                                        </button>
                                     </div>
-                                    <span class="float-right display-5 opacity-5"><i
-                                            class="fa fa-shopping-cart"></i></span>
+                                    <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="card gradient-2">
                                 <div class="card-body">
-                                    <h3 class="card-title text-white">Valid Balance</h3>
+                                    <h3 class="d-inline text-white">Valid Balance</h3>
                                     <div class="d-inline-block">
-                                        <h4 class="text-white">$ 8541</h4>
+                                        <h5 class="text-white">$ 8541</h5>
+                                        <button class="btn text-start p-2 plus">
+                                            <p class="mb-0">Get Paid</p></span>
+                                        </button>
                                     </div>
                                     <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                                 </div>
@@ -36,31 +40,33 @@
                         <div class="col-lg-3 col-sm-6">
                             <div class="card gradient-3">
                                 <div class="card-body">
-                                    <h3 class="card-title text-white">In Escrow</h3>
+                                    <h3 class="card-title text-white d-inline">Escrow Incoming</h3>
+                                    <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
                                     <div class="d-inline-block">
                                         <h4 class="text-white">$4565</h4>
                                     </div>
-                                    <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="card gradient-4">
                                 <div class="card-body">
-                                    <h3 class="card-title text-white">In Review</h3>
-                                    <div class="d-inline-block">
+                                    <h3 class="card-title text-white d-inline">Escrow Outgoing</h3>
+                                    <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                                    <div class="d-block">
                                         <h4 class="text-white">$99</h4>
                                     </div>
-                                    <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="row mt-5">
-                        <div class="col-lg-12">
+                        <h3 class="h3  text-center mb-2">Wallet Transactions</h3>
+                        <div class="col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="h4">Spend History</h4>
+                                    <h4 class="h4">Send History</h4>
                                     <div class="active-member">
                                         <div class="table-responsive">
                                             <table class="table table-xs mb-0">
@@ -70,23 +76,18 @@
                                                         <th>Project Title</th>
                                                         <th>Milestone</th>
                                                         <th>Payment Date</th>
-                                                        <th>Released Date</th>
-                                                        <th>Status</th>
-                                                        <th>Payment Method</th>
+                                                        <th>Amount</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td><img src="./images/avatar/1.jpg"
-                                                                class=" rounded-circle mr-3" alt="">Sarah Smith</td>
+                                                        <td><img src="./images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
                                                         <td>Project 1</td>
                                                         <td>Milestone 1</td>
                                                         <td>
                                                             <span>23 aug 2022</span>
                                                         </td>
-                                                        <td> 23 sept 2022 </td>
-                                                        <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                                        <td> Local Bank #12334556 </td>
+                                                        <td>$123 </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -95,9 +96,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-lg-12">
+
+                        <div class="col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="h4">Received History</h4>
@@ -110,23 +110,18 @@
                                                         <th>Project Title</th>
                                                         <th>Milestone</th>
                                                         <th>Payment Date</th>
-                                                        <th>Released Date</th>
-                                                        <th>Status</th>
-                                                        <th>Payment Method</th>
+                                                        <th>Amount</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td><img src="./images/avatar/1.jpg"
-                                                                class=" rounded-circle mr-3" alt="">Sarah Smith</td>
+                                                        <td><img src="./images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
                                                         <td>Project 1</td>
                                                         <td>Milestone 1</td>
                                                         <td>
                                                             <span>23 aug 2022</span>
                                                         </td>
-                                                        <td> 23 sept 2022 </td>
-                                                        <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                                        <td> Local Bank #12334556 </td>
+                                                        <td>$1234</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -136,10 +131,69 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row mt-5">
+                        <h3 class="h3 text-center mb-2">Bank Transactions</h3>
+
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="h4">Send History</h4>
+                                    <div class="active-member">
+                                        <div class="table-responsive">
+                                            <table class="table table-xs mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Account No.</th>
+                                                        <th>Payment Date</th>
+                                                        <th>Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>24334123 </td>
+                                                        <td>22 June 2022 </td>
+                                                        <td>$123 </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="h4">Received History</h4>
+                                    <div class="active-member">
+                                        <div class="table-responsive">
+                                            <table class="table table-xs mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Account No.</th>
+                                                        <th>Payment Date</th>
+                                                        <th>Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>24334123 </td>
+                                                        <td>22 June 2022 </td>
+                                                        <td>$123 </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #/ container -->
                 </div>
-                <!-- #/ container -->
             </div>
-        </div>
-    <section>
-        
+            <section>
+
 </x-layout>

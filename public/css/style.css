@@ -3297,17 +3297,13 @@ svg {
 
 .dark-rgba {
   background-color: rgba(45, 54, 70, 0.1);
-=======
+}
+
+/* forms related additional css */
 .form-center
 {
   display:flex;
   justify-content: center;
-}
-
-
-*{
-  margin: 0;
-  padding: 0;
 }
 .rate {
   float: left;
@@ -3343,4 +3339,13 @@ svg {
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
   color: orange;
+}
+ul, li {
+  list-style: none
+}
+select
+{
+  padding: 3px;
+  border: 1px solid #d0d4dc;
+  border-radius: 5px;
 }

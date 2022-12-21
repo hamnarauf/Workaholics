@@ -13,8 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('proposals', function (Blueprint $table) {
+        Schema::create('gig_proposal', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+
+            $table->unsignedBigInteger('gig_id');
+            $table->string('proposal', 800);
             $table->enum('status', ['Accepted', 'Pending', 'Rejected'])->default('Pending');
+            $table->integer('bid');
+            $table->date('deadline');
         });
     }
 
@@ -25,8 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('proposals', function($table) {
-            $table->dropColumn('status');
-        });
+        Schema::dropIfExists('gig_proposal');
     }
 };
