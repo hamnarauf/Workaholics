@@ -28,7 +28,7 @@
                                 <div class="card-body">
                                     <h3 class="d-inline text-white">Valid Balance</h3>
                                     <div class="d-inline-block">
-                                        <h5 class="text-white">$ 8541</h5>
+                                        <h5 class="text-white">$ {{ $user['wallet'] }}</h5>
                                         <button class="btn text-start p-2 plus">
                                             <p class="mb-0">Get Paid</p></span>
                                         </button>

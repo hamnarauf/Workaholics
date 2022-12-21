@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Transaction;
 use App\Models\wTransactions;
 use App\Models\User;
+use App\Models\Job;
 
 class PaymentsController extends Controller
 {
@@ -56,8 +57,16 @@ class PaymentsController extends Controller
 
     public function show($id)
     {
+        $user = User::find(Auth::id());
+        
+        $created_jobs = Job::where('employer', '=', Auth::id());
+        
+        
+        $hired_on_jobs = Job::where('employee', '=', Auth::id());
+
+
         $transaction = Transaction::find($id);
-        return view('payments.show', ['transaction' => $transaction]);
+        return view('payments.show', ['user' => $user]);
     }
 
     public function edit($id)
