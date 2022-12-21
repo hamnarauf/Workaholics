@@ -11,7 +11,7 @@ use App\Http\Controllers\PaymentOptionsController;
 use App\Http\Controllers\ProposalsController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\MessagesController;
-use App\Http\Controllers\FindController;
+use App\Http\Controllers\FindsController;
 use App\Http\Controllers\WTransactionsController;
 
 use Illuminate\Support\Facades\Route;
@@ -43,9 +43,6 @@ Route::get('/profile', function () {
     return view('profile/index');
 });
 
-Route::get('/create', function () {
-    return view('gigs/create');
-});
 
 Route::get('/wallet', function () {
     return view('addToWallet/index');
@@ -184,6 +181,10 @@ Route::get('/categories/{id}/edit', [CategoriesController::class, 'edit']);
 Route::put('/categories/{id}', [CategoriesController::class, 'update']);
 Route::delete('/categories/{id}', [CategoriesController::class, 'destroy']);
 
+//findsController Routes
+
+Route::get('/finds', [FindsController::class, 'index']);
+Route::post('/finds', [FindsController::class, 'show']);
 
 
 // MesaagesController Routes

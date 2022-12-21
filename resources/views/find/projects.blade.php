@@ -9,7 +9,7 @@
         date="{{ $project->expected_by }}"
         category="{{ $project->c_name }}"
         desc="{{ $project->description }}"
-        jobImg="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2Vic2l0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"
+        jobImg="https://source.unsplash.com/random/600x600?{{ $project->c_name }}"
     ></x-jobCard>
     
     @if ($loop->index % 3 === 0 && $loop->index != 0)

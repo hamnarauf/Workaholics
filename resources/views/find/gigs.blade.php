@@ -9,7 +9,7 @@
         freelancer="{{ $gig->u_name }}"
         clicks="3"
         saves="10"
-        projImg="https://images.unsplash.com/photo-1661956601349-f61c959a8fd4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"
+        projImg="https://source.unsplash.com/random/600x600?{{ $gig->c_name }}"
         freelancerImg="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aHVtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60">
     </x-gigCard>
 

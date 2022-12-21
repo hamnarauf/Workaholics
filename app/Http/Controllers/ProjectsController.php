@@ -22,7 +22,8 @@ class ProjectsController extends Controller
     }
     public function create()
     {
-        return view('projects.create');
+        $categories = Category::all();
+        return view('projects.create', ['categories' => $categories]);
     }
     public function store()
     {
@@ -38,7 +39,7 @@ class ProjectsController extends Controller
 
         $project->created_by = Auth::id();
         $project->save();
-        return redirect()->route('projects.index');
+        return redirect('/projects');
     }
     public function show($id)
     {

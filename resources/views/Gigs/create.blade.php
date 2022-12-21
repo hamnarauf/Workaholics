@@ -7,16 +7,11 @@
             </div>
 
             <x-tabmenu>
-                <x-tab title="Jobs" class="active" sectionId="#filter-jobs"></x-tab>
-                <x-tab title="Gigs" class="" sectionId="#filter-gigs"></x-tab>
+                <h2 class="btn btn-primary">Create Gig</h2>
             </x-tabmenu>
             <div class="tab-content">
                 <div class=" tab-pane active fade in tab-pane" id="filter-jobs">
-                    @include('Gigs.createGigJob.project')
-                </div>
-
-                <div class=" tab-pane fade"  id="filter-gigs">
-                    @include('Gigs.createGigJob.gig')
+                    @include('gigs.creategig.gig')
                 </div>
             </div>
         </div>
