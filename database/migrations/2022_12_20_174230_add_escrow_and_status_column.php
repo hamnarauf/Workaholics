@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('milestones', function (Blueprint $table) {
             $table->integer('escrow');
-            $table->enum('status', ['Paid', 'Completed', 'In Progress', 'Cancelled']);
+            $table->enum('status', ['Paid', 'Completed', 'In Progress', 'Cancelled'])->default('In Progress');
         });
     }
 
