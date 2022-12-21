@@ -3300,3 +3300,7 @@ svg {
 .dark-rgba {
   background-color: rgba(45, 54, 70, 0.1);
 }
+
+ul, li{
+  list-style: none
+}
