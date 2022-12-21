@@ -28,7 +28,7 @@ class ProposalsController extends Controller
         return view('proposals.index', ["proposals" => $proposals]);
     }
 
-    public function create()
+    public function create($id)
     {
         $id = request('id');
         return view('proposals.create', ['id' => $id]);

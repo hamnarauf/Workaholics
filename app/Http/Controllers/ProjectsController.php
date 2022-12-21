@@ -44,7 +44,7 @@ class ProjectsController extends Controller
     {
         $project = Project::find($id);
         $user = User::find($project->created_by);
-        $jobcount = Job::where('employer', $user->id)->count();
+        $jobcount = Job::where('employer', $user->id)->count() + 1;
         $category = Category::find($project->category);
 
         return view('projects.show', ['project' => $project, 'user' => $user, 'jobcount' => $jobcount, 'category' => $category]);

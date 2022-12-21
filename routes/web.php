@@ -44,20 +44,13 @@ Route::get('/profile', function () {
 });
 
 Route::get('/create', function () {
-    return view('createGigJob/index');
-});
-
-Route::get('/createProposal', function () {
-    return view('createProposal/index');
+    return view('gigs/create');
 });
 
 Route::get('/wallet', function () {
     return view('addToWallet/index');
 });
 
-Route::get('/createMilestone', function () {
-    return view('createMilestone/index');
-});
 
 Route::get('/1milestoneSubmission', function () {
     return view('1milestoneSubmission/index');
@@ -75,9 +68,6 @@ Route::get('/editProfile', function () {
     return view('1editProfile/index');
 });
 
-Route::get('/contracts', function () {
-    return view('contracts/index');
-});
 
 Route::get('/payment', function () {
     return view('payments/index');
@@ -86,6 +76,21 @@ Route::get('/payment', function () {
 Route::get('/viewSub', function () {
     return view('viewSubmission');
 });
+
+Route::get('/a', function () {
+    return view('proposals/create');
+});
+
+
+
+//Contracts Routes
+Route::get('/contracts', [ContractsController::class, 'index']);
+Route::get('/contracts/create', [ContractsController::class, 'create']);
+Route::post('/contracts', [ContractsController::class, 'store']);
+Route::get('/contracts/{id}', [ContractsController::class, 'show']);
+Route::get('/contracts/{id}/edit', [ContractsController::class, 'edit']);
+Route::put('/contracts/{id}', [ContractsController::class, 'update']);
+Route::delete('/contracts/{id}', [ContractsController::class, 'destroy']);
 
 
 // Gigs Routes
