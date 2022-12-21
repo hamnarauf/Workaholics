@@ -81,7 +81,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td><img src="./images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
+                                                        <td><img src="asset($user->img)" class=" rounded-circle mr-3" alt="">{{$user['name']}}</td>
                                                         <td>Project 1</td>
                                                         <td>Milestone 1</td>
                                                         <td>
