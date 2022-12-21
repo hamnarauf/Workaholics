@@ -128,5 +128,13 @@
                 </div>
             </div>
         </div>
+
+
+
+        <a href="">Login</a>
+        <a href="">Sign Up</a>
+        {{-- categories
+            
+            --}}
     </body>
 </html>

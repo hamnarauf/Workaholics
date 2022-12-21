@@ -22,7 +22,8 @@ class ProjectsController extends Controller
     }
     public function create()
     {
-        return view('projects.create');
+        $categories = Category::all();
+        return view('projects.create', ['categories' => $categories]);
     }
     public function store()
     {
@@ -38,13 +39,13 @@ class ProjectsController extends Controller
 
         $project->created_by = Auth::id();
         $project->save();
-        return redirect()->route('projects.index');
+        return redirect('/projects');
     }
     public function show($id)
     {
         $project = Project::find($id);
         $user = User::find($project->created_by);
-        $jobcount = Job::where('employer', $user->id)->count();
+        $jobcount = Job::where('employer', $user->id)->count() + 1;
         $category = Category::find($project->category);
 
         return view('projects.show', ['project' => $project, 'user' => $user, 'jobcount' => $jobcount, 'category' => $category]);

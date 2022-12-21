@@ -18,14 +18,13 @@
                 <li class="list-inline-item">
                     <i class="ti-calendar"></i>{{$date}}
                 </li>
-                <li class="list-inline-item">
-                    <ul class="card-meta-tag list-inline">
-                        <li class="list-inline-item"><a href="tags.html">{{$category}}</a></li>
-                    </ul>
+                <x-tagMenu>
+                    <x-tag title={{$category}}></x-tag>
+                </x-tagMenu>
                 </li>
             </ul>
             <p>{{$desc}}</p>
-            <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Read More">
+            <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Details">
 
         </div>
     </article>

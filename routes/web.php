@@ -11,7 +11,7 @@ use App\Http\Controllers\PaymentOptionsController;
 use App\Http\Controllers\ProposalsController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\MessagesController;
-use App\Http\Controllers\FindController;
+use App\Http\Controllers\FindsController;
 use App\Http\Controllers\WTransactionsController;
 use App\Http\Controllers\PaymentsController;
 
@@ -44,21 +44,11 @@ Route::get('/profile', function () {
     return view('profile/index');
 });
 
-Route::get('/create', function () {
-    return view('createGigJob/index');
-});
-
-Route::get('/createProposal', function () {
-    return view('createProposal/index');
-});
 
 Route::get('/wallet', function () {
     return view('addToWallet/index');
 });
 
-Route::get('/createMilestone', function () {
-    return view('createMilestone/index');
-});
 
 Route::get('/1milestoneSubmission', function () {
     return view('1milestoneSubmission/index');
@@ -76,9 +66,6 @@ Route::get('/editProfile', function () {
     return view('1editProfile/index');
 });
 
-Route::get('/contracts', function () {
-    return view('contracts/index');
-});
 
 // Route::get('/payment', function () {
 //     return view('payments/index');
@@ -87,6 +74,21 @@ Route::get('/contracts', function () {
 Route::get('/viewSub', function () {
     return view('viewSubmission');
 });
+
+Route::get('/a', function () {
+    return view('proposals/create');
+});
+
+
+
+//Contracts Routes
+Route::get('/contracts', [ContractsController::class, 'index']);
+Route::get('/contracts/create', [ContractsController::class, 'create']);
+Route::post('/contracts', [ContractsController::class, 'store']);
+Route::get('/contracts/{id}', [ContractsController::class, 'show']);
+Route::get('/contracts/{id}/edit', [ContractsController::class, 'edit']);
+Route::put('/contracts/{id}', [ContractsController::class, 'update']);
+Route::delete('/contracts/{id}', [ContractsController::class, 'destroy']);
 
 
 // Gigs Routes
@@ -189,6 +191,10 @@ Route::get('/categories/{id}/edit', [CategoriesController::class, 'edit']);
 Route::put('/categories/{id}', [CategoriesController::class, 'update']);
 Route::delete('/categories/{id}', [CategoriesController::class, 'destroy']);
 
+//findsController Routes
+
+Route::get('/finds', [FindsController::class, 'index']);
+Route::post('/finds', [FindsController::class, 'show']);
 
 
 // MesaagesController Routes

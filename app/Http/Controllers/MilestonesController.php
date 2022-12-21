@@ -19,6 +19,7 @@ class MilestonesController extends Controller
 
     public function create()
     {
+        $id = request('id');
         return view('milestones.create');
     }
 

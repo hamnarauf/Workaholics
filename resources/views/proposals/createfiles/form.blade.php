@@ -1,3 +1,7 @@
+@php
+  $id = 1;
+@endphp
+
 <form action="/proposals" method="POST">
   @csrf
     <div class="form-group">
