@@ -1,3 +1,3 @@
-<ul class="list-inline widget-list-inline">
+<ul class="list-inline widget-list-inline d-inline">
     {{$slot}}
 </ul>
