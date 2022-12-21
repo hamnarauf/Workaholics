@@ -46,10 +46,10 @@ class ProposalsController extends Controller
         return redirect('/projects/' . request('project_id'));
     }
 
-    public function show($project_id, $proposal_id)
+    public function show($proposal_id)
     {
-        $project_name = Project::find($project_id);
         $proposal = Proposal::find($proposal_id);
+        $project_name = Project::find($proposal['project_id'])->name;
         $freelancer = User::find($proposal['created_by']);
         $freelancer = $freelancer['name'];
         return view('proposals.show', ['project_name' => $project_name, 'proposal' => $proposal, 'freelancer' => $freelancer]);

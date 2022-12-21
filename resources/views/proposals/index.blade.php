@@ -12,7 +12,7 @@
                                             <th>Freelancer</th>
                                             <th>Bid</th>
                                             <th>Expected Date</th>
-                                            <th>Proposals</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -22,7 +22,7 @@
                                             <td>{{ $proposal->user->name }}</td>
                                             <td>{{ $proposal->bid }}</td>
                                             <td>{{ $proposal->expected_by }}</td>
-                                            <td>{{ $proposal->proposal }}</td>
+                                            <td>{{ $proposal->status }}</td>
                                             <td>
                                                 <input class="btn btn-primary px-2 py-1" type="submit"
                                                     name="submit-contact" id="submit_contact" value="View">

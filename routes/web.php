@@ -16,6 +16,8 @@ use App\Http\Controllers\WTransactionsController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -78,7 +80,7 @@ Route::get('/contracts', function () {
 });
 
 Route::get('/payment', function () {
-    return view('payment');
+    return view('payments/index');
 });
 
 Route::get('/viewSub', function () {
@@ -145,7 +147,7 @@ Route::delete('/wtransactions/{id}', [WTransactionsController::class, 'destroy']
 Route::get('/proposals/{id}', [ProposalsController::class, 'index']);
 Route::post('/proposals/create', [ProposalsController::class, 'create']);
 Route::post('/proposals', [ProposalsController::class, 'store']);
-Route::get('/proposals/{project_id}/{proposal_id}/details', [ProposalsController::class, 'show']);
+Route::get('/proposals/{proposal_id}/details', [ProposalsController::class, 'show']);
 Route::get('/proposals/{id}/edit', [ProposalsController::class, 'edit']);
 Route::put('/proposals/{id}', [ProposalsController::class, 'update']);
 Route::delete('/proposals/{id}', [ProposalsController::class, 'destroy']);
