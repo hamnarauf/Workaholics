@@ -11,7 +11,7 @@ use App\Http\Controllers\PaymentOptionsController;
 use App\Http\Controllers\ProposalsController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\MessagesController;
-use App\Http\Controllers\FindsController;
+use App\Http\Controllers\FindController;
 use App\Http\Controllers\WTransactionsController;
 
 use Illuminate\Support\Facades\Route;
@@ -183,8 +183,8 @@ Route::delete('/categories/{id}', [CategoriesController::class, 'destroy']);
 
 //findsController Routes
 
-Route::get('/finds', [FindsController::class, 'index']);
-Route::post('/finds', [FindsController::class, 'show']);
+Route::get('/finds', [FindController::class, 'index']);
+Route::post('/finds', [FindController::class, 'show']);
 
 
 // MesaagesController Routes
