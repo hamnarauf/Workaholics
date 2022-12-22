@@ -17,6 +17,11 @@ body {
   color: #444444;
 }
 
+:root {
+  --color-active: #bf39fd;
+  --color-dark: #5b03e4;
+}
+
 a {
   color: #5846f9;
   text-decoration: none;
@@ -155,9 +160,7 @@ h6 {
   color: #fff;
 }
 
-#header .logo img {
-  max-height: 40px;
-}
+#header .logo img {}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -1687,7 +1690,7 @@ section {
 .card-img-overlay::before {
   position: absolute;
   content: "";
-  background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.5));
+  background: linear-gradient(transparent 0%, rgba(45, 3, 49, 0.5));
   height: 100%;
   width: 100%;
   top: 0;
@@ -1952,7 +1955,7 @@ a.read-more {
 }
 
 a.read-more:hover {
-  color: #000;
+  color: var(--color-active);
 }
 
 .section-sm {
@@ -1975,7 +1978,7 @@ a:focus {
   transition: 350ms;
   letter-spacing: 1px;
   font-size: 13px;
-  border: 1px solid transparent;
+  border: 1px solid white;
 }
 
 .btn-primary {
@@ -2377,10 +2380,7 @@ a:hover {
   }
 }
 
-.logo img {
-  max-height: 36px;
-  margin-right: 10px;
-}
+.logo img {}
 
 .logo span {
   font-size: 26px;
@@ -2744,7 +2744,9 @@ svg {
 }
 
 .star {
-  margin-top: -12px;}
+  margin-top: -12px;
+}
+
 .gradient-1 {
   background-image: linear-gradient(230deg, #759bff, #843cf6);
 }
@@ -3252,6 +3254,7 @@ svg {
 .rounded-circle {
   border-radius: 50% !important;
 }
+
 .mr-3, .mx-3 {
   margin-right: 0.9375rem !important;
 }
@@ -3298,53 +3301,64 @@ svg {
 .dark-rgba {
   background-color: rgba(45, 54, 70, 0.1);
 }
-.form-center
-{
-  display:flex;
+
+.form-center {
+  display: flex;
   justify-content: center;
 }
 
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
+
 .rate {
   float: left;
   height: 46px;
   padding: 0 10px;
 }
-.rate:not(:checked) > input {
-  position:absolute;
-  top:-9999px;
+
+.rate:not(:checked)>input {
+  position: absolute;
+  top: -9999px;
 }
-.rate:not(:checked) > label {
-  float:right;
-  width:1em;
-  overflow:hidden;
-  white-space:nowrap;
-  cursor:pointer;
-  font-size:30px;
-  color:#ccc;
+
+.rate:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
 }
-.rate:not(:checked) > label:before {
+
+.rate:not(:checked)>label:before {
   content: '★ ';
 }
-.rate > input:checked ~ label {
-  color: orange;    
+
+.rate>input:checked~label {
+  color: orange;
 }
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-  color: orange;  
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+  color: orange;
 }
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
   color: orange;
 }
 
 ul, li {
   list-style: none
+}
+
+.btn-outline-light {
+  --bs-btn-hover-color: var(--color-dark);
 }

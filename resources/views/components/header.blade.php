@@ -11,10 +11,10 @@
         <div class="collapse navbar-collapse text-center order-lg-2 order-3" id="navigation">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="contact.html">Jobs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="shop.html">Shop</a>
+                    <a class="nav-link" href="shop.html">Wallet</a>
                 </li>
             </ul>
         </div>
