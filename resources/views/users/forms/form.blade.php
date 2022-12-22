@@ -19,8 +19,7 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12"><label class="labels">Company</label><input name="company" type="text" class="form-control" placeholder="Enter company name you work for" value="{{ $user['company'] }}"></div>
-                        <div class="col-md-12"><label class="labels">Skills</label><input name="skills" type="text" class="form-control" placeholder="Enter your skills" 
-                            value= "{{ $skills }}"></div>
+                        <div class="col-md-12"><label class="labels">Skills</label><input name="skills" type="text" class="form-control" placeholder="Enter your skills" value= "{{ $skills }}"></div>
                     </div>
                     <div class="row mt-3">
                         <label for="submission">Change Profile Picture:</label>
