@@ -30,6 +30,7 @@ class UsersController extends Controller
         $user->name = request('name');
         $user->email = request('email');
         $user->password = request('password');
+        $user->img = 'user/default.png';
         $user->remember_token = request('remember_token');
         $user->city = request('city');
         $user->town = request('town');
@@ -66,7 +67,8 @@ class UsersController extends Controller
         $user->zip = request('zip');
         $user->state = request('state');
         $user->country = request('country');
-        $user->skills = request('skills');
+        $skills = request('skills');
+        $user->skills = explode(',', $skills);
         $user->company = request('company');
         $user->mobileNo = request('mobileNo');
         $user->save();

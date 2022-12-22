@@ -1,5 +1,17 @@
 <?php
-$langs = array("English", "Chinese");
+    $skills = '';
+    if ($user->skills == null) {
+        $skills = 'No skills';
+    }
+    else {
+        foreach ($user->skills as $skill) {
+            $skills = $skills . $skill . ','  ;  # code...
+        }
+    
+        $skills  = rtrim($skills, ',');
+    }
+    
+    $langs = array("English", "Chinese");
 ?>
 
 <x-basicProfile
