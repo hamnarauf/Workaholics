@@ -1,5 +1,9 @@
 @php
-    $skills = $project->skills;
+    if ($project->skills == null) {
+        $skills = ['No skills'];
+    }else {
+        $skills = $project->skills;
+    }
 @endphp
 
 

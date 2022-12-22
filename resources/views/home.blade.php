@@ -1,3 +1,7 @@
+<a href="{{ url('/gigs/create') }}">Create Gig</a><br>
+<a href="{{ url('/project/create') }}">Create Project</a><br>
+<a href="{{ url('/find') }}">Job & Projects</a><br>
+<a href="{{ url('/categories') }}">Categories</a><br>
 @extends('layouts.app')
 
 @section('content')

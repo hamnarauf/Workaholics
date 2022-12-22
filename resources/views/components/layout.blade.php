@@ -7,10 +7,7 @@
     <title>Workaholics</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <!-- Favicons -->
-    
-    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <!-- Vendor CSS Files -->
@@ -22,20 +19,28 @@
     <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-    
-    
-    <!-- Template Main CSS File -->
-    <link href="./css/app.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/templatemo-tale-seo-agency.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/owl.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-
-    <title>Workaholics</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body>
-    <x-header></x-header>
+    <x-preloader></x-preloader>
+        
+    @if (Auth::check())
+        <x-header></x-header>
+    
+    @else
+        <x-welcome-header></x-welcome-header>
+
+    @endif
+        
+    
+
+    <!-- welcome header -->
     <main>
         {{$slot}}
     </main>
@@ -51,6 +56,11 @@
     <script src="{{ asset('assets/vendor/php-email-form/validate.js')}}"></script>
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js')}}"></script>
+    <script src="{{ asset('assets/js/owl-carousel.js')}}"></script>
+    <script src="{{ asset('assets/js/isotope.min.js')}}"></script>
+    <script src="{{ asset('assets/js/tabs.js')}}"></script>
+    <script src="{{ asset('assets/js/popup.js')}}"></script>
+    <script src="{{ asset('assets/js/custom.js')}}"></script>
 </body>
 
 </html>
