@@ -43,7 +43,7 @@ class UsersController extends Controller
         $user->mobileNo = request('mobileNo');
         $user->save();
 
-        return redirect()->route('users.index');
+        return redirect('users.index');
     }
 
     public function show($id)
@@ -55,7 +55,19 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('users.edit', ['user' => $user]);
+
+        $skills = '';
+        if ($user->skills == null) {
+            $skills = 'No skills';
+        } else {
+            foreach ($user->skills as $skill) {
+                $skills = $skills . $skill . ',';  # code...
+            }
+
+            $skills  = rtrim($skills, ',');
+        }
+
+        return view('users.edit', ['user' => $user, 'skills' => $skills]);
     }
 
     public function update()
@@ -72,7 +84,7 @@ class UsersController extends Controller
         $user->company = request('company');
         $user->mobileNo = request('mobileNo');
         $user->save();
-        return view('users.edit', ['user' => $user]);
+        return view('users.edit', ['user' => $user, 'skills' => $skills]);
     }
 
     public function destroy($id)
