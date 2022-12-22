@@ -23,7 +23,7 @@ class GigsController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('createGigJob.index', ["categories" => $categories]);
+        return view('gigs.create', ["categories" => $categories]);
     }
     public function store()
     {
@@ -39,14 +39,14 @@ class GigsController extends Controller
         $gig->created_by = Auth::id();
         $gig->category = request('category');
         $gig->save();
-        return redirect()->route('gigs.index');
+        return redirect('/gigs');
     }
 
     public function show($id)
     {
         $gig = Gig::find($id);
         $user = User::find($gig->created_by);
-        $jobcount = Job::where('employee', $user->id)->count();
+        $jobcount = Job::where('employee', $user->id)->count() + 1;
         $category = Category::find($gig->category);
         return view('gigs.show', ["gig" => $gig, "user" => $user, "jobcount" => $jobcount, "category" => $category]);
     }

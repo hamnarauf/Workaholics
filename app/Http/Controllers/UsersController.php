@@ -60,20 +60,18 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $user->name = request('name');
-        $user->email = request('email');
-        $user->password = request('password');
-        $user->remember_token = request('remember_token');
-        $user->city = request('city');
-        $user->town = request('town');
+        $user->street_address = request('street_address');
         $user->zip = request('zip');
         $user->state = request('state');
         $user->country = request('country');
-        $user->wallet = request('wallet');
-        $user->skills = request('skills');
+        $skills_string = request('skills');
+        $user->skills = explode(',', $skills_string);
+
+        $user->description = request('description');
         $user->company = request('company');
         $user->mobileNo = request('mobileNo');
         $user->save();
-        return redirect()->route('users.index');
+        return redirect('users/index'); // return back to edit profile page
     }
 
     public function destroy($id)
