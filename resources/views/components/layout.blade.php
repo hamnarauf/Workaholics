@@ -35,10 +35,8 @@
         
     @if (Auth::check())
         <x-header></x-header>
-    
     @else
         <x-welcome-header></x-welcome-header>
-
     @endif
         
     

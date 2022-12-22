@@ -95,7 +95,7 @@ Route::delete('/contracts/{id}', [ContractsController::class, 'destroy']);
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
 Route::post('/gigs', [GigsController::class, 'store']);
-Route::get('/gigs/{id}', [GigsController::class, 'show']);
+Route::get('/gigs/{idd}', [GigsController::class, 'show']);
 Route::get('/gigs/{id}/edit', [GigsController::class, 'edit']);
 Route::put('/gigs/{id}', [GigsController::class, 'update']);
 Route::delete('/gigs/{id}', [GigsController::class, 'destroy']);
