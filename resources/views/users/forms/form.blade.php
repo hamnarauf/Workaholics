@@ -1,3 +1,18 @@
+<?php
+    $skills = '';
+    if ($user->skills == null) {
+        $skills = 'No skills';
+    }
+    else {
+        foreach ($user->skills as $skill) {
+            $skills = $skills . $skill . ','  ;  # code...
+        }
+    
+        $skills  = rtrim($skills, ',');
+    }
+?>
+
+
 <form action="/users/{{ $user['id'] }}/edit" method="POST">
   @csrf
     <div class="container rounded bg-white mt-5 mb-5">
@@ -19,7 +34,8 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12"><label class="labels">Company</label><input name="company" type="text" class="form-control" placeholder="Enter company name you work for" value="{{ $user['company'] }}"></div>
-                        <div class="col-md-12"><label class="labels">Skills</label><input name="skills" type="text" class="form-control" placeholder="Enter your skills" value=""></div>
+                        <div class="col-md-12"><label class="labels">Skills</label><input name="skills" type="text" class="form-control" placeholder="Enter your skills" 
+                            value= "{{ $skills }}"></div>
                     </div>
                     <div class="row mt-3">
                         <label for="submission">Change Profile Picture:</label>
