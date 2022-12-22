@@ -24,8 +24,10 @@
                 </li>
             </ul>
             <p>{{$desc}}</p>
-            <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Details">
-
+            @php
+                $link = url('projects/'.$id);
+            @endphp
+            <a href="{{$link }}" class="btn btn-primary" >Details</a>
         </div>
     </article>
 
