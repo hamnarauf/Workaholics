@@ -3,9 +3,10 @@ $langs = array("English", "Chinese");
 ?>
 
 <x-basicProfile
-    name="Charls Xaviar"
+    name="{{ $user['name'] }}"
     heading="Author & developer of Bexer, Biztrox theme"
-    country="Pakistan"
+    country="{{ $user['country'] }}"
     :langs=$langs
+    skills="{{ $user['skills'] }}"
     hoursPerWeek="30"
 ></x-basicProfile>

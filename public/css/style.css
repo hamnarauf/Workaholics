@@ -20,6 +20,11 @@ body {
 :root {
   --color-active: #bf39fd;
   --color-dark: #5b03e4;
+  --color-white: #fefdff;
+}
+
+.color-white{
+  color: var(--color-white);
 }
 
 a {
@@ -2392,12 +2397,9 @@ a:hover {
 .header {
   transition: all 0.5s;
   z-index: 997;
-  height: 60px;
-  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
-  padding-left: 20px;
-  /* Toggle Sidebar Button */
-  /* Search Bar */
+
+
 }
 
 .header .toggle-sidebar-btn {
@@ -2472,6 +2474,9 @@ a:hover {
 --------------------------------------------------------------*/
 .header-nav ul {
   list-style: none;
+}
+.header-nav  {
+  margin-left: 150px;;
 }
 
 .header-nav>ul {
@@ -3302,26 +3307,12 @@ svg {
   background-color: rgba(45, 54, 70, 0.1);
 }
 
-<<<<<<< HEAD
-.form-center {
-  display: flex;
-  justify-content: center;
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-=======
 /* forms related additional css */
 .form-center
 {
   display:flex;
   justify-content: center;
 }
->>>>>>> 5bc1930c0039f8672a534f4b6c47fea8d342f690
 .rate {
   float: left;
   height: 46px;

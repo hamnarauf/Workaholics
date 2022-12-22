@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -64,14 +65,11 @@ class UsersController extends Controller
         $user->zip = request('zip');
         $user->state = request('state');
         $user->country = request('country');
-        $skills_string = request('skills');
-        $user->skills = explode(',', $skills_string);
-
-        $user->description = request('description');
+        $user->skills = request('skills');
         $user->company = request('company');
         $user->mobileNo = request('mobileNo');
         $user->save();
-        return redirect('users/index'); // return back to edit profile page
+        return redirect('users/{$id}');
     }
 
     public function destroy($id)
