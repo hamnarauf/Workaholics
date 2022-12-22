@@ -32,12 +32,18 @@
 
 <body>
     <x-preloader></x-preloader>
+        
+    @if (Auth::check())
+        <x-header></x-header>
     
-    <!-- general header -->
-    <x-header></x-header>
+    @else
+        <x-welcome-header></x-welcome-header>
+
+    @endif
+        
+    
 
     <!-- welcome header -->
-    <x-welcome-header></x-welcome-header>
     <main>
         {{$slot}}
     </main>
