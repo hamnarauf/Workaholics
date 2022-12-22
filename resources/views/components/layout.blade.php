@@ -31,7 +31,13 @@
 </head>
 
 <body>
+    <x-preloader></x-preloader>
+    
+    <!-- general header -->
     <x-header></x-header>
+
+    <!-- welcome header -->
+    <x-welcome-header></x-welcome-header>
     <main>
         {{$slot}}
     </main>
