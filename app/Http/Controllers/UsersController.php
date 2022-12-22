@@ -57,8 +57,9 @@ class UsersController extends Controller
         return view('users.edit', ['user' => $user]);
     }
 
-    public function update($id)
+    public function update()
     {
+        $id = Auth::id();
         $user = User::find($id);
         $user->name = request('name');
         $user->street_address = request('street_address');
@@ -69,7 +70,7 @@ class UsersController extends Controller
         $user->company = request('company');
         $user->mobileNo = request('mobileNo');
         $user->save();
-        return redirect('users/{$id}');
+        return view('users.edit', ['user' => $user]);
     }
 
     public function destroy($id)
