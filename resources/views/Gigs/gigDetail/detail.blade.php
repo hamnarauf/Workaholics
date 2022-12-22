@@ -1,5 +1,9 @@
 @php
-$skills = $gig->skills;
+    if ($gig->skills == null) {
+        $skills = ['No skills'];
+    }else {
+        $skills = $gig->skills;
+    }
 @endphp
 
 <x-gigDetails

@@ -7,10 +7,15 @@ $attrs = [
     "Member Since" => "$date"
 ];
 $skills = '';
-foreach ($user->skills as $skill) {
+if ($user->skills == null) {
+    $skills = 'No skills';
+}
+else {
+    foreach ($user->skills as $skill) {
     $skills = $skills . $skill . ','  ;  # code...
 }
 $skills  = rtrim($skills, ',');
+}
 @endphp
 
 <x-clientOverview

@@ -10,7 +10,11 @@
                                 @include('Gigs.gigDetail.client')
                             </div>
                             <div class="sidebar-widget follow mb-5 text-center">
-                                <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Request to Order">
+                                <form action="/gigs/create" method="POST">
+                                    @csrf
+                                    <input type="number" name="id" hidden value="{{ $gig->id }}" >
+                                    <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Request to Order">
+                                </form>
                             </div>
                         </div>
                     </div>
