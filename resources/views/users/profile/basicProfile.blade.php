@@ -1,7 +1,7 @@
 <?php
     $skills = '';
     if ($user->skills == null) {
-        $skills = 'No skills';
+        $skills = ["No skills"];
     }
     else {
         foreach ($user->skills as $skill) {
@@ -19,6 +19,6 @@
     heading="Author & developer of Bexer, Biztrox theme"
     country="{{ $user['country'] }}"
     :langs=$langs
-    skills="{{ $user['skills'] }}"
+    skills="{{ $skills }}"
     hoursPerWeek="30"
 ></x-basicProfile>

@@ -84,7 +84,8 @@ class UsersController extends Controller
         $user->company = request('company');
         $user->mobileNo = request('mobileNo');
         $user->save();
-        return view('users.edit', ['user' => $user, 'skills' => $skills]);
+        $route = '/users/' . $id;
+        return redirect($route);
     }
 
     public function destroy($id)
