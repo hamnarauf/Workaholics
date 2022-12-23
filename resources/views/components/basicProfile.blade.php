@@ -6,9 +6,10 @@
 </div>
 <div class="content">
     <span><strong class="mb-2">Skills: </strong></span>
-    @foreach($skills as $skill)
-    <span>{{$skill}} | </span>
-    @endforeach
+
+        @foreach($skills as $skill)
+            <span>{{$skill}} | </span>
+        @endforeach
 </div>
 <div class="content">
     <span><strong class="mb-2">Posted Projects: </strong></span>

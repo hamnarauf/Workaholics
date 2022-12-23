@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Project;
 use App\Models\Job;
 use App\Models\Education;
+use App\Models\Employment;
 use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
@@ -74,11 +75,9 @@ class UsersController extends Controller
         $job_details = ['projects_posted' => $projects_posted, 'job_count' => $job_count];
 
         $education = Education::where('user', '=', Auth::id());
-        
+        $employment = Employment::where('user', '=', Auth::id());
 
-        
-
-        return view('users.show', ['user' => $user, "job_details" => $job_details]);
+        return view('users.show', ['user' => $user, "job_details" => $job_details, "employment" => $employment]);
     }
 
     public function edit($id)

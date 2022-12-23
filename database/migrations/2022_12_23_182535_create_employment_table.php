@@ -19,6 +19,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('user');
             $table->string('title');
+            $table->string('company');
             $table->string('description', 800);
             $table->date('date_of_joining');
             $table->date('date_of_leaving')->nullable();
