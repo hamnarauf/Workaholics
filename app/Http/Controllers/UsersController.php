@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Project;
 use App\Models\Job;
+use App\Models\Education;
 use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
@@ -68,10 +69,10 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $projects_posted = Project::where('created_by', '=', Auth::id())->count();
+        $projects_posted = Project::where('created_by', '=', Auth::id())->get()->count();
         $job_count = Job::where('employee', '=', Auth::id())->count();
         $job_details = ['projects_posted' => $projects_posted, 'job_count' => $job_count];
-        
+
         $education = Education::where('user', '=', Auth::id());
         
 
