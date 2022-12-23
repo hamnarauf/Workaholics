@@ -17,7 +17,15 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->job
+            $table->unsignedBigInteger('user');
+            $table->string('title');
+            $table->string('description', 800);
+            $table->date('date_of_joining');
+            $table->date('date_of_leaving')->nullable();
+            $table->string('city');
+            $table->string('country');
+
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
