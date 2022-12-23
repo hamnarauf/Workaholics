@@ -13,21 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-
+        Schema::table('gig_proposal', function (Blueprint $table) {
             $table->unsignedBigInteger('created_by');
             
-            $table->string('name', 255);
-            $table->string('description', 800);
-            $table->unsignedBigInteger('category');
-            $table->integer('budget');
-            $table->date('expected_by');
-            $table->json('skills')->nullable();
-            
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('category')->references('id')->on('categories');
         });
     }
 
@@ -38,6 +27,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::table('gig_proposal', function (Blueprint $table) {
+            $table->dropColumn('created_by');
+        });
     }
 };

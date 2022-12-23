@@ -21,12 +21,13 @@
                                 </li>
                                 <li class="list-inline-item">
                                     <i class="ti-calendar"></i>Expected by: {{
-                                    $proposal['expected_by'] }}
+                                    $proposal['deadline'] }}
                                 </li>
                             </ul>
                             <div class="content">
                                 <p>{{ $proposal['proposal'] }}</p>
-                                <form action="/proposals" method="POST">
+
+                                <form action="/gigproposals" method="POST">
                                 @csrf
                                 {{ method_field('PUT') }}
                                 <button

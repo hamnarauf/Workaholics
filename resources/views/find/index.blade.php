@@ -2,8 +2,19 @@
     <section id="portfolio" class="portfolio">
          <div class="container" data-aos="fade-up">
             <div class="section-title top-header">
-                <h2>Find Talent/Project</h2>
-                <p>Interact with the community and earn.</p>
+                <h2>
+                    @if ($owner == 'true')
+                        My Projects/Gigs
+                    @else
+                        Find Talent/Project</h2>
+                    @endif
+                <p>
+                    @if ($owner == 'true')
+                        Manage your projects and gigs.
+                    @else
+                    Interact with the community and earn.
+                    @endif
+                </p>
             </div>
 
             <x-tabmenu>

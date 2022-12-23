@@ -24,10 +24,11 @@
                 </li>
             </ul>
             <p>{{$desc}}</p>
-            @php
-                $link = url('projects/'.$id);
-            @endphp
-            <a href="{{$link }}" class="btn btn-primary" >Details</a>
+            <form action="/projects/details" method="POST">
+                @csrf
+                <input type="number" name="id" hidden value={{$id}} >
+                <input class="btn btn-primary" type="submit" value="Details" >
+            </form>
         </div>
     </article>
 

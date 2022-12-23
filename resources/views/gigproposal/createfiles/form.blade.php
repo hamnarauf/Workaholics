@@ -1,4 +1,4 @@
-<form action="/proposals" method="POST">
+<form action="/gigproposals" method="POST">
   @csrf
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Proposal:</label>
