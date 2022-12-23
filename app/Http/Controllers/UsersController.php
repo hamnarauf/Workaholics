@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Project;
+use App\Models\Job;
 use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
@@ -11,6 +13,23 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function get_skills() {
+        $user = User::find(Auth::id());
+
+        $skills = '';
+        if ($user->skills == null) {
+            $skills = 'No skills';
+        } else {
+            foreach ($user->skills as $skill) {
+                $skills = $skills . $skill . ',';  # code...
+            }
+
+            $skills  = rtrim($skills, ',');
+        }
+        
+        return $skills;
     }
 
     public function index()
@@ -49,24 +68,18 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('users.show', ['user' => $user]);
+        $projects_posted = Project::where('created_by', '=', Auth::id())->count();
+        $job_count = Job::where('employee', '=', Auth::id())->count();
+
+        $job_details = ['projects_posted' => $projects_posted, 'job_count' => $job_count];
+
+        return view('users.show', ['user' => $user, "job_details" => $job_details]);
     }
 
     public function edit($id)
     {
         $user = User::find($id);
-
-        $skills = '';
-        if ($user->skills == null) {
-            $skills = 'No skills';
-        } else {
-            foreach ($user->skills as $skill) {
-                $skills = $skills . $skill . ',';  # code...
-            }
-
-            $skills  = rtrim($skills, ',');
-        }
-
+        $skills = UsersController::get_skills();
         return view('users.edit', ['user' => $user, 'skills' => $skills]);
     }
 

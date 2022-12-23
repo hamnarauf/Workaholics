@@ -1,24 +1,8 @@
-<?php
-    $skills = '';
-    if ($user->skills == null) {
-        $skills = ["No skills"];
-    }
-    else {
-        foreach ($user->skills as $skill) {
-            $skills = $skills . $skill . ','  ;  # code...
-        }
-    
-        $skills  = rtrim($skills, ',');
-    }
-    
-    $langs = array("English", "Chinese");
-?>
-
 <x-basicProfile
-    name="{{ $user['name'] }}"
-    heading="Author & developer of Bexer, Biztrox theme"
-    country="{{ $user['country'] }}"
-    :langs=$langs
-    skills="{{ $skills }}"
-    hoursPerWeek="30"
+    name = "{{ $user['name'] }}"
+    description = "{{ $user['description'] }}"
+    country = "{{ $user['country'] }}"
+    skills = "{{ $user['skills'] }}"
+    projects_posted = "{{ $job_details['projects_posted'] }}"
+    job_count = "{{ $job_details['job_count'] }}"
 ></x-basicProfile>
