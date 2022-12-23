@@ -44,11 +44,11 @@
                         @include('users.profile.gigs')
 
                         <x-sectionTitle title="Projects" desc="Work history on Workaholics"></x-sectionTitle>
-                        @include('users.profile.projects')
+                        <!-- @include('users.profile.projects') -->
                     </div>
                     <div class="row tab-pane fade" id="filter-buyerProfile">
                         <x-sectionTitle title="Job Posted" desc="Work history on Workaholics"></x-sectionTitle>
-                        @include('users.profile.jobsPosted')
+                        <!-- @include('users.profile.jobsPosted') -->
                     </div>
                 </div>
             </div>

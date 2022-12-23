@@ -1,8 +1,15 @@
+<?php 
+    $skill_list = array();
+    foreach ( $user['skills'] as $skill) {
+        array_push($skill_list, $skill);
+    }
+?>
+
 <x-basicProfile
     name="{{ $user['name'] }}"
     description="{{ $user['description'] }}"
     country="{{ $user['country'] }}"
-    :skills="{{ $user['skills'] }}"
-    projects_posted="{{ $job_details['projects_posted'] }}"
-    job_count="{{ $job_details['job_count'] }}"
+    :skills=$skill_list
+    projectsPosted="{{ $jobDetails['projectsPosted'] }}"
+    jobCount="{{ $jobDetails['jobCount'] }}"
 ></x-basicProfile>

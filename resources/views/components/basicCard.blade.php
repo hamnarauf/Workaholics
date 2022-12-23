@@ -10,13 +10,9 @@
                 <li class="list-inline-item">
                     <i class="ti-calendar"></i> Location: {{$location}}
                 </li>
-                <x-tagMenu>
-                    @foreach ($tags as $tag)
-                    <x-tag title={{$tag}}></x-tag>
-                    @endforeach
-                </x-tagMenu>
             </ul>
 
         </div>
     </div>
 </article>
+
