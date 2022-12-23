@@ -13,7 +13,7 @@
                                         <th>Bid</th>
                                         <th>Expected Date</th>
                                         <th>Status</th>
-                                        <th class="text-center">Action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -22,7 +22,12 @@
                                         <td>{{ $proposal->user->name }}</td>
                                         <td>{{ $proposal->bid }}</td>
                                         <td>{{ $proposal->expected_by }}</td>
-                                        <td>{{ $proposal->status }}</td>
+                                        <td>
+                                            <x-tagMenu>
+                                                <x-tag title="{{$proposal->status}}"></x-tag>
+                                            </x-tagMenu>
+                                            
+                                        </td>
                                         <td class="">
                                             <input class="btn btn-primary px-2 py-1" type="submit" name="submit-contact" id="submit_contact" value="View">
                                             <input class="btn btn-primary px-2 py-1" type="submit" name="submit-contact" id="submit_contact" value="Accept">
