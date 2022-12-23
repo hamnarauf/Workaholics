@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -29,6 +30,7 @@ class UsersController extends Controller
         $user->name = request('name');
         $user->email = request('email');
         $user->password = request('password');
+        $user->img = 'user/default.png';
         $user->remember_token = request('remember_token');
         $user->city = request('city');
         $user->town = request('town');
@@ -41,7 +43,7 @@ class UsersController extends Controller
         $user->mobileNo = request('mobileNo');
         $user->save();
 
-        return redirect()->route('users.index');
+        return redirect('users.index');
     }
 
     public function show($id)
@@ -53,25 +55,37 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('users.edit', ['user' => $user]);
+
+        $skills = '';
+        if ($user->skills == null) {
+            $skills = 'No skills';
+        } else {
+            foreach ($user->skills as $skill) {
+                $skills = $skills . $skill . ',';  # code...
+            }
+
+            $skills  = rtrim($skills, ',');
+        }
+
+        return view('users.edit', ['user' => $user, 'skills' => $skills]);
     }
 
-    public function update($id)
+    public function update()
     {
+        $id = Auth::id();
         $user = User::find($id);
         $user->name = request('name');
         $user->street_address = request('street_address');
         $user->zip = request('zip');
         $user->state = request('state');
         $user->country = request('country');
-        $skills_string = request('skills');
-        $user->skills = explode(',', $skills_string);
-
-        $user->description = request('description');
+        $skills = request('skills');
+        $user->skills = explode(',', $skills);
         $user->company = request('company');
         $user->mobileNo = request('mobileNo');
         $user->save();
-        return redirect('users/index'); // return back to edit profile page
+        $route = '/users/' . $id;
+        return redirect($route);
     }
 
     public function destroy($id)

@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('jobs', function (Blueprint $table) {
-            $table->enum('status', ['Paid', 'Completed', 'In Progress', 'Cancelled'])->default('In Progress');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('img')->default('user/default.png')->change();
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('jobs', function (Blueprint $table) {
-            $table->dropColumn('status');
+        Schema::table('users', function (Blueprint $table) {
+            //
         });
     }
 };

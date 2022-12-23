@@ -2,7 +2,7 @@
 $date = new DateTime($user->created_at);
 $date = $date->format('d M Y');
 $attrs = [
-    "Coutnry" => "$user->country",
+    "Country" => "$user->country",
     "Job Posted" => "$jobcount",
     "Member Since" => "$date"
 ];

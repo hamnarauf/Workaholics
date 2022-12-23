@@ -13,7 +13,6 @@ use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\FindController;
 use App\Http\Controllers\WTransactionsController;
-use App\Http\Controllers\PaymentsController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -67,9 +66,9 @@ Route::get('/editProfile', function () {
 });
 
 
-// Route::get('/payment', function () {
-//     return view('payments/index');
-// });
+Route::get('/payment', function () {
+    return view('payments/index');
+});
 
 Route::get('/viewSub', function () {
     return view('viewSubmission');
@@ -95,7 +94,7 @@ Route::delete('/contracts/{id}', [ContractsController::class, 'destroy']);
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
 Route::post('/gigs', [GigsController::class, 'store']);
-Route::get('/gigs/{id}', [GigsController::class, 'show']);
+Route::get('/gigs/{idd}', [GigsController::class, 'show']);
 Route::get('/gigs/{id}/edit', [GigsController::class, 'edit']);
 Route::put('/gigs/{id}', [GigsController::class, 'update']);
 Route::delete('/gigs/{id}', [GigsController::class, 'destroy']);
@@ -164,22 +163,13 @@ Route::get('/transactions/{id}/edit', [TransactionsController::class, 'edit']);
 Route::put('/transactions/{id}', [TransactionsController::class, 'update']);
 Route::delete('/transactions/{id}', [TransactionsController::class, 'destroy']);
 
-// TransactionsController Routes   
-Route::get('/payments', [PaymentsController::class, 'index']);
-// Route::get('/payments/create', [TransactionsController::class, 'create']);
-// Route::post('/transactions', [TransactionsController::class, 'store']);
-Route::get('/payments/{id}', [PaymentsController::class, 'show']);
-// Route::get('/transactions/{id}/edit', [TransactionsController::class, 'edit']);
-// Route::put('/transactions/{id}', [TransactionsController::class, 'update']);
-// Route::delete('/transactions/{id}', [TransactionsController::class, 'destroy']);
-
 // UsersController Routes
 Route::get('/users', [UsersController::class, 'index']);
 Route::get('/users/create', [UsersController::class, 'create']);
 Route::post('/users', [UsersController::class, 'store']);
 Route::get('/users/{id}', [UsersController::class, 'show']);
 Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
-Route::post('/users/{id}/edit', [UsersController::class, 'update']);
+Route::post('/users/edit', [UsersController::class, 'update']);
 Route::delete('/users/{id}', [UsersController::class, 'destroy']);
 
 // CategoriesController Routes

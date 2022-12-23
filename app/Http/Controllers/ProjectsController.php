@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Models\User;
 use App\Models\job;
 use App\Models\Category;
+use App\Models\Proposal;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectsController extends Controller
@@ -47,7 +48,7 @@ class ProjectsController extends Controller
         $user = User::find($project->created_by);
         $jobcount = Job::where('employer', $user->id)->count() + 1;
         $category = Category::find($project->category);
-
+        $submit = Proposal::where('project_id', $id)->where('created_by', Auth::id())->count();
         return view('projects.show', ['project' => $project, 'user' => $user, 'jobcount' => $jobcount, 'category' => $category]);
     }
     public function edit($id)
