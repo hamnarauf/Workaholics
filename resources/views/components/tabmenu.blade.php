@@ -2,6 +2,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 
-<ul id="portfolio-flters" class="d-flex justify-content-center nav nav-pills" data-aos="fade-up" data-aos-delay="100">
+<ul id="portfolio-flters" class="d-flex justify-content-center nav nav-pills tab-menu" data-aos="fade-up" data-aos-delay="100">
     {{$slot}}
 </ul>

@@ -13,9 +13,9 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="./jobs">Jobs</a></li>
-                        <li class="scroll-to-section"><a href="./wallet">Wallet</a></li>
+                        <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="/jobs">Jobs</a></li>
+                        <li class="scroll-to-section"><a href="/wallet">Wallet</a></li>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>

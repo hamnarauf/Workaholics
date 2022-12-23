@@ -3,7 +3,9 @@
         <img src={{$projImg}} class="img-fluid" alt="...">
         <div class="course-content">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4>{{$category}}</h4>
+                <x-tagMenu>
+                    <x-tag title={{$category}}></x-tag>
+                </x-tagMenu>
                 <p class="price">{{$price}}</p>
             </div>
 
@@ -19,9 +21,9 @@
                     &nbsp;&nbsp;
                     <i class="bx bx-heart"></i>&nbsp;{{$saves}}
                 </div>
-                
+
             </div>
         </div>
-        
+
     </div>
 </div>

@@ -1,6 +1,6 @@
 <x-layout>
     <section id="portfolio" class="portfolio">
-        <div class="container" data-aos="fade-up">
+         <div class="container" data-aos="fade-up">
             <div class="section-title top-header">
                 <h2>Find Talent/Project</h2>
                 <p>Interact with the community and earn.</p>
@@ -19,6 +19,6 @@
                     @include('find.gigs')
                 </div>
             </div>
-        </div>
+        </div> 
     </section>
 </x-layout>
