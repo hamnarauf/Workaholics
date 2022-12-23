@@ -70,8 +70,12 @@ class UsersController extends Controller
         $user = User::find($id);
         $projects_posted = Project::where('created_by', '=', Auth::id())->count();
         $job_count = Job::where('employee', '=', Auth::id())->count();
-
         $job_details = ['projects_posted' => $projects_posted, 'job_count' => $job_count];
+        
+        $education = Education::where('user', '=', Auth::id());
+        
+
+        
 
         return view('users.show', ['user' => $user, "job_details" => $job_details]);
     }

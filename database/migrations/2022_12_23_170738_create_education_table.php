@@ -16,8 +16,15 @@ return new class extends Migration
         Schema::create('education', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->
             
+            $table->unsignedBigInteger('user');
+            $table->string('institute');
+            $table->string('title');
+            $table->date('date_of_graduation');
+            $table->string('city');
+            $table->string('country');
+
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
