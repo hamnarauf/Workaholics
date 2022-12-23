@@ -7,7 +7,11 @@ use App\Models\Gig;
 use App\Models\User;
 use App\Models\job;
 use App\Models\Category;
+use App\Models\GigProposal;
 use Illuminate\Support\Facades\Auth;
+
+use function PHPSTORM_META\registerArgumentsSet;
+use function Termwind\render;
 
 class GigsController extends Controller
 {
@@ -18,12 +22,13 @@ class GigsController extends Controller
     public function index()
     {
         $gigs = Gig::all();
-        return view('gigs.index', ["gigs" => $gigs]);
+        return view('Gigs.index', ["gigs" => $gigs]);
     }
     public function create()
     {
+        $id = request('id');
         $categories = Category::all();
-        return view('gigs.create', ["categories" => $categories]);
+        return view('Gigs.create', ["categories" => $categories, "id" => $id]);
     }
     public function store()
     {
@@ -42,13 +47,20 @@ class GigsController extends Controller
         return redirect('/gigs');
     }
 
-    public function show($id)
+    public function show()
     {
+        $id = request('id');
         $gig = Gig::find($id);
         $user = User::find($gig->created_by);
         $jobcount = Job::where('employee', $user->id)->count() + 1;
         $category = Category::find($gig->category);
-        return view('gigs.show', ["gig" => $gig, "user" => $user, "jobcount" => $jobcount, "category" => $category]);
+        $submit = GigProposal::where('gig_id', $id)->where('created_by', Auth::id())->count();
+        if ($user == Auth::user()) {
+            $route = '/gigproposals/' . $id;
+            return redirect($route);
+        } else {
+            return view('gigs.show', ["gig" => $gig, "user" => $user, "jobcount" => $jobcount, "category" => $category, "submit" => $submit]);
+        }
     }
 
     public function edit($id)

@@ -27,6 +27,25 @@ body {
   color: var(--color-white);
 }
 
+.color-dark{
+  color:var(--color-dark)
+}
+
+.bg-active{
+  background-color: var(--color-active);
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #fff;
+  background-color: var(--color-active) !important;
+
+}
+
+.btn-primary {
+  background-color: var(--color-active) !important;
+  border-color: var(--color-active) !important;
+}
+
 a {
   color: #5846f9;
   text-decoration: none;
@@ -607,7 +626,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #5846f9;
+  background: var(--color-dark);
   bottom: 0;
   left: calc(50% - 25px);
 }
@@ -965,7 +984,6 @@ section {
 .portfolio #portfolio-flters li {
   cursor: pointer;
   display: inline-block;
-  padding: 10px 15px;
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
@@ -1802,7 +1820,7 @@ section {
 
 .courses .course-content h4 {
   font-size: 14px;
-  background: #5fcf80;
+  background: var(--color-active);
   padding: 7px 14px;
   color: #fff;
   margin: 0;
@@ -2142,7 +2160,7 @@ a:focus {
 
 .widget-list-inline li a {
   padding: 2px 15px;
-  border: 1px solid #4FD675;
+  border: 1px solid var(--color-active);
   border-radius: 30px;
   display: block;
   color: #555;
@@ -2150,8 +2168,8 @@ a:focus {
 }
 
 .widget-list-inline li a:hover {
-  border-color: #4FD675;
-  background: #4FD675;
+  border-color: var(--color-active);
+  background: var(--color-active);
   cursor: auto;
   color: #fff;
 }
@@ -3366,4 +3384,13 @@ select
   padding: 3px;
   border: 1px solid #d0d4dc;
   border-radius: 5px;
+}
+
+.tab-menu{
+  border-bottom: 1px solid var(--color-dark);
+  padding-bottom: 20px !important;
+  border-radius: 15px !important;
+}
+
+.tab{
 }

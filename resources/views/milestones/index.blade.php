@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="section dashboard m-4">
+    <section class="section dashboard m-4 mt-5">
         <div class="row">
             <!-- Left side columns -->
             <div class="col-lg-12">
@@ -9,7 +9,7 @@
                         <!-- Recent Activity -->
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title text-center">Milestones <span>| Timeline</span></h4>
+                                <h4 class="card-title text-center mt-4">Milestones <span>| Timeline</span></h4>
 
                                 <div class="activity">
                                     @include('milestones.show')

@@ -1,1 +1,1 @@
-<li class={{$class}}><a href={{$sectionId}} data-toggle="tab">{{$title}}</a></li>
+<li class={{$class}}><a href={{$sectionId}} data-toggle="tab" class="tab color-dark">{{$title}}</a></li>

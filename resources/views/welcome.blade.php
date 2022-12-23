@@ -1,5 +1,5 @@
 <x-layout>
-    
+
     <div class="main-banner" id="top">
         <div class="container">
             <div class="row">
@@ -10,7 +10,7 @@
                         <h4>Any Job <em>You Can</em> Possibly <span>Think Of</span></h4>
                         <p>Hire the best freelancers for any job, online. Hire the best freelancers for any job, online.
                             Post a Job, Choose Freelancer, Pay safely, we're here to help
-                        <div class="main-button"><a href="">Login/Signup</a></div>
+                        <div class="main-button"><a href="/register">Signup</a></div>
                         <span>or</span>
                         <div class="second-button"><a href="#categories">Check our Categories</a></div>
                     </div>

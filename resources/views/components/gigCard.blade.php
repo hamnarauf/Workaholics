@@ -3,17 +3,20 @@
         <img src={{$projImg}} class="img-fluid" alt="...">
         <div class="course-content">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4>{{$category}}</h4>
+                <x-tagMenu>
+                    <x-tag title={{$category}}></x-tag>
+                </x-tagMenu>
                 <p class="price">{{$price}}</p>
             </div>
 
             <h3><a href="course-details.html">{{$title}}</a></h3>
             <p>{{$desc}}</p>
-            @php
-                $link = url('gigs/'.$id);
-            @endphp
-            <a href="{{ $link }}" class="btn btn-primary">Details</a>
-            <div class="trainer d-flex justify-content-between align-items-center">
+            <form action="/gigs/details" method="POST">
+                @csrf
+                <input type="number" name="id" hidden value={{$id}} >
+                <input class="btn btn-primary" type="submit" value="Details" >
+            </form>
+                <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                     <img src={{$freelancerImg}} class="img-fluid" alt="">
                     <span>{{$freelancer}}</span>
@@ -23,9 +26,9 @@
                     &nbsp;&nbsp;
                     <i class="bx bx-heart"></i>&nbsp;{{$saves}}
                 </div>
-                
+
             </div>
         </div>
-        
+
     </div>
 </div>

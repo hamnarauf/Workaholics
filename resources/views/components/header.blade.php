@@ -13,9 +13,13 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="./jobs">Jobs</a></li>
-                        <li class="scroll-to-section"><a href="./wallet">Wallet</a></li>
+                        <li class="scroll-to-section"><a href="{{ url('/') }}" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="{{ url('/finds') }}">Find</a></li>
+                        <li class="scroll-to-section"><a href="{{ url('/finds/my') }}">Proposals</a></li>
+                        <li class="scroll-to-section"><a href="./wallet">Wallet</a></li>                  
+                        <li class="scroll-to-section"><a href="{{ url('/projects/create') }}">Add Project</a></li>                  
+                        <li class="scroll-to-section"><a href="{{ url('/gigs/create') }}">Add Gig</a></li>                  
+                        <li class="scroll-to-section"><a href="{{ url('/categories') }}">Categories</a></li>                  
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -154,7 +158,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ url("users")."/". Auth::user()->id }}">
                                         <i class="bi bi-person"></i>
                                         <span>My Profile</span>
                                     </a>
@@ -181,10 +185,16 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                                    >
                                         <i class="bi bi-box-arrow-right"></i>
-                                        <span>Sign Out</span>
+                                        <span>Sign Out</span>                                       
                                     </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 </li>
                             </ul><!-- End Profile Dropdown Items -->
                         </li><!-- End Profile Nav -->

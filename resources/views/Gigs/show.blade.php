@@ -1,5 +1,11 @@
 <x-layout>
     <!--search overlay end-->
+        <section class="single-block-wrapper section-padding">
+        @if ($submit > 0)
+            <div class="alert alert-success" role="alert">
+                Already submitted a proposal for this project
+            </div>            
+        @endif
     <section class="single-block-wrapper section-padding">
         <div class="container">
             <div class="row">
@@ -10,10 +16,14 @@
                                 @include('Gigs.gigDetail.client')
                             </div>
                             <div class="sidebar-widget follow mb-5 text-center">
-                                <form action="/gigs/create" method="POST">
+                                <form action="/gigproposals/create" method="POST">
                                     @csrf
                                     <input type="number" name="id" hidden value="{{ $gig->id }}" >
-                                    <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Request to Order">
+                                    <input
+                                    @if($submit>0)
+                                        disabled
+                                    @endif
+                                    class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Request to Order">
                                 </form>
                             </div>
                         </div>
