@@ -9,6 +9,7 @@ use App\Http\Controllers\JobsController;
 use App\Http\Controllers\MilestonesController;
 use App\Http\Controllers\PaymentOptionsController;
 use App\Http\Controllers\ProposalsController;
+use App\Http\Controllers\GigproposalsController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\FindController;
@@ -29,16 +30,15 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-Route::get('/find', [FindController::class, 'index']);
 
-Route::get('/test', function () {
-    return view('test');
-});
 Route::get('/profile', function () {
     return view('profile/index');
 });
@@ -74,27 +74,22 @@ Route::get('/viewSub', function () {
     return view('viewSubmission');
 });
 
-Route::get('/a', function () {
-    return view('proposals/create');
+Route::get('/test', function () {
+    return view('myjob.index');
 });
 
 
 
-//Contracts Routes
-Route::get('/contracts', [ContractsController::class, 'index']);
-Route::get('/contracts/create', [ContractsController::class, 'create']);
-Route::post('/contracts', [ContractsController::class, 'store']);
-Route::get('/contracts/{id}', [ContractsController::class, 'show']);
-Route::get('/contracts/{id}/edit', [ContractsController::class, 'edit']);
-Route::put('/contracts/{id}', [ContractsController::class, 'update']);
-Route::delete('/contracts/{id}', [ContractsController::class, 'destroy']);
+
+
+
 
 
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
 Route::post('/gigs', [GigsController::class, 'store']);
-Route::get('/gigs/{idd}', [GigsController::class, 'show']);
+Route::post('/gigs/details', [GigsController::class, 'show']);
 Route::get('/gigs/{id}/edit', [GigsController::class, 'edit']);
 Route::put('/gigs/{id}', [GigsController::class, 'update']);
 Route::delete('/gigs/{id}', [GigsController::class, 'destroy']);
@@ -103,10 +98,42 @@ Route::delete('/gigs/{id}', [GigsController::class, 'destroy']);
 Route::get('/projects', [ProjectsController::class, 'index']);
 Route::get('/projects/create', [ProjectsController::class, 'create']);
 Route::post('/projects', [ProjectsController::class, 'store']);
-Route::get('/projects/{id}', [ProjectsController::class, 'show']);
+Route::post('/projects/details', [ProjectsController::class, 'show']);
 Route::get('/projects/{id}/edit', [ProjectsController::class, 'edit']);
 Route::put('/projects/{id}', [ProjectsController::class, 'update']);
 Route::delete('/projects/{id}', [ProjectsController::class, 'destroy']);
+
+// ProposalsController Routes
+Route::get('/proposals/{id}', [ProposalsController::class, 'index']);
+Route::post('/proposals/create', [ProposalsController::class, 'create']);
+Route::post('/proposals', [ProposalsController::class, 'store']);
+Route::get('/proposals/{proposal_id}/details', [ProposalsController::class, 'show']);
+Route::get('/proposals/{id}/edit', [ProposalsController::class, 'edit']);
+Route::put('/proposals', [ProposalsController::class, 'update']);
+Route::delete('/proposals/{id}', [ProposalsController::class, 'destroy']);
+
+// GigProposalsController Routes
+Route::get('/gigproposals/{id}', [GigproposalsController::class, 'index']);
+Route::post('/gigproposals/create', [GigproposalsController::class, 'create']);
+Route::post('/gigproposals', [GigproposalsController::class, 'store']);
+Route::get('/gigproposals/{proposal_id}/details', [GigproposalsController::class, 'show']);
+Route::get('/gigproposals/{id}/edit', [GigproposalsController::class, 'edit']);
+Route::put('/gigproposals', [GigproposalsController::class, 'update']);
+
+//findsController Routes
+
+Route::get('/finds', [FindController::class, 'index']);
+Route::get('/finds/my', [FindController::class, 'myshow']);
+Route::post('/finds', [FindController::class, 'show']);
+
+// CategoriesController Routes
+Route::get('/categories', [CategoriesController::class, 'index']);
+Route::get('/categories/create', [CategoriesController::class, 'create']);
+Route::post('/categories', [CategoriesController::class, 'store']);
+Route::get('/categories/{id}', [CategoriesController::class, 'show']);
+Route::get('/categories/{id}/edit', [CategoriesController::class, 'edit']);
+Route::put('/categories/{id}', [CategoriesController::class, 'update']);
+Route::delete('/categories/{id}', [CategoriesController::class, 'destroy']);
 
 
 // Feedbacks Routes
@@ -145,15 +172,6 @@ Route::get('/wtransactions/{id}/edit', [WTransactionsController::class, 'edit'])
 Route::put('/wtransactions/{id}', [WTransactionsController::class, 'update']);
 Route::delete('/wtransactions/{id}', [WTransactionsController::class, 'destroy']);
 
-// ProposalsController Routes
-Route::get('/proposals/{id}', [ProposalsController::class, 'index']);
-Route::post('/proposals/create', [ProposalsController::class, 'create']);
-Route::post('/proposals', [ProposalsController::class, 'store']);
-Route::get('/proposals/{proposal_id}/details', [ProposalsController::class, 'show']);
-Route::get('/proposals/{id}/edit', [ProposalsController::class, 'edit']);
-Route::put('/proposals/{id}', [ProposalsController::class, 'update']);
-Route::delete('/proposals/{id}', [ProposalsController::class, 'destroy']);
-
 // TransactionsController Routes   
 Route::get('/transactions', [TransactionsController::class, 'index']);
 Route::get('/transactions/create', [TransactionsController::class, 'create']);
@@ -172,19 +190,7 @@ Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
 Route::post('/users/edit', [UsersController::class, 'update']);
 Route::delete('/users/{id}', [UsersController::class, 'destroy']);
 
-// CategoriesController Routes
-Route::get('/categories', [CategoriesController::class, 'index']);
-Route::get('/categories/create', [CategoriesController::class, 'create']);
-Route::post('/categories', [CategoriesController::class, 'store']);
-Route::get('/categories/{id}', [CategoriesController::class, 'show']);
-Route::get('/categories/{id}/edit', [CategoriesController::class, 'edit']);
-Route::put('/categories/{id}', [CategoriesController::class, 'update']);
-Route::delete('/categories/{id}', [CategoriesController::class, 'destroy']);
 
-//findsController Routes
-
-Route::get('/finds', [FindController::class, 'index']);
-Route::post('/finds', [FindController::class, 'show']);
 
 
 // MesaagesController Routes
@@ -200,3 +206,7 @@ Route::group(['prefix' => 'messages'], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/{any}', function () {
+//     return view('welcome');
+// })->where('any', '.*');

@@ -42,14 +42,20 @@ class ProjectsController extends Controller
         $project->save();
         return redirect('/projects');
     }
-    public function show($id)
+    public function show()
     {
+        $id = request('id');
         $project = Project::find($id);
         $user = User::find($project->created_by);
         $jobcount = Job::where('employer', $user->id)->count() + 1;
         $category = Category::find($project->category);
         $submit = Proposal::where('project_id', $id)->where('created_by', Auth::id())->count();
-        return view('projects.show', ['project' => $project, 'user' => $user, 'jobcount' => $jobcount, 'category' => $category]);
+        if ($user == Auth::user()) {
+            $route = '/proposals/' . $id;
+            return redirect($route);
+        } else {
+            return view('projects.show', ['project' => $project, 'user' => $user, 'jobcount' => $jobcount, 'category' => $category, 'submit' => $submit]);
+        }
     }
     public function edit($id)
     {

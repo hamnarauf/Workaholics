@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Proposal;
-use App\Models\Project;
+use App\Models\Gigproposal;
+use App\Models\Gig;
 use App\Models\User;
 use App\Models\Job;
 use Illuminate\Support\Facades\Auth;
-
 use function PHPUnit\Framework\identicalTo;
 use function Termwind\render;
 
-class ProposalsController extends Controller
+use Illuminate\Http\Request;
+
+class GigproposalsController extends Controller
 {
     public function __construct()
     {
@@ -21,45 +21,45 @@ class ProposalsController extends Controller
 
     public function index($id)
     {
-        $proposals = Proposal::all()->where('project_id', $id)->where('status', 'Pending' || 'Accepted');
+        $proposals = Gigproposal::all()->where('gig_id', $id)->where('status', 'Pending' || 'Accepted');
         foreach ($proposals as $proposal) {
             $proposal->user = User::find($proposal->created_by);
         }
 
-        return view('proposals.index', ["proposals" => $proposals]);
+        return view('gigproposal.index', ["proposals" => $proposals]);
     }
 
     public function create()
     {
         $id = request('id');
-        return view('proposals.create', ['id' => $id]);
+        return view('gigproposal.create', ['id' => $id]);
     }
 
     public function store()
     {
-        $proposal = new Proposal();
-        $proposal->project_id = request('project_id');
+        $proposal = new Gigproposal();
+        $proposal->gig_id = request('project_id');
         $proposal->proposal = request('proposal');
-        $proposal->expected_by = request('expected_by');
+        $proposal->deadline = request('expected_by');
         $proposal->bid = request('bid');
         $proposal->created_by = Auth::id();
         $proposal->save();
-        return redirect('/projects/' . request('project_id'));
+        return redirect('/gigs/' . request('project_id'));
     }
 
     public function show($proposal_id)
     {
-        $proposal = Proposal::find($proposal_id);
-        $project_name = Project::find($proposal['project_id'])->name;
+        $proposal = Gigproposal::find($proposal_id);
+        $project_name = Gig::find($proposal['gig_id'])->name;
         $freelancer = User::find($proposal['created_by']);
         $freelancer = $freelancer['name'];
-        return view('proposals.show', ['project_name' => $project_name, 'proposal' => $proposal, 'freelancer' => $freelancer]);
+        return view('gigproposal.show', ['project_name' => $project_name, 'proposal' => $proposal, 'freelancer' => $freelancer]);
     }
 
     public function edit($id)
     {
-        $proposal =   Proposal::find($id);
-        return view('proposals.edit', ['proposal' => $proposal]);
+        $proposal =   GigProposal::find($id);
+        return view('gigproposal.edit', ['proposal' => $proposal]);
     }
 
     public function update()
@@ -67,17 +67,17 @@ class ProposalsController extends Controller
         $id = request('id');
         $status = request('status');
         if ($status == 'view') {
-            $route = 'proposals/' . $id . '/details';
+            $route = 'gigproposals/' . $id . '/details';
             return redirect($route);
         } else {
-            $proposal = Proposal::find($id);
+            $proposal = GigProposal::find($id);
             $proposal->status = $status;
-            $route = 'proposals/' . $id;
+            $route = 'gigproposals/' . $id;
             $proposal->save();
             if ($status == 'Accepted') {
                 $job = new Job();
-                $job->project_id = $proposal->project_id;
-                $job->employer = User::find(Project::find($proposal->project_id)->created_by)->id;
+                $job->gig_id = $proposal->gig_id;
+                $job->employer = User::find(Gig::find($proposal->gig_id)->created_by)->id;
                 $job->employee = $proposal->created_by;
                 $job->save();
             }
@@ -87,7 +87,7 @@ class ProposalsController extends Controller
 
     public function destroy($id)
     {
-        $proposal = Proposal::find($id);
+        $proposal = GigProposal::find($id);
         $proposal->delete();
         return redirect()->route('proposals.index');
     }

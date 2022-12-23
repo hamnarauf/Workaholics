@@ -9,11 +9,12 @@
 
             <h3><a href="course-details.html">{{$title}}</a></h3>
             <p>{{$desc}}</p>
-            @php
-                $link = url('gigs/'.$id);
-            @endphp
-            <a href="{{ $link }}" class="btn btn-primary">Details</a>
-            <div class="trainer d-flex justify-content-between align-items-center">
+            <form action="/gigs/details" method="POST">
+                @csrf
+                <input type="number" name="id" hidden value={{$id}} >
+                <input class="btn btn-primary" type="submit" value="Details" >
+            </form>
+                <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                     <img src={{$freelancerImg}} class="img-fluid" alt="">
                     <span>{{$freelancer}}</span>

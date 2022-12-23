@@ -2,12 +2,12 @@
 <x-layout>
     <!--search overlay end-->
     <section class="single-block-wrapper section-padding">
-        @if ($su)
-            
+        @if ($submit > 0)
+            <div class="alert alert-success" role="alert">
+                Already submitted a proposal for this project
+            </div>            
         @endif
-                <div class="alert alert-success" role="alert">
-            Already submitted a proposal for this project
-        </div>
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -20,7 +20,11 @@
                                 <form action="/proposals/create" method="POST">
                                     @csrf
                                     <input type="number" name="id" hidden value="{{ $project->id }}" >
-                                    <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Submit Proposal">
+                                    <input 
+                                    @if($submit>0)
+                                        disabled
+                                    @endif
+                                    class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Submit Proposal">
                                 </form>
                             </div>
                         </div>
