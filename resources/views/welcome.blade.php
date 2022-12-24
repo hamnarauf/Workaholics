@@ -10,8 +10,7 @@
                         <h4>Any Job <em>You Can</em> Possibly <span>Think Of</span></h4>
                         <p>Hire the best freelancers for any job, online. Hire the best freelancers for any job, online.
                             Post a Job, Choose Freelancer, Pay safely, we're here to help
-                        <div class="main-button"><a href="/register">Signup</a></div>
-                        <span>or</span>
+
                         <div class="second-button"><a href="#categories">Check our Categories</a></div>
                     </div>
                 </div>
@@ -37,10 +36,13 @@
                 <!-- CATEGORY SECTION -->
                 <div class="col-md-3 mb-3">
                     <article class="card bg-dark text-center text-white border-0 rounded-0 mb-18">
-                        <img class="card-img rounded-0 img-fluid" src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="post-thumb">
+                        <img class="card-img rounded-0 img-fluid"
+                            src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+                            alt="post-thumb">
                         <div class="card-img-overlay">
                             <div class="card-content">
-                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB devlopment</a></h4>
+                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB
+                                        devlopment</a></h4>
                                 <a class="btn btn-outline-light" href="l">Explore</a>
                             </div>
                         </div>
@@ -48,10 +50,13 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <article class="card bg-dark text-center text-white border-0 rounded-0 mb-18">
-                        <img class="card-img rounded-0 img-fluid" src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="post-thumb">
+                        <img class="card-img rounded-0 img-fluid"
+                            src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+                            alt="post-thumb">
                         <div class="card-img-overlay">
                             <div class="card-content">
-                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB devlopment</a></h4>
+                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB
+                                        devlopment</a></h4>
                                 <a class="btn btn-outline-light" href="l">Explore</a>
                             </div>
                         </div>
@@ -59,10 +64,13 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <article class="card bg-dark text-center text-white border-0 rounded-0 mb-18">
-                        <img class="card-img rounded-0 img-fluid" src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="post-thumb">
+                        <img class="card-img rounded-0 img-fluid"
+                            src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+                            alt="post-thumb">
                         <div class="card-img-overlay">
                             <div class="card-content">
-                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB devlopment</a></h4>
+                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB
+                                        devlopment</a></h4>
                                 <a class="btn btn-outline-light" href="l">Explore</a>
                             </div>
                         </div>
@@ -70,17 +78,20 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <article class="card bg-dark text-center text-white border-0 rounded-0 mb-18">
-                        <img class="card-img rounded-0 img-fluid" src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="post-thumb">
+                        <img class="card-img rounded-0 img-fluid"
+                            src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+                            alt="post-thumb">
                         <div class="card-img-overlay">
                             <div class="card-content">
-                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB devlopment</a></h4>
+                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB
+                                        devlopment</a></h4>
                                 <a class="btn btn-outline-light" href="l">Explore</a>
                             </div>
                         </div>
                     </article>
                 </div>
-                
-                
+
+
             </div>
         </div>
     </div>
@@ -103,7 +114,8 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="service-item">
                                 <div class="icon">
-                                    <img src="{{asset('img/services-01.jpg')}}" alt="discover SEO" class="templatemo-feature">
+                                    <img src="{{ asset('img/services-01.jpg') }}" alt="discover SEO"
+                                        class="templatemo-feature">
                                 </div>
                                 <h4>Connect to experienced freelancers</h4>
                             </div>
@@ -111,7 +123,8 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="service-item">
                                 <div class="icon">
-                                    <img src="{{asset('img/services-02.jpg')}}" alt="data analysis" class="templatemo-feature">
+                                    <img src="{{ asset('img/services-02.jpg') }}" alt="data analysis"
+                                        class="templatemo-feature">
                                 </div>
                                 <h4>powerful workspace</h4>
                             </div>
@@ -119,7 +132,8 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="service-item">
                                 <div class="icon">
-                                    <img src="{{asset('img/services-03.jpg')}}" alt="precise data" class="templatemo-feature">
+                                    <img src="{{ asset('img/services-03.jpg') }}" alt="precise data"
+                                        class="templatemo-feature">
                                 </div>
                                 <h4>Expertise, when you need it</h4>
                             </div>
@@ -127,7 +141,8 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="service-item">
                                 <div class="icon">
-                                    <img src="{{asset('img/services-04.jpg')}}" alt="SEO marketing" class="templatemo-feature">
+                                    <img src="{{ asset('img/services-04.jpg') }}" alt="SEO marketing"
+                                        class="templatemo-feature">
                                 </div>
                                 <h4>Manage teamwork &amp; boost productivity</h4>
                             </div>
@@ -146,14 +161,15 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="left-image">
-                                    <img src="{{asset('img/left-infos.jpg')}}" alt="">
+                                    <img src="{{ asset('img/left-infos.jpg') }}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="section-heading">
                                     <h2>More <em>About Us</em> &amp; What <span>We Offer</span></h2>
                                     <div class="line-dec"></div>
-                                    <p>Work with the largest network of independent professionals and get things done—from quick turnarounds to big transformations.</p>
+                                    <p>Work with the largest network of independent professionals and get things
+                                        done—from quick turnarounds to big transformations.</p>
                                 </div>
                                 <div class="skills">
                                     <div class="skill-slide marketing">
@@ -173,7 +189,8 @@
                                     </div>
                                 </div>
                                 <p class="more-info">Meet clients you’re excited to work with and take
-                                    your career or business to new heights. One of the advantages of utilizing freelancers is finding
+                                    your career or business to new heights. One of the advantages of utilizing
+                                    freelancers is finding
                                     talent with different skills quickly as out needs change.
                                 </p>
                             </div>
@@ -192,7 +209,10 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <div id="map">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="670px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen=""></iframe>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth"
+                                        width="100%" height="670px" frameborder="0"
+                                        style="border:0; border-radius: 23px;" allowfullscreen=""></iframe>
                                 </div>
                             </div>
                             <div class="col-lg-8">
@@ -205,22 +225,27 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <fieldset>
-                                                <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
+                                                <input type="name" name="name" id="name"
+                                                    placeholder="Your Name..." autocomplete="on" required>
                                             </fieldset>
                                         </div>
                                         <div class="col-lg-6">
                                             <fieldset>
-                                                <input type="surname" name="surname" id="surname" placeholder="Your Surname..." autocomplete="on" required>
+                                                <input type="surname" name="surname" id="surname"
+                                                    placeholder="Your Surname..." autocomplete="on" required>
                                             </fieldset>
                                         </div>
                                         <div class="col-lg-6">
                                             <fieldset>
-                                                <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
+                                                <input type="text" name="email" id="email"
+                                                    pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..."
+                                                    required="">
                                             </fieldset>
                                         </div>
                                         <div class="col-lg-6">
                                             <fieldset>
-                                                <input type="subject" name="subject" id="subject" placeholder="Subject..." autocomplete="on">
+                                                <input type="subject" name="subject" id="subject"
+                                                    placeholder="Subject..." autocomplete="on">
                                             </fieldset>
                                         </div>
                                         <div class="col-lg-12">
@@ -230,7 +255,8 @@
                                         </div>
                                         <div class="col-lg-12">
                                             <fieldset>
-                                                <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                                                <button type="submit" id="form-submit" class="orange-button">Send
+                                                    Message Now</button>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -253,7 +279,8 @@
                                         <div class="col-lg-4">
                                             <div class="info-item">
                                                 <i class="fa fa-map-marker"></i>
-                                                <h4><a href="#">National University of Science and Technology, Islamabad, pakistan</a></h4>
+                                                <h4><a href="#">National University of Science and Technology,
+                                                        Islamabad, pakistan</a></h4>
                                             </div>
                                         </div>
                                     </div>
@@ -265,7 +292,6 @@
             </div>
         </div>
     </div>
-
     <footer>
         <div class="container">
             <div class="col-lg-12">
@@ -275,5 +301,4 @@
         </div>
     </footer>
 
-    
-    </x-layout>
+</x-layout>
