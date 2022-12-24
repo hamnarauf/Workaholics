@@ -1,4 +1,4 @@
-<form action="/gigproposals" method="POST">
+<form action="/gigproposals" method="POST" enctype="multipart/form-data">
   @csrf
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Proposal:</label>
@@ -16,7 +16,7 @@
     </div>
     <div class="form-group">
         <label for="proposalAttachment">Attachment Files <small>(if any):</small></label>
-        <input type="file" class="form-control-file" id="proposalAttachment">
+        <input type="file" class="form-control-file" id="proposalAttachment" name="file">
     </div>
     <input type="hidden" value= "{{ $id }}" name="project_id">
     <button type="submit" class="btn btn-primary">Send Proposal</button>

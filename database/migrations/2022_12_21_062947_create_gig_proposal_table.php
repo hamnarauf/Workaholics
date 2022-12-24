@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('gig_proposal', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
             $table->unsignedBigInteger('gig_id');
             $table->string('proposal', 800);
             $table->enum('status', ['Accepted', 'Pending', 'Rejected'])->default('Pending');
             $table->integer('bid');
             $table->date('deadline');
+            $table->string('file');
         });
     }
 

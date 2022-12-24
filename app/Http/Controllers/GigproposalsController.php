@@ -43,6 +43,12 @@ class GigproposalsController extends Controller
         $proposal->deadline = request('expected_by');
         $proposal->bid = request('bid');
         $proposal->created_by = Auth::id();
+
+        $file=request('file');
+        $filename=time().'.'.$file->getClientOriginalExtension();
+        request('file')->move('gigproposalfiles',$filename);
+        $proposal->file=$filename;
+
         $proposal->save();
         return redirect('/gigs/' . request('project_id'));
     }
