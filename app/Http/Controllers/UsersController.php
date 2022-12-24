@@ -72,7 +72,7 @@ class UsersController extends Controller
 
     public function show($id)
     {
-        $user = User::find($id);
+        $user = User::find(Auth::id());
         $projects_posted = Project::where('created_by', '=', Auth::id())->get()->count();
         $job_count = Job::where('employee', '=', Auth::id())->count();
         $job_details = ['projectsPosted' => $projects_posted, 'jobCount' => $job_count];
@@ -82,8 +82,7 @@ class UsersController extends Controller
         $category_list = array();
 
         foreach ($gigs as $gig){
-            $category = Category::find($gig['category']);
-            array_push($category_list, $category);
+            array_push($category_list, Category::find($gig['category']));
         }
 
         $education = Education::where('user', '=', Auth::id())->get();
@@ -93,12 +92,14 @@ class UsersController extends Controller
                         ->leftjoin('gigs', 'jobs.gig_id', '=', 'gigs.id')
                         ->leftjoin('users', 'jobs.employer', '=', 'users.id')
                         ->where('employee', '=', Auth::id())
-                        ->select('jobs.*', 'projects.name as p_name', 'gigs.name as g_name', 'users.name as u_name')->get();
+                        ->select('jobs.*', 'users.name as u_name', 'users.img as u_img', 
+                                'projects.name as p_name', 'gigs.name as g_name', 
+                                'projects.skills as p_skills', 'gigs.skills as g_skills',
+                                'projects.description as p_des', 'gigs.description as g_des')->get();
         
         $pricings = array();
         $deadlines = array();
-        $profile_pics = array();
-        
+
         foreach ($work_history as $w){
             # calculate total price of a job
             $price = Milestone::where('job_id', '=', $w['id'])
@@ -113,14 +114,8 @@ class UsersController extends Controller
                             ->where('approved_by_employee', '=', '1')
                             ->max('expected_by');
             array_push($deadlines, $deadline);
-
-            # get image of the clients
-            $client = User::where('id', '=', $w['employer'])->select('img')->first();
-            array_push($profile_pics, $client['img']);
         }
-
-
-
+    
         return view('users.show', 
             ['user' => $user, 
             "jobDetails" => $job_details, 
@@ -131,7 +126,6 @@ class UsersController extends Controller
             "workHistory" => $work_history,
             "pricings" => $pricings,
             "deadlines" => $deadlines,
-            "profilePics" => $profile_pics
             ]);
     }
 
