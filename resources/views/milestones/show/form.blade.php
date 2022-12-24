@@ -1,13 +1,6 @@
-<form>
-    <div class="form-group">
-      <label for="cars">Choose a Milestone:</label><br>
-      <select name="cars" id="cars">
-        <option value="">Milstone1</option>
-        <option value="">Milstone2</option>
-        <option value="">Milstone3</option>
-        <option value="">Milstone4</option>
-      </select> 
-    </div>
+<form action="/milestones/submit" method="POST">
+    @csrf
+    @method('PUT')
     <div class="form-group">
       <label for="msg">Message:</label>
       <textarea class="form-control" id="msg" rows="10" placeholder="Leave a message with your submission" name="msg"></textarea>
@@ -23,5 +16,6 @@
       <input type="file" class="form-control-file" id="submission" name="submission" multiple="multiple">
     </div>
     <br>
+    <input type="number" name="id" value="{{ $id }}" hidden>
     <button type="submit" class="btn btn-primary">submit</button>
-  </form>
+</form>

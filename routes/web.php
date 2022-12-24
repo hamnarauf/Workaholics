@@ -150,7 +150,8 @@ Route::get('/milestones/create/{id}', [MilestonesController::class, 'create']);
 Route::post('/milestones', [MilestonesController::class, 'store']);
 Route::get('/milestones/{id}/details', [MilestonesController::class, 'show']);
 Route::get('/milestones/{id}/edit', [MilestonesController::class, 'edit']);
-Route::put('/milestones/{id}', [MilestonesController::class, 'update']);
+Route::put('/milestones', [MilestonesController::class, 'update']);
+Route::put('/milestones/submit', [MilestonesController::class, 'submit']);
 Route::delete('/milestones/{id}', [MilestonesController::class, 'destroy']);
 
 
