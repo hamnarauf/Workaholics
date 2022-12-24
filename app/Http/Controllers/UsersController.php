@@ -88,7 +88,6 @@ class UsersController extends Controller
         $education = Education::where('user', '=', Auth::id())->get();
         $employment = Employment::where('user', '=', Auth::id())->get();
 
-
         return view('users.show', ['user' => $user, "jobDetails" => $job_details, "education" => $education , "employment" => $employment, "gigs" => $gigs, "catList" => $category_list]);
     }
 
