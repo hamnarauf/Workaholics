@@ -16,7 +16,7 @@
                         <li class="scroll-to-section"><a href="{{ url('/') }}" class="">Home</a></li>
                         <li class="scroll-to-section"><a href="{{ url('/finds') }}">Find</a></li>
                         <li class="scroll-to-section"><a href="{{ url('/categories') }}">Categories</a></li>
-                        <li class="scroll-to-section"><a href="{{ url('/myjob') }}">Jobs</a></li>
+                        <li class="scroll-to-section"><a href="{{ url('/jobs') }}">Jobs</a></li>
                         <li class="scroll-to-section"><a href="{{ url('/finds/my') }}">Proposals</a></li>
                         <li class="scroll-to-section"><a href="/wallet">Wallet</a></li>                  
                     </ul>
