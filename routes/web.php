@@ -78,7 +78,13 @@ Route::get('/test', function () {
     return view('myjob.index');
 });
 
+Route::get('/education', function () {
+    return view('1education.index');
+});
 
+Route::get('/employment', function () {
+    return view('1employment.index');
+});
 
 
 
