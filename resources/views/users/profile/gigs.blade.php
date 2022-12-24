@@ -1,11 +1,10 @@
 <?php 
-    
-    $skill_list = array();
-    foreach ( $user['skills'] as $skill) {
-        array_push($skill_list, $skill);
+    if (is_null($user['skills']) == 0) {
+        $skill_list = array();
+        foreach ( $user['skills'] as $skill) {
+            array_push($skill_list, $skill);
+        }
     }
-
-    $skill_list = array("a", "v", "c")
 ?>
 
 @foreach($gigs as $gig)

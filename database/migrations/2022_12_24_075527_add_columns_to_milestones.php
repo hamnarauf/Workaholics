@@ -27,8 +27,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('milestones', function (Blueprint $table) {
-            $table->dropColumn('approved_by_employer');
-            $table->dropColumn('approved_by_employee');
+            $table->dropColumn('approved_by_employer')->default(0);
+            $table->dropColumn('approved_by_employee')->default(0);
         });
     }
 };
