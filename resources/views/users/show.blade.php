@@ -39,14 +39,14 @@
                 </x-tabMenu>
 
                 <div class="tab-content">
-                    <div class="tab-pane active fade in row" id="filter-sellerProfile">
+                    <div class="tab-pane active show row" id="filter-sellerProfile">
                         <x-sectionTitle title="Gigs" desc=""></x-sectionTitle>
                         @include('users.profile.gigs')
 
                         <x-sectionTitle title="Projects" desc="Work history on Workaholics"></x-sectionTitle>
                         <!-- @include('users.profile.projects') -->
                     </div>
-                    <div class="row tab-pane fade" id="filter-buyerProfile">
+                    <div class="row tab-pane" id="filter-buyerProfile">
                         <x-sectionTitle title="Job Posted" desc="Work history on Workaholics"></x-sectionTitle>
                         <!-- @include('users.profile.jobsPosted') -->
                     </div>
