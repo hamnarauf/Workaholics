@@ -1,0 +1,58 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 24, 2022 at 07:12 PM
+-- Server version: 5.7.36
+-- PHP Version: 7.4.26
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `workaholics`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gig_proposal`
+--
+
+DROP TABLE IF EXISTS `gig_proposal`;
+CREATE TABLE IF NOT EXISTS `gig_proposal` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `gig_id` bigint(20) UNSIGNED NOT NULL,
+  `proposal` varchar(800) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('Accepted','Pending','Rejected') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Pending',
+  `bid` int(11) NOT NULL,
+  `deadline` date NOT NULL,
+  `file` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_by` bigint(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `gig_proposal_created_by_foreign` (`created_by`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `gig_proposal`
+--
+
+INSERT INTO `gig_proposal` (`id`, `created_at`, `updated_at`, `gig_id`, `proposal`, `status`, `bid`, `deadline`, `file`, `created_by`) VALUES
+(1, '2022-12-25 01:58:12', '2022-12-25 01:58:12', 1, 'Proposal Example', 'Pending', 1, '2022-12-21', '1671908292.docx', 1),
+(2, '2022-12-25 02:01:11', '2022-12-25 02:01:11', 1, 'Proposal Example', 'Pending', 1, '2022-12-21', '1671908471.docx', 1),
+(3, '2022-12-25 02:01:53', '2022-12-25 02:01:53', 1, 'Proposal Example', 'Pending', 1, '2022-12-21', '1671908513.docx', 1);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

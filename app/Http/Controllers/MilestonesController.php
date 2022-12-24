@@ -96,7 +96,7 @@ class MilestonesController extends Controller
         $milestone->status = "Completed";
         $milestone->submission_msg = request('msg');
         $milestone->filename = request('fname');
-        $milestone->file_path = request('submission');
+        request('submission')->move('milestonefiles','fname');
         $milestone->save();
         return redirect('/milestones/' . $milestone->job_id);
     }
