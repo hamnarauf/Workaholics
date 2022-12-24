@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::table('milestones', function (Blueprint $table) {
             $table->boolean('approved_by_employer')->default(0);
             $table->boolean('approved_by_employee')->default(0);
-            $table->integer('escrow')->nullable()->change();
         });
     }
 
