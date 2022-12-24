@@ -44,12 +44,11 @@ class GigsController extends Controller
         $gig->created_by = Auth::id();
         $gig->category = request('category');
         $gig->save();
-        return redirect('/gigs');
+        return redirect('/finds');
     }
 
-    public function show()
+    public function show($id)
     {
-        $id = request('id');
         $gig = Gig::find($id);
         $user = User::find($gig->created_by);
         $jobcount = Job::where('employee', $user->id)->count() + 1;

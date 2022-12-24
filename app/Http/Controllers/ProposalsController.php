@@ -21,7 +21,7 @@ class ProposalsController extends Controller
 
     public function index($id)
     {
-        $proposals = Proposal::all()->where('project_id', $id)->where('status', 'Pending' || 'Accepted');
+        $proposals = Proposal::all()->where('project_id', $id)->whereIn('status', ['Pending', 'Accepted']);
         foreach ($proposals as $proposal) {
             $proposal->user = User::find($proposal->created_by);
         }
@@ -44,7 +44,8 @@ class ProposalsController extends Controller
         $proposal->bid = request('bid');
         $proposal->created_by = Auth::id();
         $proposal->save();
-        return redirect('/projects/' . request('project_id'));
+        $route = '/projects/' . request('project_id');
+        return redirect($route);
     }
 
     public function show($proposal_id)

@@ -40,11 +40,10 @@ class ProjectsController extends Controller
 
         $project->created_by = Auth::id();
         $project->save();
-        return redirect('/projects');
+        return redirect('/finds');
     }
-    public function show()
+    public function show($id)
     {
-        $id = request('id');
         $project = Project::find($id);
         $user = User::find($project->created_by);
         $jobcount = Job::where('employer', $user->id)->count() + 1;

@@ -33,55 +33,12 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-Route::get('/', function () {
+
+
+
+route::get('/', function () {
     return view('welcome');
 });
-
-
-
-Route::get('/profile', function () {
-    return view('profile/index');
-});
-
-
-Route::get('/wallet', function () {
-    return view('addToWallet/index');
-});
-
-
-Route::get('/1milestoneSubmission', function () {
-    return view('1milestoneSubmission/index');
-});
-
-Route::get('/bank', function () {
-    return view('addToBank/index');
-});
-
-Route::get('/review', function () {
-    return view('1review/index');
-});
-
-Route::get('/editProfile', function () {
-    return view('1editProfile/index');
-});
-
-
-Route::get('/payment', function () {
-    return view('payments/index');
-});
-
-Route::get('/viewSub', function () {
-    return view('viewSubmission');
-});
-
-Route::get('/test', function () {
-    return view('myjob.index');
-});
-
-
-
-
-
 
 
 
@@ -89,7 +46,7 @@ Route::get('/test', function () {
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);
 Route::post('/gigs', [GigsController::class, 'store']);
-Route::post('/gigs/details', [GigsController::class, 'show']);
+Route::get('/gigs/{id}', [GigsController::class, 'show']);
 Route::get('/gigs/{id}/edit', [GigsController::class, 'edit']);
 Route::put('/gigs/{id}', [GigsController::class, 'update']);
 Route::delete('/gigs/{id}', [GigsController::class, 'destroy']);
@@ -98,7 +55,7 @@ Route::delete('/gigs/{id}', [GigsController::class, 'destroy']);
 Route::get('/projects', [ProjectsController::class, 'index']);
 Route::get('/projects/create', [ProjectsController::class, 'create']);
 Route::post('/projects', [ProjectsController::class, 'store']);
-Route::post('/projects/details', [ProjectsController::class, 'show']);
+Route::get('/projects/{id}', [ProjectsController::class, 'show']);
 Route::get('/projects/{id}/edit', [ProjectsController::class, 'edit']);
 Route::put('/projects/{id}', [ProjectsController::class, 'update']);
 Route::delete('/projects/{id}', [ProjectsController::class, 'destroy']);

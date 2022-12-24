@@ -21,7 +21,7 @@ class GigproposalsController extends Controller
 
     public function index($id)
     {
-        $proposals = Gigproposal::all()->where('gig_id', $id)->where('status', 'Pending' || 'Accepted');
+        $proposals = Gigproposal::all()->where('gig_id', $id)->whereIn('status', ['Pending', 'Accepted']);
         foreach ($proposals as $proposal) {
             $proposal->user = User::find($proposal->created_by);
         }
@@ -77,8 +77,8 @@ class GigproposalsController extends Controller
             if ($status == 'Accepted') {
                 $job = new Job();
                 $job->gig_id = $proposal->gig_id;
-                $job->employer = User::find(Gig::find($proposal->gig_id)->created_by)->id;
-                $job->employee = $proposal->created_by;
+                $job->employer = $proposal->created_by;
+                $job->employee = User::find(Gig::find($proposal->gig_id)->created_by)->id;
                 $job->save();
             }
             return redirect($route);
