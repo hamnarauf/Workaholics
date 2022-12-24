@@ -2,7 +2,7 @@
     $skill_list = array();
 
     foreach ($gigs as $g) {
-        if (is_null($g['skills']) != "") {
+        if (($g['skills']) != "") {
             $gig_skill = array();
 
             foreach ($g['skills'] as $skill) {
