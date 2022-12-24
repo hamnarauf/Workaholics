@@ -24,7 +24,7 @@ body {
 }
 
 .color-white{
-  color: var(--color-white);
+  color: var(--color-white) !important;
 }
 
 .color-dark{
@@ -1918,7 +1918,7 @@ section {
 }
 
 .card-meta-author:hover {
-  color: #4FD675;
+  color: var(--color-active);
 }
 
 .card-meta-tag {
@@ -1940,8 +1940,8 @@ section {
 }
 
 .card-meta-tag li a:hover {
-  background-color: #4FD675;
-  border-color: #4FD675;
+  background-color: var(--color-active);
+  border-color: var(--color-active);
   color: #fff;
 }
 
@@ -2151,7 +2151,7 @@ a:focus {
 }
 
 .widget-list li a:hover {
-  color: #4FD675;
+  color: var(--color-active);
 }
 
 .widget-list-inline li {
@@ -2196,7 +2196,7 @@ select:focus {
 }
 
 a:hover {
-  color: #4FD675;
+  color: var(--color-active);
 }
 
 .shadow, .promotion, .logo-list li, .widget, .card, .navbar .dropdown-menu {
@@ -2218,7 +2218,7 @@ a:hover {
 }
 
 .navbar-white .navbar-nav .nav-link:hover {
-  color: #4FD675;
+  color: var(--color-active);
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -2648,7 +2648,7 @@ a:hover {
 }
 
 .author-shape-1 .path {
-  fill: #4FD675;
+  fill: var(--color-active);
 }
 
 .author-shape-2 {
@@ -2658,7 +2658,7 @@ a:hover {
 }
 
 .author-shape-2 .path {
-  fill: #4FD675;
+  fill: var(--color-active);
 }
 
 .author-shape-3 {
@@ -2668,7 +2668,7 @@ a:hover {
 }
 
 .author-shape-3 .path {
-  fill: #4FD675;
+  fill: var(--color-active);
 }
 
 .author-border {
@@ -2676,7 +2676,7 @@ a:hover {
   bottom: -15px;
   left: 0;
   width: 100%;
-  stroke: #4FD675;
+  stroke: var(--color-active);
   z-index: -1;
 }
 
@@ -2709,7 +2709,7 @@ a:hover {
 }
 
 .wave-shape-1 .path {
-  fill: #4FD675;
+  fill: var(--color-active);
 }
 
 .wave-shape-2 {
