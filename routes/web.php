@@ -90,7 +90,7 @@ Route::get('/employment', function () {
     return view('1employment.index');
 });
 Route::get('/formchecking', function () {
-    return view('proposals.create');
+    return view('milestones.show');
 });
 
 

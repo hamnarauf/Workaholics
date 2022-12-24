@@ -1,6 +1,6 @@
-<form action="/milestones/submit" method="POST">
-    @csrf
-    @method('PUT')
+<form action="/gigproposals" method="POST" enctype="multipart/form-data">
+  @csrf
+  @method('PUT')
     <div class="form-group">
       <label for="msg">Message:</label>
       <textarea class="form-control" id="msg" rows="10" placeholder="Leave a message with your submission" name="msg"></textarea>
@@ -18,4 +18,5 @@
     <br>
     <input type="number" name="id" value="{{ $id }}" hidden>
     <button type="submit" class="btn btn-primary">submit</button>
-</form>
+
+  </form>
