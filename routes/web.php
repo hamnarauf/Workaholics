@@ -75,7 +75,7 @@ Route::get('/viewSub', function () {
 });
 
 Route::get('/test', function () {
-    return view('myjob.index');
+    return view('test');
 });
 
 

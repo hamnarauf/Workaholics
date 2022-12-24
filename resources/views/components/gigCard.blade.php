@@ -14,7 +14,7 @@
             <form action="/gigs/details" method="POST">
                 @csrf
                 <input type="number" name="id" hidden value={{$id}} >
-                <input class="btn btn-primary" type="submit" value="Details" >
+                <input class="btn btn-primary mb-3" type="submit" value="Details" >
             </form>
                 <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
