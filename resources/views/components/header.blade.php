@@ -144,10 +144,36 @@
                                 </li>
                             </ul><!-- End Messages Dropdown Items -->
                         </li><!-- End Messages Nav -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                            <i class="bi bi-plus color-white d-inline  plus-btn"></i>
+                            </a><!-- End Profile Iamge Icon -->
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ url('/projects/create') }}">
+                                        <i class="bi bi-plus"></i>
+                                        <span>New Project</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ url('/gigs/create')}}">
+                                        <i class="bi bi-plus"></i>
+                                        <span>New Gig</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                               
+                            </ul><!-- End Profile Dropdown Items -->
+                        </li><!-- End Profile Nav -->
                         <li class="nav-item dropdown pe-3">
                             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                                 <img src="img/team/team-1.jpg" alt="Profile" class="rounded-circle">
-                                <span class="d-none d-md-block dropdown-toggle ps-2 color-white">K. Anderson</span>
+                                <span class="d-none d-md-block dropdown-toggle ps-2 color-white"></span>
                             </a><!-- End Profile Iamge Icon -->
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                                 <li class="dropdown-header">
