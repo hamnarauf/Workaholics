@@ -15,6 +15,8 @@ class MilestonesController extends Controller
     public function index()
     {
         //All milestones to be displayed on the index page
+        $milestones = Milestone::all()->where('job_id', request('id'));
+        return view('milestones.index', ["milestones" => $milestones]);
     }
 
     public function create()

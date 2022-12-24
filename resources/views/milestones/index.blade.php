@@ -1,5 +1,6 @@
 <x-layout>
-    <section class="section dashboard m-4 mt-5">
+    <section class="single-block-wrapper section-padding">
+    
         <div class="row">
             <!-- Left side columns -->
             <div class="col-lg-12">

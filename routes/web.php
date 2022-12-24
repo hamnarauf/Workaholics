@@ -135,6 +135,25 @@ Route::get('/finds', [FindController::class, 'index']);
 Route::get('/finds/my', [FindController::class, 'myshow']);
 Route::post('/finds', [FindController::class, 'show']);
 
+// JobsController Routes
+Route::get('/jobs', [JobsController::class, 'index']);
+Route::get('/jobs/create', [JobsController::class, 'create']);
+Route::post('/jobs', [JobsController::class, 'store']);
+Route::get('/jobs/{id}', [JobsController::class, 'show']);
+Route::get('/jobs/{id}/edit', [JobsController::class, 'edit']);
+Route::put('/jobs/{id}', [JobsController::class, 'update']);
+Route::delete('/jobs/{id}', [JobsController::class, 'destroy']);
+
+// MilestonesController Routes
+Route::get('/milestones/{id}', [MilestonesController::class, 'index']);
+Route::get('/milestones/create', [MilestonesController::class, 'create']);
+Route::post('/milestones', [MilestonesController::class, 'store']);
+Route::get('/milestones/{id}/details', [MilestonesController::class, 'show']);
+Route::get('/milestones/{id}/edit', [MilestonesController::class, 'edit']);
+Route::put('/milestones/{id}', [MilestonesController::class, 'update']);
+Route::delete('/milestones/{id}', [MilestonesController::class, 'destroy']);
+
+
 // CategoriesController Routes
 Route::get('/categories', [CategoriesController::class, 'index']);
 Route::get('/categories/create', [CategoriesController::class, 'create']);
@@ -154,23 +173,7 @@ Route::get('/feedbacks/{id}/edit', [FeedbacksController::class, 'edit']);
 Route::put('/feedbacks/{id}', [FeedbacksController::class, 'update']);
 Route::delete('/feedbacks/{id}', [FeedbacksController::class, 'destroy']);
 
-// JobsController Routes
-Route::get('/jobs', [JobsController::class, 'index']);
-Route::get('/jobs/create', [JobsController::class, 'create']);
-Route::post('/jobs', [JobsController::class, 'store']);
-Route::get('/jobs/{id}', [JobsController::class, 'show']);
-Route::get('/jobs/{id}/edit', [JobsController::class, 'edit']);
-Route::put('/jobs/{id}', [JobsController::class, 'update']);
-Route::delete('/jobs/{id}', [JobsController::class, 'destroy']);
 
-// MilestonesController Routes
-Route::get('/milestones', [MilestonesController::class, 'index']);
-Route::get('/milestones/create', [MilestonesController::class, 'create']);
-Route::post('/milestones', [MilestonesController::class, 'store']);
-Route::get('/milestones/{id}', [MilestonesController::class, 'show']);
-Route::get('/milestones/{id}/edit', [MilestonesController::class, 'edit']);
-Route::put('/milestones/{id}', [MilestonesController::class, 'update']);
-Route::delete('/milestones/{id}', [MilestonesController::class, 'destroy']);
 
 // WTransactionsController Routes
 Route::get('/wtransactions', [WTransactionsController::class, 'index']);

@@ -67,9 +67,10 @@
                                 </ul>
                                 <p>Milestone: {{ $buyer->milestonescount }}</p>
                                 <div class="text-start d-inline">
-                                    <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Details">
-                                    <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Submit">
-                                </div>
+                                    <a href="{{ url('/milestones/'. $buyer->id) }}" class="btn btn-primary">
+                                        Details
+                                    </a>
+                                    </div>
 
                             </div>
                         </div>
@@ -145,7 +146,7 @@
                                 </ul>
                                 <p>Milestone {{ $seller->milestonescount }}</p>
                                 <div class="text-start d-inline">
-                                    <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Details">
+                                    <a href="{{ url('/milestones/'. $seller->id) }}" class="btn btn-primary">
                                 </div>
 
                             </div>

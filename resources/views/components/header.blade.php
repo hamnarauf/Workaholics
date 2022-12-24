@@ -14,7 +14,8 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{ url('/') }}" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="{{ url('/finds') }}">Find</a></li>
+                        <li class="scroll-to-section"><a href="{{ url('/jobs') }}">My Jobs</a></li>
+                        {{-- <li class="scroll-to-section"><a href="{{ url('/finds') }}">Find</a></li> --}}
                         {{-- <li class="scroll-to-section"><a href="{{ url('/finds/my') }}">Proposals</a></li>
                         <li class="scroll-to-section"><a href="./wallet">Wallet</a></li>                  
                         <li class="scroll-to-section"><a href="{{ url('/projects/create') }}">Add Project</a></li>                  
