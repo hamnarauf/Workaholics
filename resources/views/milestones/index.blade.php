@@ -17,7 +17,7 @@
 
                                 </div>
                                 <div class="mt-10">
-                                    <input class="btn btn-primary mt-10 " type="submit" name="submit-contact" id="submit_contact" value="Propose New Milestone">
+                                    <a href="{{ url('/milestones/create/'. $job_id) }}" class="btn btn-primary mt-10 ">Propose New Milestone</a>
                                 </div>
                             </div>
                         </div><!-- End Recent Activity -->

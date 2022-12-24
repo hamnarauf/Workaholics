@@ -146,7 +146,7 @@ Route::delete('/jobs/{id}', [JobsController::class, 'destroy']);
 
 // MilestonesController Routes
 Route::get('/milestones/{id}', [MilestonesController::class, 'index']);
-Route::get('/milestones/create', [MilestonesController::class, 'create']);
+Route::get('/milestones/create/{id}', [MilestonesController::class, 'create']);
 Route::post('/milestones', [MilestonesController::class, 'store']);
 Route::get('/milestones/{id}/details', [MilestonesController::class, 'show']);
 Route::get('/milestones/{id}/edit', [MilestonesController::class, 'edit']);
