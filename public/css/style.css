@@ -598,7 +598,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 100px 0;
+  padding: 150px 0 100px 0;
   overflow: hidden;
 }
 
@@ -639,7 +639,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  padding: 120px 0;
+  /* padding: 120px 0; */
 }
 
 .about .content h3 {
@@ -1951,7 +1951,7 @@ section {
 }
 
 .post-title:hover {
-  color: #4FD675;
+  color: var(--color-active)
 }
 
 a {
