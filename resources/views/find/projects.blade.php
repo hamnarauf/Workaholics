@@ -13,8 +13,5 @@
         jobImg="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2Vic2l0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"
     ></x-jobCard>
     
-    @if ($loop->index % 3 === 0 && $loop->index != 0)
-        </div>        
-    @endif
-
-@endforeach
+    @endforeach
+</div>        

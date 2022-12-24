@@ -7,12 +7,13 @@
         </x-tabmenu>
         <div class="tab-content">
             <div class=" tab-pane active fade in tab-pane" id="filter-sellerJobs">
-                <!-- for seller -->
+                <!-- for Buyers -->
+@foreach ($buyers as $buyer )
                 <div class="col-md-6 col-sm-12">
                     <article class="card mb-4">
                         <div class="row card-body">
                             <div class="p-3">
-                                <h3 class="h3  d-inline"><a class="post-title" href="post-elements.html">Web development</a></h3>
+                                <h3 class="h3  d-inline"><a class="post-title" href="post-elements.html">{{ $buyer->project->name }}</a></h3>
                                 <ul class="float-right d-inline">
                                     <li class="nav-item dropdown">
                                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -51,20 +52,20 @@
                                     <li class="list-inline-item">
                                         <a href="" class="card-meta-author">
                                             <img src=img/clients/client-1.png alt="">
-                                            <span>client Name </span>
+                                            <span>{{ $buyer->employeed->name }} </span>
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <i class="ti-timer"></i>$123445
+                                        <i class="ti-timer"></i>{{ $buyer->project->budget }}
                                     </li>
                                     <li class="list-inline-item">
-                                        <i class="ti-calendar"></i>Due: 23 July 2022
+                                        <i class="ti-calendar"></i>{{ $buyer->project->expected_by }}
                                     </li>
                                 </ul>
                                 <ul class="list-inline widget-list-inline">
-                                    <li class="list-inline-item"><a href="">Completed</a></li>
+                                    <li class="list-inline-item"><a href="">{{ $buyer->status }}</a></li>
                                 </ul>
-                                <p>Milestone 1</p>
+                                <p>Milestone: {{ $buyer->milestonescount }}</p>
                                 <div class="text-start d-inline">
                                     <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Details">
                                     <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Submit">
@@ -75,14 +76,16 @@
                     </article>
                 </div>
             </div>
-
+@endforeach
             <div class=" tab-pane fade" id="filter-buyerJobs">
-                <!-- for buyer -->
+                <!-- for Sellers -->
+                @foreach ($sellers as $seller )
+                    
                 <div class="col-md-6 col-sm-12">
                     <article class="card mb-4">
                         <div class="row card-body">
                             <div class="p-3">
-                                <h3 class="h3  d-inline"><a class="post-title" href="post-elements.html">Web development</a></h3>
+                                <h3 class="h3  d-inline"><a class="post-title" href="post-elements.html">{{ $seller->gig->name }}</a></h3>
                                 <ul class="float-right d-inline">
                                     <li class="nav-item dropdown">
                                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -96,7 +99,7 @@
                                             <li>
                                                 <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                                                     <i class="bi bi-person"></i>
-                                                    <span>Proposals</span>
+                                                    <span>{{ $seller->gig->description }}</span>
                                                 </a>
                                             </li>
                                             <li>
@@ -127,20 +130,20 @@
                                     <li class="list-inline-item">
                                         <a href="" class="card-meta-author">
                                             <img src=img/clients/client-1.png alt="">
-                                            <span>client Name </span>
+                                            <span>{{ $seller->employerd->name }} </span>
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <i class="ti-timer"></i>$123445
+                                        <i class="ti-timer"></i>{{ $seller->gig->budget }}
                                     </li>
                                     <li class="list-inline-item">
-                                        <i class="ti-calendar"></i>Due: 23 July 2022
+                                        <i class="ti-calendar"></i>{{ $seller->gig->deadline }}
                                     </li>
                                 </ul>
                                 <ul class="list-inline widget-list-inline">
-                                    <li class="list-inline-item"><a href="">Completed</a></li>
+                                    <li class="list-inline-item"><a href="">{{ $seller->status }}</a></li>
                                 </ul>
-                                <p>Milestone 1</p>
+                                <p>Milestone {{ $seller->milestonescount }}</p>
                                 <div class="text-start d-inline">
                                     <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Details">
                                 </div>
@@ -149,6 +152,8 @@
                         </div>
                     </article>
                 </div>
+                @endforeach
+
             </div>
         </div>
     </section>
