@@ -1,11 +1,8 @@
-<?php
-$skills = array("php", "javasript", "CSS", "Design");
-?>
-
+@foreach ($education as $edString)
 <x-basicCard
-    heading="{{ $education['institute'] }}"
-    desc="{{ $education['title'] }}"
-    date="{{ $education['date_of_graduation'] }}"
-    location="{{ $education['city'] }}, {{ $education['country'] }}"
-    :tags=$skills
+    heading="{{ $edString['institute'] }}"
+    desc="{{ $edString['title'] }}"
+    date="{{ $edString['date_of_graduation'] }}"
+    location="{{ $edString['city'] }}, {{ $edString['country'] }}"
 ></x-basicCard>
+@endforeach

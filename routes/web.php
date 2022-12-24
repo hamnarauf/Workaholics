@@ -42,6 +42,58 @@ route::get('/', function () {
 
 
 
+Route::get('/profile', function () {
+    return view('profile/index');
+});
+
+
+Route::get('/wallet', function () {
+    return view('addToWallet/index');
+});
+
+
+Route::get('/1milestoneSubmission', function () {
+    return view('1milestoneSubmission/index');
+});
+
+Route::get('/bank', function () {
+    return view('addToBank/index');
+});
+
+Route::get('/review', function () {
+    return view('1review/index');
+});
+
+Route::get('/editProfile', function () {
+    return view('1editProfile/index');
+});
+
+
+Route::get('/payment', function () {
+    return view('payments/index');
+});
+
+Route::get('/viewSub', function () {
+    return view('viewSubmission');
+});
+
+Route::get('/test', function () {
+    return view('myjob.index');
+});
+
+Route::get('/education', function () {
+    return view('1education.index');
+});
+
+Route::get('/employment', function () {
+    return view('1employment.index');
+});
+
+
+
+
+
+
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
 Route::get('/gigs/create', [GigsController::class, 'create']);

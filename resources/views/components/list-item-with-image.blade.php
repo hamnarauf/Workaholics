@@ -8,12 +8,14 @@
         <div class="col-md-8">
             <h3 class="h4 mb-3"><a class="post-title" href="post-elements.html">{{$title}}</a></h3>
             <ul class="card-meta list-inline">
+                @if( $personImg!="")
                 <li class="list-inline-item">
                     <a href="" class="card-meta-author">
                         <img src={{$personImg}} alt="">
                         <span>{{$personName}}</span>
                     </a>
                 </li>
+                @endif
                 <li class="list-inline-item">
                     <i class="ti-timer"></i>{{$price}}
                 </li>

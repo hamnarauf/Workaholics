@@ -1,13 +1,11 @@
-<?php
-$skills = array("php", "javasript", "CSS", "Design");
-?>
 
-<x-basicCard
-heading="{{$employment['title']}}"
-company="{{$employment['company']}}"
-desc="{{$employment['description']}}"
-date_of_joining="$employment['date_of_joining']"
-date_of_leaving="$employment['date_of_leaving']"
-location="$employment['city'], {{ $employment['country'] }}"
-:tags=$skills
-></x-basicCard>
+@foreach ($employment as $empString)
+    <x-basicCard
+        heading="{{$empString['title']}}"
+        company="{{$empString['company']}}"
+        desc="{{$empString['description']}}"
+        date="{{ $empString['date_of_joining'] }}"
+        dateLeave="{{ $empString['date_of_leaving'] }}"
+        location="{{ $empString['city'] }}, {{ $empString['country'] }}"
+    ></x-basicCard>
+@endforeach
