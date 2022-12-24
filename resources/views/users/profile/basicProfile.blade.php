@@ -1,6 +1,6 @@
 <?php 
-    if (is_null($user['skills']) == 0) {
-        $skill_list = array();
+    $skill_list = array();
+    if ($user['skills'] != "") {
         foreach ( $user['skills'] as $skill) {
             array_push($skill_list, $skill);
         }
