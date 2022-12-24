@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('proposal', 800);
             $table->date('expected_by');
             $table->integer('bid');
-
+            $table->string('file');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('project_id')->references('id')->on('projects');
         });

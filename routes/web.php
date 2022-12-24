@@ -89,7 +89,7 @@ Route::get('/employment', function () {
     return view('1employment.index');
 });
 Route::get('/formchecking', function () {
-    return view('gigproposal.create');
+    return view('proposals.create');
 });
 
 

@@ -43,6 +43,12 @@ class ProposalsController extends Controller
         $proposal->expected_by = request('expected_by');
         $proposal->bid = request('bid');
         $proposal->created_by = Auth::id();
+        
+        $file=request('file');
+        $filename=time().'.'.$file->getClientOriginalExtension();
+        request('file')->move('proposalfiles',$filename);
+        $proposal->file=$filename;
+
         $proposal->save();
         $route = '/projects/' . request('project_id');
         return redirect($route);
