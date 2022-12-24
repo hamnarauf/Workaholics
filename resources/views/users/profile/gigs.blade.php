@@ -8,7 +8,6 @@
             foreach ($g['skills'] as $skill) {
                 array_push($gig_skill, $skill);    
             }
-
             array_push($skill_list, $gig_skill);
         }
     }
@@ -17,7 +16,7 @@
 @foreach($gigs as $gig)
 <x-list-item-with-image
     title="{{ $gig['name'] }}"
-    personName="{{ $catList[$loop->index]['name'] }}"
+    personName="{{ $gig['c_name'] }}"
     personImg="{{ asset($user['img']) }}"
     price="${{ $gig['budget'] }}"
     date="{{ $gig['required_days'] }} days"

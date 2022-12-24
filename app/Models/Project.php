@@ -21,5 +21,6 @@ class Project extends Model
 
     protected $casts = [
         'skills' => 'array',
+        'p_skills'=> 'array'
     ];
 }

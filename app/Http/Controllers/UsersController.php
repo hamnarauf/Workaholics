@@ -77,13 +77,13 @@ class UsersController extends Controller
         $job_count = Job::where('employee', '=', Auth::id())->count();
         $job_details = ['projectsPosted' => $projects_posted, 'jobCount' => $job_count];
         
-        $gigs = Gig::where('created_by', '=', Auth::id())->get();
-
-        $category_list = array();
-
-        foreach ($gigs as $gig){
-            array_push($category_list, Category::find($gig['category']));
-        }
+        $gigs = Gig::leftjoin('categories', 'gigs.category', '=', 'categories.id')
+                    ->where('created_by', '=', Auth::id())
+                    ->select('gigs.*', 'categories.name as c_name')->get();
+        
+        $projs = Project::leftjoin('categories', 'projects.category', '=', 'categories.id')
+                    ->where('created_by', '=', Auth::id())
+                    ->select('projects.*', 'categories.name as c_name')->get();
 
         $education = Education::where('user', '=', Auth::id())->get();
         $employment = Employment::where('user', '=', Auth::id())->get();
@@ -122,7 +122,7 @@ class UsersController extends Controller
             "education" => $education , 
             "employment" => $employment, 
             "gigs" => $gigs, 
-            "catList" => $category_list,
+            "projs" => $projs,
             "workHistory" => $work_history,
             "pricings" => $pricings,
             "deadlines" => $deadlines,

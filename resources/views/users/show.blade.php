@@ -48,7 +48,7 @@
                     </div>
                     <div class="row tab-pane" id="filter-buyerProfile">
                         <x-sectionTitle title="Projects Posted" desc="Work history on Workaholics"></x-sectionTitle>
-                        <!-- @include('users.profile.jobsPosted') -->
+                        @include('users.profile.jobsPosted')
                     </div>
                 </div>
             </div>

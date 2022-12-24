@@ -1,15 +1,27 @@
-<?php
-$skills = array("php", "javasript", "CSS", "Design");
+<?php 
+    $skill_list = array();
+
+    foreach ($projs as $p) {
+        if (($p['skills']) != "") {
+            $proj_skill = array();
+
+            foreach ($p['skills'] as $skill) {
+                array_push($proj_skill, $skill);    
+            }
+            array_push($skill_list, $proj_skill);
+        }
+    }
 ?>
 
+@foreach ($projs as $proj)
 <x-list-item
-    title="Develop a PHP Website."
+    title="{{ $proj['name'] }}"
     personName="John Doe"
     personImg="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdlYnNpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
-    price="$1000"
-    date="15 Jan, 2020"
-    :tags=$skills
-    desc="Heading example Here is example of hedings. You can use this heading by following markdownify rules."
+    price="${{ $proj['budget'] }}"
+    date="{{ $proj['updated_at'] }}"
+    :tags="$skill_list[$loop->index]"
+    desc="{{ $proj['description'] }}"
 >
 <x-feedback
     stars="5"
@@ -27,3 +39,4 @@ $skills = array("php", "javasript", "CSS", "Design");
     
     ></x-feedback>
 </x-list-item>
+@endforeach

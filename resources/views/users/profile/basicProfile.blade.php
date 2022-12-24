@@ -9,7 +9,7 @@
 
 <x-basicProfile
     name="{{ $user['name'] }}"
-    description="{{ $catList[0]['name'] }}"
+    description=""
     country="{{ $user['country'] }}"
     :skills=$skill_list
     projectsPosted="{{ $jobDetails['projectsPosted'] }}"
