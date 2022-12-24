@@ -7,7 +7,7 @@
             <div class="col-12">
                 <nav class="main-nav header">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="/" class="logo">
                         <img src="{{asset('img/lamp.png')}}" alt="" width="55" height="55">
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -15,11 +15,10 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{ url('/') }}" class="">Home</a></li>
                         <li class="scroll-to-section"><a href="{{ url('/finds') }}">Find</a></li>
+                        <li class="scroll-to-section"><a href="{{ url('/categories') }}">Categories</a></li>
+                        <li class="scroll-to-section"><a href="{{ url('/jobs') }}">Jobs</a></li>
                         <li class="scroll-to-section"><a href="{{ url('/finds/my') }}">Proposals</a></li>
                         <li class="scroll-to-section"><a href="/wallet">Wallet</a></li>                  
-                        {{-- <li class="scroll-to-section"><a href="{{ url('/projects/create') }}">Add Project</a></li>                  
-                        <li class="scroll-to-section"><a href="{{ url('/gigs/create') }}">Add Gig</a></li>                   --}}
-                        <li class="scroll-to-section"><a href="{{ url('/categories') }}">Categories</a></li>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -179,24 +178,6 @@
                                 <li class="dropdown-header">
                                     <h6>Kevin Anderson</h6>
                                     <span>Web Designer</span>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <a class="dropdown-item d-flex align-items-center" href="{{ url('/projects/create') }}">
-                                        <i class="bi bi-plus"></i>
-                                        <span>Add Project</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <a class="dropdown-item d-flex align-items-center" href="{{ url('/gigs/create')}}">
-                                        <i class="bi bi-plus"></i>
-                                        <span>Add Gig</span>
-                                    </a>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">

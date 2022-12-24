@@ -78,7 +78,7 @@ Route::get('/viewSub', function () {
 });
 
 Route::get('/test', function () {
-    return view('test');
+    return view('admin.index');
 });
 
 Route::get('/education', function () {
@@ -223,3 +223,35 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/{any}', function () {
 //     return view('welcome');
 // })->where('any', '.*');
+
+
+Route::get('admin/index', function () {
+    return view('admin.index');
+});
+Route::get('admin/transactions', function () {
+    return view('admin.transactions');
+});
+Route::get('/admin/requests', function () {
+    return view('admin/requests');
+});
+Route::get('/admin/emails', function () {
+    return view('admin/emails');
+});
+Route::get('/admin/projects', function () {
+    return view('admin/projects');
+});
+Route::get('/admin/jobs', function () {
+    return view('admin/jobs');
+});
+Route::get('/admin/gigs', function () {
+    return view('admin/gigs');
+});
+Route::get('/admin/categories', function () {
+    return view('admin/categories');
+});
+Route::get('/admin/profiles', function () {
+    return view('admin/profiles');
+});
+Route::get('/admin/feedbacks', function () {
+    return view('admin/feedbacks');
+});
