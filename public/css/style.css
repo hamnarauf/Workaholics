@@ -2399,7 +2399,7 @@ a:hover {
 
 @media (min-width: 1200px) {
   .logo {
-    width: 280px;
+    /* width: 280px; */
   }
 }
 
@@ -3403,4 +3403,8 @@ select
 
 .plus-btn{
   font-size: 2.5rem;
+}
+
+#cat{
+  padding-top: 87px;
 }

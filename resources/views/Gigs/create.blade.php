@@ -10,7 +10,7 @@
                 <h2 class="btn btn-primary">Create Gig</h2>
             </x-tabmenu>
             <div class="tab-content">
-                <div class=" tab-pane active fade in tab-pane" id="filter-jobs">
+                <div class=" tab-pane active show" id="filter-jobs">
                     @include('gigs.creategig.gig')
                 </div>
             </div>

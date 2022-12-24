@@ -14,9 +14,9 @@
                         <li class="scroll-to-section"><a href="#categories">Categories</a></li>
                         <li class="scroll-to-section"><a href="#infos">Infos</a></li>
                         <li class="scroll-to-section"><a href="#contact">Contact</a></li>
-                        <div class="main-button mt-4 mr-3"><a href="/register">Signup</a></div>
-                        <div class="main-button mt-4"><a href="/login">Login</a></div>
                     </ul>
+                        <div class="main-button mt-4 mr-3 "><a href="/register">Signup</a></div>
+                        <div class="main-button mt-4"><a href="/login">Login</a></div>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
