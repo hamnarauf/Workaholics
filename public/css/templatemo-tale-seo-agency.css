@@ -378,11 +378,11 @@ Header Style
 }
 
 .nav {
-  justify-content: right;
+  justify-content: center;
 }
 
 .header-area .main-nav .nav li:first-child {
-  padding-left: 60px;
+  padding-left: 0px;
 }
 
 .header-area .main-nav .nav li:last-child {
@@ -390,12 +390,12 @@ Header Style
 }
 
 .header-area .main-nav .nav li {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 20px;
+  padding-right: 15px;
 }
 
 .header-area .main-nav .nav li:nth-child(4) {
-  padding-right: 45px !important;
+  /* padding-right: 45px !important; */
 }
 
 .header-area .main-nav .nav li a {
@@ -635,8 +635,8 @@ Header Style
 
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
   }
   .header-area .main-nav:before {
     display: none;

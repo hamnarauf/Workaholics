@@ -10,7 +10,7 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="#top" class="">Home</a></li>
                         <li class="scroll-to-section"><a href="#categories">Categories</a></li>
                         <li class="scroll-to-section"><a href="#infos">Infos</a></li>
                         <li class="scroll-to-section"><a href="#contact">Contact</a></li>
