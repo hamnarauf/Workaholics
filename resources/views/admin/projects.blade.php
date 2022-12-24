@@ -20,96 +20,38 @@
                             <div class="card-body ">
                                 <h4 class="card-title d-inline">Projects</h4>
                                 <div class="row">
+                                    @foreach($projs as $proj)
                                     <div class="col-lg-4 col-md-6 py-2 filter-job">
                                         <article class="card">
                                             <div class="post-slider slider-sm">
                                                 <img src="" class="card-img-top img-fluid" alt="post-thumb">
                                             </div>
                                             <div class="card-body">
-                                                <h3 class="h4 mb-3"><a class="post-title" href="">Job title</a></h3>
+                                                <h3 class="h4 mb-3"><a class="post-title" href="">{{$proj['name']}}</a></h3>
                                                 <ul class="card-meta list-inline">
                                                     <li class="list-inline-item">
                                                         <a href="author-single.html" class="card-meta-author">
-                                                            <img src="" alt="">
-                                                            <span>{client ne</span>
+                                                            <img src="{{asset($proj['img'])}}" alt="">
+                                                            <span>{{$proj['uname']}}</span>
                                                         </a>
                                                     </li>
                                                     <li class="list-inline-item">
-                                                        <i class="ti-timer"></i>@1334
+                                                        <i class="ti-timer"></i>${{$proj['budget']}}
                                                     </li>
                                                     <li class="list-inline-item">
-                                                        <i class="ti-calendar"></i>22 july 22
+                                                        <i class="ti-calendar"></i>{{$proj['expected_by']}}
                                                     </li>
                                                     <x-tagMenu>
-                                                        <x-tag title="Category"></x-tag>
+                                                        <x-tag title="{{$proj['category']}}"></x-tag>
                                                     </x-tagMenu>
                                                 </ul>
-                                                <p>descripton of prj</p>
-                                                <a class="btn btn-primary" href="">Details</a>
-                                                <a class="btn btn-primary" href="">Remove</a>
+                                                <p>"{{$proj['description']}}"</p>
+                                                <a class="btn btn-primary" href="/projects/{{ $proj['id'] }}">Details</a>
+                                                <a class="btn btn-primary" href="/admin/projects/delete/{{ $proj['id'] }}">Remove</a>
                                             </div>
                                         </article>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 py-2 filter-job">
-                                        <article class="card">
-                                            <div class="post-slider slider-sm">
-                                                <img src="" class="card-img-top img-fluid" alt="post-thumb">
-                                            </div>
-                                            <div class="card-body">
-                                                <h3 class="h4 mb-3"><a class="post-title" href="">Job title</a></h3>
-                                                <ul class="card-meta list-inline">
-                                                    <li class="list-inline-item">
-                                                        <a href="author-single.html" class="card-meta-author">
-                                                            <img src="" alt="">
-                                                            <span>{client ne</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <i class="ti-timer"></i>@1334
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <i class="ti-calendar"></i>22 july 22
-                                                    </li>
-                                                    <x-tagMenu>
-                                                        <x-tag title="Category"></x-tag>
-                                                    </x-tagMenu>
-                                                </ul>
-                                                <p>descripton of prj</p>
-                                                <a class="btn btn-primary" href="">Details</a>
-                                                <a class="btn btn-primary" href="">Remove</a>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 py-2 filter-job">
-                                        <article class="card">
-                                            <div class="post-slider slider-sm">
-                                                <img src="" class="card-img-top img-fluid" alt="post-thumb">
-                                            </div>
-                                            <div class="card-body">
-                                                <h3 class="h4 mb-3"><a class="post-title" href="">Job title</a></h3>
-                                                <ul class="card-meta list-inline">
-                                                    <li class="list-inline-item">
-                                                        <a href="author-single.html" class="card-meta-author">
-                                                            <img src="" alt="">
-                                                            <span>{client ne</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <i class="ti-timer"></i>@1334
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <i class="ti-calendar"></i>22 july 22
-                                                    </li>
-                                                    <x-tagMenu>
-                                                        <x-tag title="Category"></x-tag>
-                                                    </x-tagMenu>
-                                                </ul>
-                                                <p>descripton of prj</p>
-                                                <a class="btn btn-primary" href="">Details</a>
-                                                <a class="btn btn-primary" href="">Remove</a>
-                                            </div>
-                                        </article>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

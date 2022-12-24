@@ -1,7 +1,3 @@
-
-
-
-
 <x-admin-layout>
     <!--**********************************
             Content body start
@@ -24,82 +20,33 @@
                             <div class="card-body ">
                                 <h4 class="card-title d-inline">Gigs</h4>
                                 <div class="row">
+                                    @foreach($gigs as $gig)
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-gig courses">
                                         <div class="course-item">
                                             <img src="" class="img-fluid" alt="...">
                                             <div class="course-content">
                                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                                     <x-tagMenu>
-                                                        <x-tag title="category"></x-tag>
+                                                        <x-tag title="{{$gig['category']}}"></x-tag>
                                                     </x-tagMenu>
-                                                    <p class="price">$12</p>
+                                                    <p class="price">${{$gig['budget']}}</p>
                                                 </div>
                                     
-                                                <h3><a href="">title</a></h3>
-                                                <p>desc</p>
-                                                <a class="btn btn-primary mb-3" href="{{ url('/gigs/') }}">Details</a>
-                                                <a class="btn btn-primary mb-3" href="{{ url('/gigs/') }}">Remove</a>
+                                                <h3><a href="">{{$gig['name']}}</a></h3>
+                                                <p>{{$gig['description']}}</p>
+                                                <a class="btn btn-primary mb-3" href="/gigs/{{ $gig['id'] }}">Details</a>
+                                                <a class="btn btn-primary mb-3" href="/admin/gigs/delete/{{ $gig['id'] }}">Remove</a>
                                                     <div class="trainer d-flex justify-content-between align-items-center">
                                                     <div class="trainer-profile d-flex align-items-center">
-                                                        <img src="freelancerImg" class="img-fluid" alt="">
-                                                        <span>freelancer</span>
+                                                        <img src="{{asset($gig['img'])}}" class="img-fluid" alt="">
+                                                        <span>{{$gig['uname']}}</span>
                                                     </div>                                    
                                                 </div>
                                             </div>
                                     
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 portfolio-item filter-gig courses">
-                                        <div class="course-item">
-                                            <img src="" class="img-fluid" alt="...">
-                                            <div class="course-content">
-                                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                                    <x-tagMenu>
-                                                        <x-tag title="category"></x-tag>
-                                                    </x-tagMenu>
-                                                    <p class="price">$12</p>
-                                                </div>
-                                    
-                                                <h3><a href="">title</a></h3>
-                                                <p>desc</p>
-                                                <a class="btn btn-primary mb-3" href="{{ url('/gigs/') }}">Details</a>
-                                                <a class="btn btn-primary mb-3" href="{{ url('/gigs/') }}">Remove</a>
-                                                    <div class="trainer d-flex justify-content-between align-items-center">
-                                                    <div class="trainer-profile d-flex align-items-center">
-                                                        <img src="freelancerImg" class="img-fluid" alt="">
-                                                        <span>freelancer</span>
-                                                    </div>                                    
-                                                </div>
-                                            </div>
-                                    
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 portfolio-item filter-gig courses">
-                                        <div class="course-item">
-                                            <img src="" class="img-fluid" alt="...">
-                                            <div class="course-content">
-                                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                                    <x-tagMenu>
-                                                        <x-tag title="category"></x-tag>
-                                                    </x-tagMenu>
-                                                    <p class="price">$12</p>
-                                                </div>
-                                    
-                                                <h3><a href="">title</a></h3>
-                                                <p>desc</p>
-                                                <a class="btn btn-primary mb-3" href="{{ url('/gigs/') }}">Details</a>
-                                                <a class="btn btn-primary mb-3" href="{{ url('/gigs/') }}">Remove</a>
-                                                    <div class="trainer d-flex justify-content-between align-items-center">
-                                                    <div class="trainer-profile d-flex align-items-center">
-                                                        <img src="freelancerImg" class="img-fluid" alt="">
-                                                        <span>freelancer</span>
-                                                    </div>                                    
-                                                </div>
-                                            </div>
-                                    
-                                        </div>
-                                    </div>
-                                    
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

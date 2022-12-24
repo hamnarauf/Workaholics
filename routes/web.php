@@ -14,6 +14,7 @@ use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\FindController;
 use App\Http\Controllers\WTransactionsController;
+use App\Http\Controllers\AdminController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -207,7 +208,15 @@ Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
 Route::post('/users/edit', [UsersController::class, 'update']);
 Route::delete('/users/{id}', [UsersController::class, 'destroy']);
 
-
+// AdminController Routes
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/transactions', [AdminController::class, 'transactions']);
+Route::get('/admin/projects', [AdminController::class, 'projects']);
+Route::get('/admin/projects/delete/{id}', [AdminController::class, 'delete_project']);
+Route::get('/admin/gigs', [AdminController::class, 'gigs']);
+Route::get('/admin/gigs/delete/{id}', [AdminController::class, 'delete_gig']);
+Route::get('/admin/jobs', [AdminController::class, 'jobs']);
+Route::get('/admin/jobs/delete/{id}', [AdminController::class, 'delete_job']);
 
 
 // MesaagesController Routes
@@ -224,31 +233,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::get('/{any}', function () {
-//     return view('welcome');
-// })->where('any', '.*');
-
-
-Route::get('admin/index', function () {
-    return view('admin.index');
-});
-Route::get('admin/transactions', function () {
-    return view('admin.transactions');
-});
 Route::get('/admin/requests', function () {
     return view('admin/requests');
 });
 Route::get('/admin/emails', function () {
     return view('admin/emails');
 });
-Route::get('/admin/projects', function () {
-    return view('admin/projects');
-});
 Route::get('/admin/jobs', function () {
     return view('admin/jobs');
-});
-Route::get('/admin/gigs', function () {
-    return view('admin/gigs');
 });
 Route::get('/admin/categories', function () {
     return view('admin/categories');
