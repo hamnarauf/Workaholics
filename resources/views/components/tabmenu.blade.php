@@ -1,7 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-
-<ul id="portfolio-flters" class="d-flex justify-content-center nav nav-pills tab-menu" data-aos="fade-up" data-aos-delay="100">
+<ul class="nav nav-tabs d-flex justify-content-center nav nav-pills tab-menu">
     {{$slot}}
 </ul>

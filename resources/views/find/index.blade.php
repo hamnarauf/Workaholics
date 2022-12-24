@@ -21,12 +21,13 @@
                 <x-tab title="Projects" class="active" sectionId="#filter-jobs"></x-tab>
                 <x-tab title="Gigs" class="" sectionId="#filter-gigs"></x-tab>
             </x-tabmenu>
+            
             <div class="tab-content">
-                <div class=" tab-pane active fade in tab-pane" id="filter-jobs">
+                <div class=" tab-pane active show" id="filter-jobs">
                     @include('find.projects')
                 </div>
 
-                <div class=" tab-pane fade" id="filter-gigs">
+                <div class=" tab-pane" id="filter-gigs">
                     @include('find.gigs')
                 </div>
             </div>

@@ -11,7 +11,7 @@
 
             <h3><a href="course-details.html">{{$title}}</a></h3>
             <p>{{$desc}}</p>
-            <a class="btn btn-primary" href="{{ url('/gigs/'.$id) }}">Details</a>
+            <a class="btn btn-primary mb-3" href="{{ url('/gigs/'.$id) }}">Details</a>
                 <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                     <img src={{$freelancerImg}} class="img-fluid" alt="">
