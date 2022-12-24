@@ -9,6 +9,7 @@ use App\Models\Job;
 use App\Models\Education;
 use App\Models\Employment;
 use App\Models\Gig;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
@@ -75,12 +76,20 @@ class UsersController extends Controller
         $job_count = Job::where('employee', '=', Auth::id())->count();
         $job_details = ['projectsPosted' => $projects_posted, 'jobCount' => $job_count];
         
-        $gigs = Gig::where('created_by', '=', Auth::id());
+        $gigs = Gig::where('created_by', '=', Auth::id())->get();
+
+        $category_list = array();
+
+        foreach ($gigs as $gig){
+            $category = Category::find($gig['category']);
+            array_push($category_list, $category);
+        }
 
         $education = Education::where('user', '=', Auth::id())->get();
         $employment = Employment::where('user', '=', Auth::id())->get();
 
-        return view('users.show', ['user' => $user, "jobDetails" => $job_details, "education" => $education , "employment" => $employment, "gigs" => $gigs]);
+
+        return view('users.show', ['user' => $user, "jobDetails" => $job_details, "education" => $education , "employment" => $employment, "gigs" => $gigs, "catList" => $category_list]);
     }
 
     public function edit($id)
