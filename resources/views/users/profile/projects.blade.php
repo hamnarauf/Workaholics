@@ -1,14 +1,38 @@
 <?php
-$skills = array("php", "javasript", "CSS", "Design");
+    $skill_list = array();
+    $job_skill = array();
+
+    foreach ($workHistory as $w){    
+        if ($w['p_name'] == ''){
+            $name = $w['g_name'];
+
+            if (is_null($w['g_skills']) == 0) {
+                foreach($w['g_skills'] as $skill){
+                    array_push($job_skill, $skill);
+                }   
+            }
+        }
+        else {
+            $name = $w['p_name'];
+
+            if (is_null($w['p_skills']) == 0) {
+                foreach($w['p_skills'] as $skill){
+                    array_push($job_skill, $skill);
+                }   
+            }
+        }
+        array_push($skill_list, $job_skill);
+    }
 ?>
 
+@foreach($workHistory as $work)
 <x-list-item
-    title="Develop a PHP Website."
-    personName="John Doe"
-    personImg="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdlYnNpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
-    price="$1000"
-    date="15 Jan, 2020"
-    :tags=$skills
+    title="{{ $name }}"
+    personName="{{ $work['u_name'] }}"
+    personImg="{{ asset($profilePics[$loop->index]) }}"
+    price="${{ $pricings[$loop->index] }}"
+    date="{{$deadlines[$loop->index]}}"
+    :tags="$skill_list[$loop->index]"
     desc="Heading example Here is example of hedings. You can use this heading by following markdownify rules. eading example Here is example of hedings. You can use this heading by following markdowni"
 >
 <x-feedback
@@ -27,3 +51,4 @@ $skills = array("php", "javasript", "CSS", "Design");
     
     ></x-feedback>
 </x-list-item>
+@endforeach

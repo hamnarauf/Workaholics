@@ -44,7 +44,7 @@
                         @include('users.profile.gigs')
 
                         <x-sectionTitle title="Jobs" desc="Work history on Workaholics"></x-sectionTitle>
-                        <!-- @include('users.profile.projects') -->
+                        @include('users.profile.projects')
                     </div>
                     <div class="row tab-pane" id="filter-buyerProfile">
                         <x-sectionTitle title="Projects Posted" desc="Work history on Workaholics"></x-sectionTitle>

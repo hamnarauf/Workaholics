@@ -26,9 +26,15 @@
 
             <x-tagMenu>
                 @foreach($tags as $tag)
-                <x-tag title={{$tag}}></x-tag>
+                    @if(empty($tag))
+                        <p></p>                        
+                    @else
+                        <x-tag title={{$tag}}></x-tag>
+                    @endif
+
                 @endforeach
             </x-tagMenu>
+
             <p>{{$desc}}.</p>
         </div>
     </div>

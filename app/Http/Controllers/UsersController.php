@@ -10,6 +10,7 @@ use App\Models\Education;
 use App\Models\Employment;
 use App\Models\Gig;
 use App\Models\Category;
+use App\Models\Milestone;
 use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
@@ -88,7 +89,50 @@ class UsersController extends Controller
         $education = Education::where('user', '=', Auth::id())->get();
         $employment = Employment::where('user', '=', Auth::id())->get();
 
-        return view('users.show', ['user' => $user, "jobDetails" => $job_details, "education" => $education , "employment" => $employment, "gigs" => $gigs, "catList" => $category_list]);
+        $work_history = Job::leftjoin('projects', 'jobs.project_id', '=', 'projects.id')
+                        ->leftjoin('gigs', 'jobs.gig_id', '=', 'gigs.id')
+                        ->leftjoin('users', 'jobs.employer', '=', 'users.id')
+                        ->where('employee', '=', Auth::id())
+                        ->select('jobs.*', 'projects.name as p_name', 'gigs.name as g_name', 'users.name as u_name')->get();
+        
+        $pricings = array();
+        $deadlines = array();
+        $profile_pics = array();
+        
+        foreach ($work_history as $w){
+            # calculate total price of a job
+            $price = Milestone::where('job_id', '=', $w['id'])
+                            ->where('approved_by_employer', '=', '1')
+                            ->where('approved_by_employee', '=', '1')
+                            ->sum('budget');
+            array_push($pricings, $price);
+
+            # calculate the deadline of the project
+            $deadline = Milestone::where('job_id', '=', $w['id'])
+                            ->where('approved_by_employer', '=', '1')
+                            ->where('approved_by_employee', '=', '1')
+                            ->max('expected_by');
+            array_push($deadlines, $deadline);
+
+            # get image of the clients
+            $client = User::where('id', '=', $w['employer'])->select('img')->first();
+            array_push($profile_pics, $client['img']);
+        }
+
+
+
+        return view('users.show', 
+            ['user' => $user, 
+            "jobDetails" => $job_details, 
+            "education" => $education , 
+            "employment" => $employment, 
+            "gigs" => $gigs, 
+            "catList" => $category_list,
+            "workHistory" => $work_history,
+            "pricings" => $pricings,
+            "deadlines" => $deadlines,
+            "profilePics" => $profile_pics
+            ]);
     }
 
     public function edit($id)
