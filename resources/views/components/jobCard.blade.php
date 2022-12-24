@@ -24,11 +24,7 @@
                 </li>
             </ul>
             <p>{{$desc}}</p>
-            <form action="/projects/details" method="POST">
-                @csrf
-                <input type="number" name="id" hidden value={{$id}} >
-                <input class="btn btn-primary" type="submit" value="Details" >
-            </form>
+         <a class="btn btn-primary" href="{{ url("/projects/". $id ) }}">Details</a>
         </div>
     </article>
 

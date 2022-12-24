@@ -15,11 +15,11 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{ url('/') }}" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="{{ url('/finds') }}">Find</a></li>
-                        <li class="scroll-to-section"><a href="{{ url('/finds/my') }}">Proposals</a></li>
+                        {{-- <li class="scroll-to-section"><a href="{{ url('/finds/my') }}">Proposals</a></li>
                         <li class="scroll-to-section"><a href="./wallet">Wallet</a></li>                  
                         <li class="scroll-to-section"><a href="{{ url('/projects/create') }}">Add Project</a></li>                  
                         <li class="scroll-to-section"><a href="{{ url('/gigs/create') }}">Add Gig</a></li>                  
-                        <li class="scroll-to-section"><a href="{{ url('/categories') }}">Categories</a></li>                  
+                        <li class="scroll-to-section"><a href="{{ url('/categories') }}">Categories</a></li>                   --}}
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
