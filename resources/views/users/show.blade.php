@@ -43,11 +43,11 @@
                         <x-sectionTitle title="Gigs" desc=""></x-sectionTitle>
                         @include('users.profile.gigs')
 
-                        <x-sectionTitle title="Projects" desc="Work history on Workaholics"></x-sectionTitle>
-                        <!-- @include('users.profile.projects') -->
+                        <x-sectionTitle title="Jobs" desc="Work history on Workaholics"></x-sectionTitle>
+                        @include('users.profile.projects')
                     </div>
                     <div class="row tab-pane" id="filter-buyerProfile">
-                        <x-sectionTitle title="Job Posted" desc="Work history on Workaholics"></x-sectionTitle>
+                        <x-sectionTitle title="Projects Posted" desc="Work history on Workaholics"></x-sectionTitle>
                         <!-- @include('users.profile.jobsPosted') -->
                     </div>
                 </div>

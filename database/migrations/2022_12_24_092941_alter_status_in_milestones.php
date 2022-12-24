@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('milestones', function (Blueprint $table) {
-            $table->integer('escrow');
-            $table->enum('status', ['Paid', 'Completed', 'In Progress', 'Cancelled'])->default('In Progress');
+            $table->integer('escrow')->default(0);
+            $table->enum('status', ['Paid', 'Completed', 'In Progress', 'Pending', 'Cancelled'])->default('Pending');
         });
     }
 
