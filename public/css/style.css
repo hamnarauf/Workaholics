@@ -3400,3 +3400,7 @@ select
   background-color: var(--color-active) !important
   ;
 }
+
+.plus-btn{
+  font-size: 2.5rem;
+}
