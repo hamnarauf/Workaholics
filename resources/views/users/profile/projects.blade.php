@@ -44,7 +44,7 @@
     clientTime="{{ $work['updated_at'] }}"
     clientComment="{{ $work['review'] }}"
     
-    freelancerImg="{{ $user['img'] }}"
+    freelancerImg="{{ asset($user['img']) }}"
     freelancerName="{{ $user['name'] }}"
     freelancerDate="20 Jan 2022"
     freelancerTime="6 00 pm"
