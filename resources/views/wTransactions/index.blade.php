@@ -42,7 +42,9 @@
                                     <div class="d-inline-block">
                                         <h5 class=" text-white">$4565</h5>
                                         <p class="text-white mb-0"></p>
-                                        <button class="btn text-start p-2 plus"><p class="mb-0"><i class="fa fa-plus"></i> Add</p></span></button>
+                                        
+                                        <a href='{{url('wtransactions/create')}}'><button class="btn text-start p-2 plus"><p class="mb-0"><i class="fa fa-plus"></i> Add</p></span></button></a>
+                                        
                                     </div>
                                     <span class="float-right display-5 opacity-5"><i
                                             class="fa fa-shopping-cart"></i></span>
