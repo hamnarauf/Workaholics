@@ -21,12 +21,9 @@
                                 <h4 class="card-title d-inline">Projects</h4>
                                 <div class="row">
                                     @foreach($projs as $proj)
-                                    <div class="col-lg-4 col-md-6 py-2 filter-job">
+                                    <div class="col-md-6 ol-12 py-2 filter-job">
                                         <article class="card">
-                                            <div class="post-slider slider-sm">
-                                                <img src="" class="card-img-top img-fluid" alt="post-thumb">
-                                            </div>
-                                            <div class="card-body">
+                                            <div class="p-4">
                                                 <h3 class="h4 mb-3"><a class="post-title" href="">{{$proj['name']}}</a></h3>
                                                 <ul class="card-meta list-inline">
                                                     <li class="list-inline-item">
@@ -40,14 +37,16 @@
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <i class="ti-calendar"></i>{{$proj['expected_by']}}
-                                                    </li>
+                                                    </li><br>
                                                     <x-tagMenu>
                                                         <x-tag title="{{$proj['category']}}"></x-tag>
                                                     </x-tagMenu>
                                                 </ul>
-                                                <p>"{{$proj['description']}}"</p>
-                                                <a class="btn btn-primary" href="/projects/{{ $proj['id'] }}">Details</a>
-                                                <a class="btn btn-primary" href="/admin/projects/delete/{{ $proj['id'] }}">Remove</a>
+                                                <p>{{$proj['description']}}</p>
+                                                <div class="mt-2">
+                                                    <a class="btn btn-primary" href="/projects/{{ $proj['id'] }}">Details</a>
+                                                    <a class="btn btn-primary" href="/admin/projects/delete/{{ $proj['id'] }}">Remove</a>
+                                                </div>
                                             </div>
                                         </article>
                                     </div>

@@ -7,6 +7,9 @@
     <title>Workaholics</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/blue-lamp.png') }}">
+
     <!-- Chartist -->
     <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
@@ -17,7 +20,7 @@
 </head>
 
 <body>
-<preloader></preloader>
+    <preloader></preloader>
     <x-admin-header></x-admin-header>
     <main id="main-wrapper">
         <x-admin-sidebar></x-admin-sidebar>

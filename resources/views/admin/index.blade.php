@@ -109,7 +109,7 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6 col-12">
                         <div class="card card-widget">
                             <div class="card-body">
                                 <h5 class="text-muted">Jobs Overview </h5>
@@ -137,34 +137,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-6">
-                        <div class="card card-widget">
-                            <div class="card-body">
-                                <h5 class="text-muted">Client Feedback Overview </h5>
-                                <h2 class="mt-4">5680</h2>
-                                <span>Total Feedbacks</span>
-                                <div class="mt-4">
-                                    <h4>30</h4>
-                                    <h6>Positive <span class="pull-right">30%</span></h6>
-                                    <div class="progress mb-3" style="height: 7px">
-                                        <div class="progress-bar bg-success" style="width: 30%;" role="progressbar">
-                                            <span class="sr-only">30% Order</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-4">
-                                    <h4>50</h4>
-                                    <h6 class="m-t-10 text-muted">Negative <span class="pull-right">50%</span>
-                                    </h6>
-                                    <div class="progress mb-3" style="height: 7px">
-                                        <div class="progress-bar bg-danger" style="width: 50%;" role="progressbar">
-                                            <span class="sr-only">50% Order</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

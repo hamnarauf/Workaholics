@@ -26,7 +26,6 @@
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Image Source</th>
                                                 <th>Projects Posted</th>
                                                 <th>Gigs Posted</th>
                                                 <th>Action</th>
@@ -36,7 +35,6 @@
                                         @foreach($categories as $cat)
                                             <tr>
                                                 <td>{{$cat['name']}}</td>
-                                                <td>img/assets/img.png</td>
                                                 <td>{{$projs[$loop->index]}}</td>
                                                 <td>{{$gigs[$loop->index]}}</td>
                                                 <td>
