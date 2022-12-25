@@ -50,7 +50,10 @@ class AdminController extends Controller
 
     public function transactions()
     {
-        return view('admin.transactions');
+        $transactions = wTransactions::leftjoin('users as sender', 'wtransactions.sender_id', '=', 'sender.id')
+            ->leftjoin('users as receiver', 'wtransactions.receiver_id', '=', 'receiver.id')
+            ->select('wtransactions.amount', 'wtransactions.created_at', 'sender.name as sname', 'receiver.name as rname')->get();
+        return view('admin.transactions', ['transactions'=>$transactions]);
     }
 
     public function projects()

@@ -16,8 +16,8 @@
 @foreach ($projs as $proj)
 <x-list-item
     title="{{ $proj['name'] }}"
-    personName="John Doe"
-    personImg="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdlYnNpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
+    personName=""
+    personImg=""
     price="${{ $proj['budget'] }}"
     date="{{ $proj['updated_at'] }}"
     :tags="$skill_list[$loop->index]"
