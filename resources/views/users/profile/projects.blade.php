@@ -37,6 +37,7 @@
     desc="{{ $desc }}"
 >
 <x-feedback
+hasfeedback="true"
     stars="{{ $work['rating'] }}"
     clientImg="{{ asset($work['u_img']) }}"
     clientName="{{ $work['u_name'] }}"
