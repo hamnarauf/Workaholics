@@ -19,8 +19,6 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title d-inline">Profiles</h4>
-                            <input class="btn btn-primary float-right" type="submit" name="submit-contact"
-                                id="submit_contact" value="Send Message to All">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered mt-4">
                                     <thead>
@@ -35,20 +33,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($profiles as $profile)
                                         <tr>
-                                            <td><a href="">Tiger Nixon</a></td>
-                                            <td>22 june 2022</td>
-                                            <td>3</td>
-                                            <td>5</td>
-                                            <td>$5</td>
-                                            <td>$5</td>
+                                            <td><a href="">{{$profile['name']}}</a></td>
+                                            <td>{{$profile['created_at']}}</td>
+                                            <td>{{$projs[$loop->index]}}</td>
+                                            <td>{{$jobs[$loop->index]}}</td>
+                                            <td>${{$earnings[$loop->index]}}</td>
+                                            <td>${{$spendings[$loop->index]}}</td>
                                             <td>
                                                 <input class="btn btn-primary" type="submit" name="submit-contact"
                                                     id="submit_contact" value="Message">
-                                                <input class="btn btn-primary" type="submit" name="submit-contact"
-                                                    id="submit_contact" value="Remove">
+                                                <a class="btn btn-primary mb-3" href="/admin/profiles/delete/{{ $profile['id'] }}">Remove</a>
                                             </td>
                                         </tr>
+                                        @endforeach
                                 </table>
                             </div>
                         </div>

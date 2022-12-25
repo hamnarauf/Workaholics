@@ -1,4 +1,4 @@
-<form action="/transactions" method="POST">
+<form action="/wtransactions" method="POST">
 @csrf
     <div class="form-row">
         <div class="form-group">
@@ -26,6 +26,9 @@
       <div class="form_group">
         <label for="price">Amount:</label>
         <input type="number" class="form-control col-7" name="amount" placeholder="$0"><br>
+      </div>
+      <div class="form_group">
+        <input type="number" class="form-control col-7" name="user_id" placeholder="$0" hidden value="1"><br>
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Add to Wallet</button>

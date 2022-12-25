@@ -1,10 +1,10 @@
 <section>
-    <form action="/categories" method="POST" enctype="multipart/form-data">
+    <form action="/admin/categories" method="POST" enctype="multipart/form-data">
         @csrf
             <div class="container rounded bg-white mt-5 mb-5">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="d-flex justify-content-between align-items-center experience"><span>Add a category</span><span class="border px-3 p-1 add-experience">Category</span></div><br>
+                        <div class="d-flex justify-content-between align-items-center experience"><span>Add a category</span></div><br>
                         <div class="row mt-2">
                             <div class="col-md-12"><label class="labels">Name:</label><input type="text" class="form-control" value="" name="name"></div>
                         </div>

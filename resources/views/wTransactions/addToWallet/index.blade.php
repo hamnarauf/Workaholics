@@ -5,7 +5,7 @@
                 <h2>Add Money to Your Wallet</h2>
             </div>
             <div class="form-center">
-                @include('addToWallet.form')
+                @include('wTransactions.addToWallet.form')
             </div> 
         </div>
     </section>

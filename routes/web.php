@@ -33,9 +33,6 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-
-
-
 Route::get('/profile', function () {
     return view('profile/index');
 });
@@ -213,8 +210,11 @@ Route::get('/admin/gigs/delete/{id}', [AdminController::class, 'delete_gig']);
 Route::get('/admin/jobs', [AdminController::class, 'jobs']);
 Route::get('/admin/jobs/delete/{id}', [AdminController::class, 'delete_job']);
 Route::get('/admin/categories', [AdminController::class, 'categories']);
+Route::post('/admin/categories', [AdminController::class, 'store']);
 Route::get('/admin/categories/delete/{id}', [AdminController::class, 'delete_category']);
 Route::get('/admin/categories/create', [AdminController::class, 'create']);
+Route::get('/admin/profiles', [AdminController::class, 'profiles']);
+Route::get('/admin/categories/delete/{id}', [AdminController::class, 'delete_profile']);
 
 // MesaagesController Routes
 Route::group(['prefix' => 'messages'], function () {
@@ -237,9 +237,7 @@ Route::get('/admin/emails', function () {
     return view('admin/emails');
 });
 
-Route::get('/admin/profiles', function () {
-    return view('admin/profiles');
-});
+
 Route::get('/admin/feedbacks', function () {
     return view('admin/feedbacks');
 });
