@@ -24,6 +24,7 @@ class User extends Authenticatable
         'img',
         'email',
         'password',
+        'description',
         'street_address',
         'zip',
         'state',

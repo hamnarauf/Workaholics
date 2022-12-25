@@ -18,7 +18,8 @@ class WelcomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('welcome', ['categories'=>$categories]);
+        $user = User::find(Auth::id());
+        return view('welcome', ['categories'=>$categories, 'user'=>$user]);
 
     }
 

@@ -28,7 +28,7 @@
                                                 <hr class="dropdown-divider">
                                             </li>
                                             <li>
-                                                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                                <a class="dropdown-item d-flex align-items-center" href="gigs/{{ $seller->project->id }}/submissions">
                                                     <i class="bi bi-gear"></i>
                                                     <span>Submissions</span>
                                                 </a>
@@ -100,7 +100,7 @@
                                             <hr class="dropdown-divider">
                                         </li>
                                         <li>
-                                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                            <a class="dropdown-item d-flex align-items-center" href="jobs/{{ $buyer->project->id }}/submissions">
                                                 <i class="bi bi-gear"></i>
                                                 <span>Submissions</span>
                                             </a>

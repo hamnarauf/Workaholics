@@ -140,6 +140,7 @@ Route::get('/jobs/{id}', [JobsController::class, 'show']);
 Route::get('/jobs/{id}/edit', [JobsController::class, 'edit']);
 Route::put('/jobs/{id}', [JobsController::class, 'update']);
 Route::delete('/jobs/{id}', [JobsController::class, 'destroy']);
+Route::get('/job/{id}/submissions', [JobsController::class, 'submissions']);
 
 // MilestonesController Routes
 Route::get('/milestones/{id}', [MilestonesController::class, 'index']);

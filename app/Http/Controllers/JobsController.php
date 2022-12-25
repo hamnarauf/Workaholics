@@ -100,4 +100,9 @@ class JobsController extends Controller
         $job->delete();
         return redirect()->route('jobs.index');
     }
+
+    public function submissions($id)
+    {
+        return view('jobs.viewSubmission');
+    }
 }
