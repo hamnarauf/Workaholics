@@ -7,6 +7,7 @@ use App\Models\Gig;
 use App\Models\User;
 use App\Models\Job;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use function PHPUnit\Framework\identicalTo;
 use function Termwind\render;
 
@@ -90,7 +91,12 @@ class GigproposalsController extends Controller
             return redirect($route);
         }
     }
-
+    
+    public function download(Request $req, $file)
+    {
+        return response()->download(public_path('file/'.$file));
+    }
+    
     public function destroy($id)
     {
         $proposal = GigProposal::find($id);

@@ -91,6 +91,10 @@ class ProposalsController extends Controller
             return redirect($route);
         }
     }
+    public function download(Request $req, $file)
+    {
+        return response()->download(public_path('file/'.$file));
+    }
 
     public function destroy($id)
     {
