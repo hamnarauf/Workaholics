@@ -11,17 +11,6 @@
                     <i class="icon-graph menu-icon"></i><span class="nav-text">Transactions</span>
                 </a>
             </li>
-            <li class="nav-label">Chat</li>
-            <li>
-                <a href="/admin/requests" aria-expanded="false">
-                    <i class="icon-envelope menu-icon"></i><span class="nav-text">Request For Help</span>
-                </a>
-            </li>
-            <li>
-                <a href="/admin/emails" aria-expanded="false">
-                    <i class="icon-envelope menu-icon"></i><span class="nav-text">Emails</span>
-                </a>
-            </li>
             <li class="nav-label">Update</li>
             <li>
                 <a href="/admin/projects" aria-expanded="false">

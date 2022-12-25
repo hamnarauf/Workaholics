@@ -21,12 +21,8 @@
                                 <h4 class="card-title d-inline">Jobs</h4>
                                 <div class="row">
                                     @foreach ($jobs as $job)
-                                    <div class="col-lg-4 col-md-6 py-2 filter-job">
-                                        <article class="card">
-                                            <div class="post-slider slider-sm">
-                                                <img src="" class="card-img-top img-fluid" alt="post-thumb">
-                                            </div>
-                                            <div class="card-body">
+                                    <div class="col-12 col-md-6 py-2 filter-job">
+                                        <article class="card p-4">
                                                 @if ($job['ptitle'] == "")
                                                 <h3 class="h4 mb-3"><a class="post-title" href="">{{ $job['gtitle'] }}</a></h3>
                                                 @else
@@ -44,7 +40,7 @@
                                                             <img src="{{ asset($job['simg']) }}" alt="">
                                                             <span>{{ $job['sname'] }}</span>
                                                         </a>
-                                                    </li>
+                                                    </li><br>
 
                                                     <x-tagMenu>
                                                         @if ($job['pname'] == "")
@@ -62,9 +58,10 @@
                                                 @else 
                                                     <p>{{$job['pdes']}}</p>
                                                 @endif
-                                                
-                                                <a class="btn btn-primary" href="/jobs/{{ $job['id'] }}">Details</a>
-                                                <a class="btn btn-primary" href="/admin/jobs/delete/{{ $job['id'] }}">Remove</a>
+                                                <div class="mt-2">
+                                                    <a class="btn btn-primary" href="/jobs/{{ $job['id'] }}">Details</a>
+                                                    <a class="btn btn-primary" href="/admin/jobs/delete/{{ $job['id'] }}">Remove</a>
+                                                </div>
                                             </div>
                                         </article>
                                     </div>
