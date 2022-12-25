@@ -91,34 +91,25 @@ class AdminController extends Controller
         return view('admin.jobs', ["jobs" => $jobs]);
     }
 
-
-    # find a particular category
-    public function show($id)
+    public function categories()
     {
-        $category = Category::find($id);
-        return view('category.show', ["category" => $category]);
+        $categories = Category::all();
+
+        $category_project_count = array();
+        $category_gig_count = array();
+
+        foreach($categories as $category) {
+            $project_count = Project::where('category', '=', $category['id'])->count();
+            array_push($category_project_count, $project_count);
+
+            $gig_count = Gig::where('category', '=', $category['id'])->count();
+            array_push($category_gig_count, $gig_count);
+        }
+        return view('admin.categories', ["categories"=>$categories, "projs"=>$category_project_count, 
+            "gigs"=>$category_gig_count]);
     }
 
-    public function edit($id)
-    {
-        $category = Category::find($id);
-        return view('category.edit', ["category" => $category]);
-    }
-
-    public function update($id)
-    {
-        $category = Category::find($id);
-        $category->name = request('name');
-        $category->save();
-        return redirect()->route('category.index');
-    }
-
-    public function destroy($id)
-    {
-        $category = Category::find($id);
-        $category->delete();
-        return redirect()->route('category.index');
-    }
+    # Deletion Functions
 
     public function delete_project($id)
     {
@@ -139,5 +130,19 @@ class AdminController extends Controller
         $job = Job::find($id);
         $job->delete();
         return redirect('admin/jobs');
+    }
+
+    public function delete_category($id)
+    {
+        $cat = Category::find($id);
+        $cat->delete();
+        return redirect('admin/categories');
+    }
+
+    # Add Functions
+
+    public function create()
+    {
+        echo "Implementation required";
     }
 }

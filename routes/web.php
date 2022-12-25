@@ -219,7 +219,9 @@ Route::get('/admin/gigs', [AdminController::class, 'gigs']);
 Route::get('/admin/gigs/delete/{id}', [AdminController::class, 'delete_gig']);
 Route::get('/admin/jobs', [AdminController::class, 'jobs']);
 Route::get('/admin/jobs/delete/{id}', [AdminController::class, 'delete_job']);
-
+Route::get('/admin/categories', [AdminController::class, 'categories']);
+Route::get('/admin/categories/delete/{id}', [AdminController::class, 'delete_category']);
+Route::get('/admin/categories/create', [AdminController::class, 'create']);
 
 // MesaagesController Routes
 Route::group(['prefix' => 'messages'], function () {
@@ -242,9 +244,6 @@ Route::get('/admin/emails', function () {
     return view('admin/emails');
 });
 
-Route::get('/admin/categories', function () {
-    return view('admin/categories');
-});
 Route::get('/admin/profiles', function () {
     return view('admin/profiles');
 });

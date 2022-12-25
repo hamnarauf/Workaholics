@@ -19,8 +19,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title d-inline">Categories</h4>
-                                <input class="btn btn-primary float-right" type="submit" name="submit-contact"
-                                    id="submit_contact" value="Add Category">
+                                <a class="btn btn-primary float-right" href="/admin/categories/create">Add Category</a>
+
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered mt-4">
                                         <thead>
@@ -29,24 +29,21 @@
                                                 <th>Image Source</th>
                                                 <th>Projects Posted</th>
                                                 <th>Gigs Posted</th>
-                                                <th>Earnings</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($categories as $cat)
                                             <tr>
-                                                <td>web devl</td>
+                                                <td>{{$cat['name']}}</td>
                                                 <td>img/assets/img.png</td>
-                                                <td>3</td>
-                                                <td>5</td>
-                                                <td>$5</td>
+                                                <td>{{$projs[$loop->index]}}</td>
+                                                <td>{{$gigs[$loop->index]}}</td>
                                                 <td>
-                                                    <input class="btn btn-primary" type="submit" name="submit-contact"
-                                                        id="submit_contact" value="Edit">
-                                                    <input class="btn btn-primary" type="submit" name="submit-contact"
-                                                        id="submit_contact" value="Remove">
+                                                    <a class="btn btn-primary" href="/admin/categories/delete/{{ $cat['id'] }}">Remove</a>
                                                 </td>
                                             </tr>
+                                        @endforeach
                                     </table>
                                 </div>
                             </div>
