@@ -85,16 +85,16 @@ class AdminController extends Controller
         foreach($profiles as $profile) {
             $proj = Project::where('created_by', '=', $profile['id'])->count();
             $job = Job::where('employee', '=', $profile['id'])->count();
-            $earning = wTransactions::where('receiver_id', '=', $profile['id'])->sum();
-            $spending = wTransactions::where('sender_id', '=', $profile['id'])->sum();
+            $earning = wTransactions::where('receiver_id', '=', $profile['id'])->sum('amount');
+            $spending = wTransactions::where('sender_id', '=', $profile['id'])->sum('amount');
 
             array_push($projects, $proj);
             array_push($jobs, $job);
             array_push($earnings, $earning);
-            array_push($spending, $spending);
+            array_push($spendings, $spending);
         }
         
-        return view('admin.profiles', ["profiles"=>$profiles, "projs"=>$projects, "jobs"=>$earnings, "spendings"=>$spendings]);
+        return view('admin.profiles', ["profiles"=>$profiles, "projs"=>$projects, "jobs"=>$jobs, "earnings"=>$earnings, "spendings"=>$spendings]);
     }
 
 
@@ -163,6 +163,14 @@ class AdminController extends Controller
         $cat->delete();
         return redirect('admin/categories');
     }
+
+    public function delete_profile($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect('admin/profiles');
+    }
+
 
     # Add Functions
 
