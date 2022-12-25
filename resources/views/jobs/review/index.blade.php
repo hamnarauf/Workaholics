@@ -5,7 +5,7 @@
                 <h2>Review Job</h2>
             </div>
             <div class="form-center">
-                @include('1review.form')
+                @include('jobs.review.form')
             </div>
         </div>
     </section>

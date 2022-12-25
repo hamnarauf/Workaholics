@@ -14,10 +14,6 @@
         <input type="date" class="form-control col-11" id="date" name="expected_by">
       </div>
     </div>
-    <div class="form-group">
-        <label for="proposalAttachment">Attachment Files <small>(if any):</small></label>
-        <input type="file" class="form-control-file" id="proposalAttachment" name="file">
-    </div>
     <input type="hidden" value= "{{ $id }}" name="project_id">
     <button type="submit" class="btn btn-primary">Send Proposal</button>
   </form>

@@ -58,7 +58,8 @@ class JobsController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
+        $job = new Job();
+        
         return view('jobs.create', ["categories" => $categories]);
     }
 

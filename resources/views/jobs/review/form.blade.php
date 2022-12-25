@@ -1,4 +1,4 @@
-<form action="/transactions" method="POST">
+<form action="/feedbacks" method="POST">
     @csrf
         <label>Rating:</label>
         <div>
