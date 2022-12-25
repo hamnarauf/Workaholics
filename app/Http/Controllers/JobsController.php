@@ -22,11 +22,11 @@ class JobsController extends Controller
     {
         $buyers = Job::all()->where('employer', auth()->user()->id);
         foreach ($buyers as $buyer) {
-            if ($buyer->project_id != null) {
-                $buyer->project = Project::find($buyer->project_id);
-            } else {
+            if (is_null($buyer->project_id)) {
                 $buyer->project = Gig::find($buyer->gig_id);
                 $buyer->project->expected_by = $buyer->project->deadline;
+            } else {
+                $buyer->project = Project::find($buyer->project_id);
             }
             $buyer->employeed = User::find($buyer->employee);
             $buyer->status = ModelsMilestone::all()->where('job_id', $buyer->id)->where('status', '!=', 'completed')->count();
@@ -38,11 +38,11 @@ class JobsController extends Controller
         }
         $sellers = Job::all()->where('employee', auth()->user()->id);
         foreach ($sellers as $seller) {
-            if ($seller->project_id != null) {
-                $seller->gig = Project::find($seller->project_id);
-                $seller->gig->deadline = $seller->gig->expected_by;
+            if (is_null($seller->project_id)) {
+                $seller->project = Gig::find($seller->gig_id);
+                $seller->project->expected_by = $seller->project->deadline;
             } else {
-                $seller->gig = Gig::find($seller->gig_id);
+                $seller->project = Project::find($seller->project_id);
             }
             $seller->employerd = User::find($seller->employer);
             $seller->status = ModelsMilestone::all()->where('job_id', $seller->id)->where('status', '!=', 'completed')->count();
@@ -52,6 +52,7 @@ class JobsController extends Controller
                 $seller->status = 'Not started';
             }
         }
+        // return $buyers;
         return view('jobs.index', ["buyers" => $buyers, "sellers" => $sellers]);
     }
 

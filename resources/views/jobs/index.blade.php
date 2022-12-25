@@ -7,13 +7,13 @@
         </x-tabmenu>
         <div class="tab-content">
             <div class=" tab-pane active show " id="filter-sellerJobs">
-                <!-- for Buyers -->
-                @foreach ($buyers as $buyer)
+                <!-- for Seller -->
+                @foreach ($sellers as $seller)
                 <div class="col-md-6 col-sm-12">
                     <article class="card mb-4">
                         <div class="row card-body">
                             <div class="p-3">
-                                <h3 class="h3  d-inline"><a class="post-title" href="post-elements.html">{{ $buyer->project->name }}</a></h3>
+                                <h3 class="h3  d-inline"><a class="post-title" href="post-elements.html">{{ $seller->project->name }}</a></h3>
                                 <ul class="float-right d-inline">
                                     <li class="nav-item dropdown">
                                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -52,22 +52,22 @@
                                     <li class="list-inline-item">
                                         <a href="" class="card-meta-author">
                                             <img src=img/clients/client-1.png alt="">
-                                            <span>{{ $buyer->employeed->name }} </span>
+                                            <span>{{ $seller->employerd->name }} </span>
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <i class="ti-timer"></i>{{ $buyer->project->budget }}
+                                        <i class="ti-timer"></i>{{ $seller->project->budget }}
                                     </li>
                                     <li class="list-inline-item">
-                                        <i class="ti-calendar"></i>{{ $buyer->project->expected_by }}
+                                        <i class="ti-calendar"></i>{{ $seller->project->expected_by }}
                                     </li>
                                 </ul>
                                 <ul class="list-inline widget-list-inline">
-                                    <li class="list-inline-item"><a href="">{{ $buyer->status }}</a></li>
+                                    <li class="list-inline-item"><a href="">{{ $seller->status }}</a></li>
                                 </ul>
-                                <p>Milestone: {{ $buyer->milestonescount }}</p>
+                                <p>Milestone: {{ $seller->milestonescount }}</p>
                                 <div class="text-start d-inline">
-                                    <a href="{{ url('/milestones/' . $buyer->id) }}" class="btn btn-primary">
+                                    <a href="{{ url('/milestones/' . $seller->id) }}" class="btn btn-primary">
                                         Details
                                     </a>
                                 </div>
@@ -76,16 +76,16 @@
                         </div>
                     </article>
                 </div>
+                @endforeach
             </div>
-        @endforeach
         <div class=" tab-pane" id="filter-buyerJobs">
-            <!-- for Sellers -->
-            @foreach ($sellers as $seller)
+            <!-- for SBuyers -->
+            @foreach ($buyers as $buyer)
             <div class="col-md-6 col-sm-12">
                 <article class="card mb-4">
                     <div class="row card-body">
                         <div class="p-3">
-                            <h3 class="h3  d-inline"><a class="post-title" href="post-elements.html">{{ $seller->gig->name }}</a></h3>
+                            <h3 class="h3  d-inline"><a class="post-title" href="post-elements.html">{{ $buyer->project->name }}</a></h3>
                             <ul class="float-right d-inline">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -99,7 +99,7 @@
                                         <li>
                                             <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                                                 <i class="bi bi-person"></i>
-                                                <span>{{ $seller->gig->description }}</span>
+                                                <span>{{ $buyer->project->description }}</span>
                                             </a>
                                         </li>
                                         <li>
@@ -130,22 +130,22 @@
                                 <li class="list-inline-item">
                                     <a href="" class="card-meta-author">
                                         <img src=img/clients/client-1.png alt="">
-                                        <span>{{ $seller->employerd->name }} </span>
+                                        <span>{{ $buyer->employeed->name }} </span>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <i class="ti-timer"></i>{{ $seller->gig->budget }}
+                                    <i class="ti-timer"></i>{{ $buyer->project->budget }}
                                 </li>
                                 <li class="list-inline-item">
-                                    <i class="ti-calendar"></i>{{ $seller->gig->deadline }}
+                                    <i class="ti-calendar"></i>{{ $buyer->project->expected_by }}
                                 </li>
                             </ul>
                             <ul class="list-inline widget-list-inline">
-                                <li class="list-inline-item"><a href="">{{ $seller->status }}</a></li>
+                                <li class="list-inline-item"><a href="">{{ $buyer->status }}</a></li>
                             </ul>
-                            <p>Milestone {{ $seller->milestonescount }}</p>
+                            <p>Milestone {{ $buyer->milestonescount }}</p>
                             <div class="text-start d-inline">
-                                <a href="{{ url('/milestones/' . $seller->id) }}" class="btn btn-primary">Details</a>
+                                <a href="{{ url('/milestones/' . $buyer->id) }}" class="btn btn-primary">Details</a>
                             </div>
 
                         </div>
