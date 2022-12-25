@@ -8,7 +8,6 @@
             <ul class="card-meta list-inline">
                 <li class="list-inline-item">
                     <a href="author-single.html" class="card-meta-author">
-                        <img src={{$clientImg}} alt={{$clientName}}>
                         <span>{{$clientName}}</span>
                     </a>
                 </li>
@@ -24,7 +23,7 @@
                 </li>
             </ul>
             <p>{{$desc}}</p>
-         <a class="btn btn-primary" href="{{ url("/projects/". $id ) }}">Details</a>
+            <a class="btn btn-primary" href="{{ url("/projects/". $id ) }}">Details</a>
         </div>
     </article>
 
