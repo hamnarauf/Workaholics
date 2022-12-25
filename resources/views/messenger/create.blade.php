@@ -28,8 +28,8 @@
             @endif
     
             <!-- Submit Form Input -->
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary form-control">Submit</button>
+            <div class="">
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
     </form>

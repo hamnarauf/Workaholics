@@ -42,8 +42,6 @@
                                             <td>${{$earnings[$loop->index]}}</td>
                                             <td>${{$spendings[$loop->index]}}</td>
                                             <td>
-                                                <input class="btn btn-primary py-1 px-2" type="submit" name="submit-contact"
-                                                    id="submit_contact" value="Message">
                                                 <a class="btn btn-primary p-1 px-2" href="/admin/profiles/delete/{{ $profile['id'] }}">Remove</a>
                                             </td>
                                         </tr>
