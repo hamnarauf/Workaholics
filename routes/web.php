@@ -15,6 +15,7 @@ use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\FindController;
 use App\Http\Controllers\WTransactionsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\WelcomeController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -32,14 +33,6 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-
-
-
-
-
-route::get('/', function () {
-    return view('welcome');
-});
 
 
 
@@ -97,7 +90,7 @@ Route::get('/formchecking', function () {
 
 
 
-
+Route::get('/', [WelcomeController::class, 'index']);
 
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);

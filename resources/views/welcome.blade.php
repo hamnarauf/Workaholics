@@ -8,7 +8,7 @@
                         <h6>Workaholics</h6>
                         <div class="line-dec"></div>
                         <h4>Any Job <em>You Can</em> Possibly <span>Think Of</span></h4>
-                        <p>Hire the best freelancers for any job, online. Hire the best freelancers for any job, online.
+                        <p>Hire the best freelancers for any job, online.
                             Post a Job, Choose Freelancer, Pay safely, we're here to help
 
                         <div class="second-button"><a href="#categories">Check our Categories</a></div>
@@ -34,6 +34,7 @@
         <div class="container-fluid px-5">
             <div class="row px-5">
                 <!-- CATEGORY SECTION -->
+                @foreach ($categories as $category)
                 <div class="col-md-3 mb-3">
                     <article class="card bg-dark text-center text-white border-0 rounded-0 mb-18">
                         <img class="card-img rounded-0 img-fluid"
@@ -41,57 +42,13 @@
                             alt="post-thumb">
                         <div class="card-img-overlay">
                             <div class="card-content">
-                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB
-                                        devlopment</a></h4>
-                                <a class="btn btn-outline-light" href="l">Explore</a>
+                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">{{$category['name']}}</a></h4>
+                                <a class="btn btn-outline-light" href="{{$category['id']}}">Explore</a>
                             </div>
                         </div>
                     </article>
                 </div>
-                <div class="col-md-3 mb-3">
-                    <article class="card bg-dark text-center text-white border-0 rounded-0 mb-18">
-                        <img class="card-img rounded-0 img-fluid"
-                            src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
-                            alt="post-thumb">
-                        <div class="card-img-overlay">
-                            <div class="card-content">
-                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB
-                                        devlopment</a></h4>
-                                <a class="btn btn-outline-light" href="l">Explore</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <article class="card bg-dark text-center text-white border-0 rounded-0 mb-18">
-                        <img class="card-img rounded-0 img-fluid"
-                            src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
-                            alt="post-thumb">
-                        <div class="card-img-overlay">
-                            <div class="card-content">
-                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB
-                                        devlopment</a></h4>
-                                <a class="btn btn-outline-light" href="l">Explore</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <article class="card bg-dark text-center text-white border-0 rounded-0 mb-18">
-                        <img class="card-img rounded-0 img-fluid"
-                            src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
-                            alt="post-thumb">
-                        <div class="card-img-overlay">
-                            <div class="card-content">
-                                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">WEB
-                                        devlopment</a></h4>
-                                <a class="btn btn-outline-light" href="l">Explore</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-
+                @endforeach
             </div>
         </div>
     </div>
