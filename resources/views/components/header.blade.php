@@ -66,9 +66,12 @@
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                                 <li class="dropdown-header">
                                     <h6>{{Auth::user()->name}}</h6>
+
+                                    @if (Auth::user()->skills != null)
                                     @foreach(Auth::user()->skills as $skill)
                                     <span>{{ $skill }} | </span>
                                     @endforeach
+                                    @endif
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">
