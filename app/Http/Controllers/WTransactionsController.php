@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\wTransactions;
+use App\Models\Job;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,7 +23,7 @@ class WTransactionsController extends Controller
 
     public function create()
     {
-        return view('WTransactions.create');
+        return view('wTransactions.addToWallet.index');
     }
 
     public function store()
@@ -41,7 +42,7 @@ class WTransactionsController extends Controller
         $user = User::find(Auth::id());
         $spent_transactions = wTransactions::where('sender_id', '=', Auth::id())->get();
         $received_transactions = wTransactions::where('receiver_id', '=', Auth::id())->get();
-        $jobs = Jobs::where('employer');
+        $jobs = Job::where('employer');
         #$escrow =
 
         return view('WTransactions.show', ['spent_transactions' => $spent_transactions, 'received_transactions' => $received_transactions, 'wallet' => $user['wallet']]);
