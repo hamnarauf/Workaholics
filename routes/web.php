@@ -214,6 +214,7 @@ Route::post('/admin/categories', [AdminController::class, 'store']);
 Route::get('/admin/categories/delete/{id}', [AdminController::class, 'delete_category']);
 Route::get('/admin/categories/create', [AdminController::class, 'create']);
 Route::get('/admin/profiles', [AdminController::class, 'profiles']);
+Route::get('/admin/categories/delete/{id}', [AdminController::class, 'delete_profile']);
 
 // MesaagesController Routes
 Route::group(['prefix' => 'messages'], function () {

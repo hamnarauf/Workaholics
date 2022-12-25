@@ -44,8 +44,7 @@
                                             <td>
                                                 <input class="btn btn-primary" type="submit" name="submit-contact"
                                                     id="submit_contact" value="Message">
-                                                <input class="btn btn-primary" type="submit" name="submit-contact"
-                                                    id="submit_contact" value="Remove">
+                                                <a class="btn btn-primary mb-3" href="/admin/profiles/delete/{{ $profile['id'] }}">Remove</a>
                                             </td>
                                         </tr>
                                         @endforeach
