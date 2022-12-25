@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <h3>This Month</h3>
+                <h3>Last 30 Days</h3>
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
                         <div class="card gradient-1">
@@ -68,7 +68,6 @@
                                 <h3 class="card-title text-white">Users Joined</h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">{{ $userM  }}</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
                             </div>
@@ -80,7 +79,6 @@
                                 <h3 class="card-title text-white">Jobs Posted</h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">{{$cJobsM}}</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                             </div>
@@ -92,7 +90,6 @@
                                 <h3 class="card-title text-white">Gigs Created</h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">{{$gigM}}</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
                             </div>
@@ -104,81 +101,13 @@
                                 <h3 class="card-title text-white">Completed Jobs</h3>
                                 <div class="d-inline-block">
                                     <h2 class="text-white">{{$cJobsM}}</h2>
-                                    <p class="text-white mb-0">Jan - March 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="">Activity</h3>
-                                <div id="activity">
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/1.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <a href="">
-                                                <h5>Posted New Gig</h5>
-                                            </a>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <a href=""></a>
-                                            <h5>Posted New Project</h5></a>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <a href=""></a>
-                                            <h5>Submitted Proposal</h5></a>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <a href=""></a>
-                                            <h5>Completed Job</h5></a>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <a href=""></a>
-                                            <h5>Logged In</h5></a>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <a href=""></a>
-                                            <h5>New support ticket received</h5></a>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/3.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <a href=""></a>
-                                            <h5>Facebook Post 30 Comments</h5></a>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="row">
                     <div class="col-6">
                         <div class="card card-widget">
@@ -208,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <!-- <div class="col-6">
                         <div class="card card-widget">
                             <div class="card-body">
                                 <h5 class="text-muted">Client Feedback Overview </h5>
@@ -235,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
