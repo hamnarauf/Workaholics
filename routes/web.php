@@ -241,9 +241,7 @@ Route::get('/admin/requests', function () {
 Route::get('/admin/emails', function () {
     return view('admin/emails');
 });
-Route::get('/admin/jobs', function () {
-    return view('admin/jobs');
-});
+
 Route::get('/admin/categories', function () {
     return view('admin/categories');
 });

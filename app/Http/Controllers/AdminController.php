@@ -76,8 +76,19 @@ class AdminController extends Controller
 
     public function jobs()
     {
-        $jobs = Job::all();
-        return view('admin.jobs', ["jobs"=>$jobs]);
+        $jobs = Job::leftjoin('users as client', 'jobs.employer', '=', 'client.id')
+            ->leftjoin('users as seller', 'jobs.employee', '=', 'seller.id')
+            ->leftjoin('projects', 'jobs.project_id', '=', 'projects.id')
+            ->leftjoin('gigs', 'jobs.project_id', '=', 'gigs.id')
+            ->leftjoin('categories as p_cat', 'projects.category', '=', 'p_cat.id')
+            ->leftjoin('categories as g_cat', 'gigs.category', '=', 'g_cat.id')
+            ->select('jobs.id', 'jobs.status', 'client.name as cname', 'client.img as cimg', 
+                'seller.name as sname', 'seller.img as simg', 
+                'p_cat.name as pname', 'g_cat.name as gname',
+                'projects.name as ptitle', 'gigs.name as gtitle',
+                'projects.description as pdes', 'gigs.description as gdes')->get();
+        
+        return view('admin.jobs', ["jobs" => $jobs]);
     }
 
 
