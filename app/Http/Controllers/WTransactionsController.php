@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\wTransactions;
+use App\Models\Milestone;
 use App\Models\Job;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,8 @@ class WTransactionsController extends Controller
 
     public function index()
     {
+        
+        $in_escrow = Milestone::where('');
         $wTransactions = wTransactions::all();
         return view('payments.index', ["wTransactions" => $wTransactions]);
     }

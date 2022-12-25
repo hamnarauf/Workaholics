@@ -7,7 +7,7 @@
             <div class="col-12">
                 <nav class="main-nav header">
                     <!-- ***** Logo Start ***** -->
-                    <a href="/" class="logo">
+                    <a href="{{ url('/categories') }}" class="logo">
                         <img src="{{asset('img/lamp.png')}}" alt="" width="55" height="55">
                     </a>
                     <!-- ***** Logo End ***** -->
