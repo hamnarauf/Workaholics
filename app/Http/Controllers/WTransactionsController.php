@@ -18,7 +18,7 @@ class WTransactionsController extends Controller
     public function index()
     {
         $wTransactions = wTransactions::all();
-        return view('WTransactions.index', ["wTransactions" => $wTransactions]);
+        return view('payments.index', ["wTransactions" => $wTransactions]);
     }
 
     public function create()

@@ -58,9 +58,9 @@ Route::get('/editProfile', function () {
 });
 
 
-Route::get('/payment', function () {
-    return view('payments/index');
-});
+// Route::get('/payment', function () {
+//     return view('payments/index');
+// });
 
 Route::get('/viewSub', function () {
     return view('viewSubmission');

@@ -46,10 +46,13 @@ class GigproposalsController extends Controller
         $proposal->created_by = Auth::id();
 
         $file=request('file');
-        $filename=time().'.'.$file->getClientOriginalExtension();
-        request('file')->move('gigproposalfiles',$filename);
-        $proposal->file=$filename;
-
+        
+        if ($file != null){
+            $filename=time().'.'.$file->getClientOriginalExtension();
+            request('file')->move('gigproposalfiles',$filename);
+            $proposal->file=$filename;
+        }
+        
         $proposal->save();
         return redirect('/gigs/' . request('project_id'));
     }
@@ -73,6 +76,7 @@ class GigproposalsController extends Controller
     {
         $id = request('id');
         $status = request('status');
+        
         if ($status == 'view') {
             $route = 'gigproposals/' . $id . '/details';
             return redirect($route);
