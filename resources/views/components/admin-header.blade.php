@@ -19,65 +19,11 @@ Header start
             </div>
             <div class="header-right float-right">
                 <ul class="clearfix">
-                    <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                    <li class="icons dropdown">
+                        <a href="/messages">
                             <i class="mdi mdi-email-outline color-white"></i>
-                            <span class="badge badge-pill gradient-1">3</span>
                         </a>
-                        <div class="drop-down animated fadeIn dropdown-menu">
-                            <div class="dropdown-content-heading d-flex justify-content-between">
-                                <span class="">3 New Messages</span>
-                                <a href="javascript:void()" class="d-inline-block">
-                                    <span class="badge badge-pill gradient-1">3</span>
-                                </a>
-                            </div>
-                            <div class="dropdown-content-body">
-                                <ul>
-                                    <li class="notification-unread">
-                                        <a href="javascript:void()">
-                                            <img class="float-left mr-3 avatar-img" src="images/avatar/1.jpg" alt="">
-                                            <div class="notification-content">
-                                                <div class="notification-heading">Saiful Islam</div>
-                                                <div class="notification-timestamp">08 Hours ago</div>
-                                                <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="notification-unread">
-                                        <a href="javascript:void()">
-                                            <img class="float-left mr-3 avatar-img" src="images/avatar/2.jpg" alt="">
-                                            <div class="notification-content">
-                                                <div class="notification-heading">Adam Smith</div>
-                                                <div class="notification-timestamp">08 Hours ago</div>
-                                                <div class="notification-text">Can you do me a favour?</div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void()">
-                                            <img class="float-left mr-3 avatar-img" src="images/avatar/3.jpg" alt="">
-                                            <div class="notification-content">
-                                                <div class="notification-heading">Barak Obama</div>
-                                                <div class="notification-timestamp">08 Hours ago</div>
-                                                <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void()">
-                                            <img class="float-left mr-3 avatar-img" src="images/avatar/4.jpg" alt="">
-                                            <div class="notification-content">
-                                                <div class="notification-heading">Hilari Clinton</div>
-                                                <div class="notification-timestamp">08 Hours ago</div>
-                                                <div class="notification-text">Hello</div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </li>
-
-
                     <li class="icons dropdown ml-2">
                         <div class="user-img c-pointer position-relative mr-5" data-toggle="dropdown">
                             <span class="activity active"></span>
@@ -90,9 +36,9 @@ Header start
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="icon-lock"></i>
                                             <span>Sign Out</span></a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
                                     </li>
                                 </ul>
                             </div>
