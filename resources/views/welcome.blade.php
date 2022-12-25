@@ -43,7 +43,7 @@
                         <div class="card-img-overlay">
                             <div class="card-content">
                                 <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html">{{$category['name']}}</a></h4>
-                                <a class="btn btn-outline-light" href="{{$category['id']}}">Explore</a>
+                                <a class="btn btn-outline-light" href="/login">Explore</a>
                             </div>
                         </div>
                     </article>
