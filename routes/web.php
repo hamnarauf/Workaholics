@@ -125,6 +125,7 @@ Route::get('/proposals/{proposal_id}/details', [ProposalsController::class, 'sho
 Route::get('/proposals/{id}/edit', [ProposalsController::class, 'edit']);
 Route::put('/proposals', [ProposalsController::class, 'update']);
 Route::delete('/proposals/{id}', [ProposalsController::class, 'destroy']);
+Route::get('/download/{file}', [ProposalsController::class, 'download']);
 
 // GigProposalsController Routes
 Route::get('/gigproposals/{id}', [GigproposalsController::class, 'index']);
@@ -133,6 +134,7 @@ Route::post('/gigproposals', [GigproposalsController::class, 'store']);
 Route::get('/gigproposals/{proposal_id}/details', [GigproposalsController::class, 'show']);
 Route::get('/gigproposals/{id}/edit', [GigproposalsController::class, 'edit']);
 Route::put('/gigproposals', [GigproposalsController::class, 'update']);
+Route::get('/download/{file}', [GigproposalsController::class, 'download']);
 
 //findsController Routes
 
