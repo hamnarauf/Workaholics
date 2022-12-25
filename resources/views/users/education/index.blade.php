@@ -5,7 +5,7 @@
                 <h2>Add Educational Details</h2>
             </div>
             <div class="form-center">
-                @include('1education.form')
+                @include('users.education.form')
             </div>
         </div>
     </section>

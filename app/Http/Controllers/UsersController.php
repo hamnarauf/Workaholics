@@ -160,4 +160,21 @@ class UsersController extends Controller
         $user->delete();
         return redirect()->route('users.index');
     }
+
+    public function education(){
+        return view('users.education.index');
+    }
+    
+    public function update_education() {
+        $edu = new Education();
+        $edu->user = Auth::id();
+        $edu->institute = request('institute');
+        $edu->title = request('title');
+        $edu->date_of_graduation = request('date');
+        $edu->city = request('city');
+        $edu->country = request('country');
+
+        $edu->save();
+        return redirect('users/{{Auth::id()}}/edit');
+    }
 }

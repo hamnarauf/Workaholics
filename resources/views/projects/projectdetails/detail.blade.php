@@ -10,7 +10,7 @@
 <x-jobDetails
     category="{{ $category->name }}"
     title="{{ $project->name }}"
-    datePosted="{{ $project->created_at->diffForHumans() }}"
+    datePosted="{{ $project->created_at }}"
     budget="{{ $project->budget }}"
     expectedTime="{{ $project->expected_by }}"
     desc="{{ $project->description }}"

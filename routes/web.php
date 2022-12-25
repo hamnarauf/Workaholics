@@ -196,10 +196,13 @@ Route::delete('/transactions/{id}', [TransactionsController::class, 'destroy']);
 Route::get('/users', [UsersController::class, 'index']);
 Route::get('/users/create', [UsersController::class, 'create']);
 Route::post('/users', [UsersController::class, 'store']);
+Route::get('/users/education', [UsersController::class, 'education']);
 Route::get('/users/{id}', [UsersController::class, 'show']);
 Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
+Route::post('/users/{id}/edit', [UsersController::class, 'update_education']);
 Route::post('/users/edit', [UsersController::class, 'update']);
 Route::delete('/users/{id}', [UsersController::class, 'destroy']);
+
 
 // AdminController Routes
 Route::get('/admin', [AdminController::class, 'index']);

@@ -9,7 +9,7 @@
 <x-gigDetails
     category="{{ $category->name }}"
     title="{{ $gig->name }}"
-    datePosted="{{ $gig->created_at->diffForHumans() }}"
+    datePosted="{{ $gig->created_at }}"
     budget="{{ $gig->budget }}"
     expectedTime="{{ $gig->deadline }}"
     desc="{{ $gig->description }}"
