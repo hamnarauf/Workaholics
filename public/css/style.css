@@ -3408,3 +3408,7 @@ select
 #cat{
   padding-top: 87px;
 }
+
+.desc-para{
+  /* min-height: 90px; */
+}

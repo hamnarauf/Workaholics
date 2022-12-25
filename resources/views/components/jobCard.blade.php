@@ -1,3 +1,11 @@
+<?php
+    if(strlen($desc) > 180)
+    {
+        $desc = substr($desc, 0, 135);
+        $desc = $desc."...";
+    }
+?>
+
 <div class="col-lg-4 col-md-6 py-2 filter-job">
     <article class="card">
         <div class="post-slider slider-sm">
@@ -22,8 +30,10 @@
                 </x-tagMenu>
                 </li>
             </ul>
-            <p>{{$desc}}</p>
-            <a class="btn btn-primary" href="{{ url("/projects/". $id ) }}">Details</a>
+            <div class="desc-para">
+                <p class="">{{$desc}}</p>
+            </div>
+            <a class="btn btn-primary mt-2" href="{{ url("/projects/". $id ) }}">Details</a>
         </div>
     </article>
 

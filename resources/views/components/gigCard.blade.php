@@ -1,3 +1,11 @@
+<?php
+    if(strlen($desc) > 180)
+    {
+        $desc = substr($desc, 0, 135);
+        $desc = $desc."...";
+    }
+?>
+
 <div class="col-lg-4 col-md-6 portfolio-item filter-gig courses">
     <div class="course-item">
         <img src="https://source.unsplash.com/random/600x400?{{$category}}" class="img-fluid" alt="...">
@@ -9,8 +17,10 @@
             <x-tagMenu>
                 <x-tag title={{$category}}></x-tag>
             </x-tagMenu>
-            <p>{{$desc}}</p>
-            <a class="btn btn-primary mb-3" href="{{ url('/gigs/'.$id) }}">Details</a>
+            <div class="desc-para">
+                <p class="">{{$desc}}</p>
+            </div>
+            <a class="btn btn-primary mb-3 mt-2" href="{{ url('/gigs/'.$id) }}">Details</a>
             <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                     @if ($freelancerImg!="")
@@ -23,10 +33,7 @@
                 </div>
                 <div class="trainer-rank d-flex align-items-center">
                     <i class="ti-timer"></i>&nbsp;{{$clicks}} days
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;{{$saves}}
                 </div>
-
             </div>
         </div>
 
