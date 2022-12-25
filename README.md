@@ -12,12 +12,16 @@ hA service based platform for freelancers to buy and sell their gigs. This platf
 ## Website layout
 
 Landing page
+![landingpage](https://github.com/hamnarauf/Workaholics/blob/main/landingpage.PNG)
 
-Find gigs
+Categories
+![categories](https://github.com/hamnarauf/Workaholics/blob/main/Categories.png)
 
-Milestones
+services
+![services](https://github.com/hamnarauf/Workaholics/blob/main/categories%202.png)
 
-Sign up 
+contact us  
+![contact](https://github.com/hamnarauf/Workaholics/blob/main/contactUs.png)
 
 
 ## Getting Started
