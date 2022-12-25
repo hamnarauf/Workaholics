@@ -1,3 +1,18 @@
+@if ($hasfeedback != "true")
+<div class="px-5 col-10 ">
+    <div class="mb-5 border-top mt-4 pt-5">
+        <div class="mb-5">
+            <h3 class="d-inline mr-3">Feedback</h3>
+        </div>
+        <div class="media d-block mb-4 pb-4 row">
+            <div class="media-body col">
+                <p>No feedback given yet</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@else
 <div class="px-5 col-10 ">
     <div class="mb-5 border-top mt-4 pt-5">
         <div class="mb-5">
@@ -25,3 +40,5 @@
         </div>
     </div>
 </div>
+
+@endif
