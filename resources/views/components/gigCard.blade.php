@@ -22,7 +22,7 @@
                     <a href=""><span>{{$freelancer}}</span></a>
                 </div>
                 <div class="trainer-rank d-flex align-items-center">
-                    <i class="ti-timer"></i>&nbsp;{{$clicks}}
+                    <i class="ti-timer"></i>&nbsp;{{$clicks}} days
                     &nbsp;&nbsp;
                     <i class="bx bx-heart"></i>&nbsp;{{$saves}}
                 </div>

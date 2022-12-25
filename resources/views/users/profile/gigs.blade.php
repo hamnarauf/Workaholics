@@ -16,8 +16,8 @@
 @foreach($gigs as $gig)
 <x-list-item-with-image
     title="{{ $gig['name'] }}"
-    personName="{{ $gig['c_name'] }}"
-    personImg="{{ asset($user['img']) }}"
+    personName=""
+    personImg=""
     price="${{ $gig['budget'] }}"
     date="{{ $gig['required_days'] }} days"
     :tags="$skill_list[$loop->index]"
