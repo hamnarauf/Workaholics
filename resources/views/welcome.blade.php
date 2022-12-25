@@ -38,7 +38,7 @@
                 <div class="col-md-3 mb-3">
                     <article class="card bg-dark text-center text-white border-0 rounded-0 mb-18">
                         <img class="card-img rounded-0 img-fluid"
-                            src="https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+                            src="https://source.unsplash.com/random/600x800?{{$category['name']}}"
                             alt="post-thumb">
                         <div class="card-img-overlay">
                             <div class="card-content">
