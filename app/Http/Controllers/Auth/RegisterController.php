@@ -79,4 +79,13 @@ class RegisterController extends Controller
             'country'=> $data['country']
         ]);
     }
+
+    // public function redirectTo(){
+    //     if(auth()->user->email == 'admin@workaholics.com'){
+    //         return redirect('/admin');
+    //     }
+    //     else {
+    //         return redirect('/home');
+    //     }
+    // }
 }

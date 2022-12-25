@@ -38,9 +38,7 @@ Route::get('/profile', function () {
 });
 
 
-Route::get('/wallet', function () {
-    return view('addToWallet/index');
-});
+
 
 
 Route::get('/1milestoneSubmission', function () {
@@ -172,10 +170,12 @@ Route::get('/feedbacks/{id}/edit', [FeedbacksController::class, 'edit']);
 Route::put('/feedbacks/{id}', [FeedbacksController::class, 'update']);
 Route::delete('/feedbacks/{id}', [FeedbacksController::class, 'destroy']);
 
-
+// Route::get('/wallet', function () {
+//     return view('addToWallet/index');
+// });
 
 // WTransactionsController Routes
-Route::get('/wtransactions', [WTransactionsController::class, 'index']);
+Route::get('/wallet', [WTransactionsController::class, 'index']);
 Route::get('/wtransactions/create', [WTransactionsController::class, 'create']);
 Route::post('/wtransactions', [WTransactionsController::class, 'store']);
 Route::get('/wtransactions/{id}', [WTransactionsController::class, 'show']);
