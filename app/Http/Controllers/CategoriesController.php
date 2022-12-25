@@ -21,7 +21,7 @@ class CategoriesController extends Controller
 
     public function create()
     {
-        return view('category.create');
+        return view('categories.create');
     }
 
     # create new category
@@ -30,7 +30,7 @@ class CategoriesController extends Controller
         $category = new Category();
         $category->name = request('name');
         $category->save();
-        return redirect()->route('category.index');
+        return redirect('/categories');
     }
 
     # find a particular category

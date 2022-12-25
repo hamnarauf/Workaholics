@@ -90,14 +90,8 @@ Route::get('/employment', function () {
     return view('1employment.index');
 });
 Route::get('/formchecking', function () {
-    return view('milestones.show');
+    return view('1categories.index');
 });
-
-
-
-
-
-
 
 // Gigs Routes
 Route::get('/gigs', [GigsController::class, 'index']);
