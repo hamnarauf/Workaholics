@@ -38,11 +38,11 @@
                     <i class="icon-menu menu-icon"></i><span class="nav-text">profiles</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="/admin/feedbacks" aria-expanded="false">
                     <i class="icon-notebook menu-icon"></i><span class="nav-text">Feedbacks</span>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>

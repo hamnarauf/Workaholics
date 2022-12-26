@@ -233,15 +233,3 @@ Route::group(['prefix' => 'messages'], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/admin/requests', function () {
-    return view('admin/requests');
-});
-Route::get('/admin/emails', function () {
-    return view('admin/emails');
-});
-
-
-Route::get('/admin/feedbacks', function () {
-    return view('admin/feedbacks');
-});
