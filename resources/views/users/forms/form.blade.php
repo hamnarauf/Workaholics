@@ -8,7 +8,7 @@
                     <span class="font-weight-bold">{{ $user['name'] }}</span>
                     <span class="text-black-50">{{ $user['email'] }}</span><span> </span></div>
                     <div class="mt-2 text-center"><a class="btn btn-primary" href="/users/education">Add Education</a></div>
-                    <div class="mt-1 text-center"><button class="btn btn-primary profile-button" type="submit">Add Employment</button></div>
+                    <div class="mt-1 text-center"><a class="btn btn-primary profile-button" type="submit" href="/users/employment">Add Employment</a></div>
 
             </div>
             <div class="col-md-5 border-right">

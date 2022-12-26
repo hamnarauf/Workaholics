@@ -86,7 +86,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center" href="users/{{Auth::user()->id}}/edit">
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ url("users")."/". Auth::user()->id }}/edit">
                                         <i class="bi bi-gear"></i>
                                         <span>Account Settings</span>
                                     </a>

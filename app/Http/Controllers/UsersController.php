@@ -164,6 +164,9 @@ class UsersController extends Controller
     public function education(){
         return view('users.education.index');
     }
+    public function employment(){
+        return view('users.employment.index');
+    }
     
     public function update_education() {
         $edu = new Education();

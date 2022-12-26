@@ -197,6 +197,7 @@ Route::get('/users', [UsersController::class, 'index']);
 Route::get('/users/create', [UsersController::class, 'create']);
 Route::post('/users', [UsersController::class, 'store']);
 Route::get('/users/education', [UsersController::class, 'education']);
+Route::get('/users/employment', [UsersController::class, 'employment']);
 Route::get('/users/{id}', [UsersController::class, 'show']);
 Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
 Route::post('/users/{id}/edit', [UsersController::class, 'update_education']);
