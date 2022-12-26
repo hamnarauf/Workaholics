@@ -25,6 +25,9 @@ class AdminController extends Controller
 
     public function index()
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
         # Overall Statistics
         $user = User::all()->count();
         $project = Project::all()->count();
@@ -50,6 +53,9 @@ class AdminController extends Controller
 
     public function transactions()
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
         $transactions = wTransactions::leftjoin('users as sender', 'wtransactions.sender_id', '=', 'sender.id')
             ->leftjoin('users as receiver', 'wtransactions.receiver_id', '=', 'receiver.id')
             ->select('wtransactions.amount', 'wtransactions.created_at', 'sender.name as sname', 'receiver.name as rname')->get();
@@ -58,6 +64,9 @@ class AdminController extends Controller
 
     public function projects()
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
         $projs = Project::leftjoin('users', 'projects.created_by', '=', 'users.id')
             ->leftjoin('categories', 'projects.category', '=', 'categories.id')
             ->select('projects.*', 'users.name as uname', 'users.img', 'categories.name as category')->get();
@@ -67,6 +76,9 @@ class AdminController extends Controller
 
     public function gigs()
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
         $gigs = Gig::leftjoin('users', 'gigs.created_by', '=', 'users.id')
             ->leftjoin('categories', 'gigs.category', '=', 'categories.id')
             ->select('gigs.*', 'users.name as uname', 'users.img', 'categories.name as category')->get();
@@ -76,6 +88,10 @@ class AdminController extends Controller
 
     public function profiles()
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
+
         $profiles = User::all();
         $projects = array();
         $jobs = array();
@@ -101,6 +117,9 @@ class AdminController extends Controller
 
     public function jobs()
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
         $jobs = Job::leftjoin('users as client', 'jobs.employer', '=', 'client.id')
             ->leftjoin('users as seller', 'jobs.employee', '=', 'seller.id')
             ->leftjoin('projects', 'jobs.project_id', '=', 'projects.id')
@@ -118,6 +137,10 @@ class AdminController extends Controller
 
     public function categories()
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
+
         $categories = Category::all();
 
         $category_project_count = array();
@@ -138,6 +161,10 @@ class AdminController extends Controller
 
     public function delete_project($id)
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
+
         $project = Project::find($id);
         $project->delete();
         return redirect('admin/projects');
@@ -145,6 +172,10 @@ class AdminController extends Controller
 
     public function delete_gig($id)
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
+
         $gig = Gig::find($id);
         $gig->delete();
         return redirect('admin/gigs');
@@ -152,6 +183,10 @@ class AdminController extends Controller
 
     public function delete_job($id)
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
+
         $job = Job::find($id);
         $job->delete();
         return redirect('admin/jobs');
@@ -159,6 +194,10 @@ class AdminController extends Controller
 
     public function delete_category($id)
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
+
         $cat = Category::find($id);
         $cat->delete();
         return redirect('admin/categories');
@@ -166,6 +205,10 @@ class AdminController extends Controller
 
     public function delete_profile($id)
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
+
         $user = User::find($id);
         $user->delete();
         return redirect('admin/profiles');
@@ -176,11 +219,19 @@ class AdminController extends Controller
 
     public function create()
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
+
         return view('categories.create');
     }
 
     public function store()
     {
+        if (Auth::id() != '18'){
+            return redirect('/categories');
+        }
+        
         $category = new Category();
         $category->name = request('name');
         $category->save();
