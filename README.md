@@ -1,13 +1,8 @@
 # Workaholics
 ### Freelancing platform (service based website)
 
-## Web Engineering Project 
-## Use this readme file for reference for doc report!
-### Checkout Master Branch to see updated code
-
-
-# About ptoject
-hA service based platform for freelancers to buy and sell their gigs. This platform aims to provide users with hiring talent and provide communication across the world irrespective of region.
+# About project
+A service based platform for freelancers to buy and sell their gigs. This platform aims to provide users with hiring talent and provide communication across the world irrespective of region.
 
 ## Website layout
 
@@ -17,16 +12,16 @@ Landing page
 Categories
 ![categories](https://github.com/hamnarauf/Workaholics/blob/main/Categories.png)
 
-services
+Services
 ![services](https://github.com/hamnarauf/Workaholics/blob/main/categories%202.png)
 
-contact us  
+Contact us  
 ![contact](https://github.com/hamnarauf/Workaholics/blob/main/contactUs.png)
 
 
 ## Getting Started
 
-clone the repository https://github.com/hamnarauf/Workaholics.git
+Clone the repository https://github.com/hamnarauf/Workaholics.git
 
 Create a database titled workaholics in phpMyAdmin by importing the workaholics.sql file
 
@@ -35,9 +30,9 @@ Ensure that the Apache service is installed and running
 ## Initiate the dev server
 
 In the project folder, run the following command
-
+```
 php artisan serve
-
+```
 Workaholics is ready to go!
 
 ## Contributing
@@ -57,6 +52,3 @@ JQuery
 
 PHP laravel
 MySQL + phpMyAdmin
-
-## Licence
-No liscense since it is an open project developed as a semester project.
